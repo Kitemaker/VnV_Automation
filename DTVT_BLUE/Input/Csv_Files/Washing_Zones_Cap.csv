@@ -1,0 +1,3 @@
+ID,Name,Depot_ID,Siding_ID,Track_ID,Washing_Max_Speed,Memorized_Localisation,SSP_ID_List,Kp_BeginValue,Kp_BeginCorrected_Trolley_Value,Kp_EndValue,Kp_EndCorrected_Trolley_Value,Default_Stop
+1,WZ_132_ITW,0,SID_ITW_1,TR_S_ITW3_ITW,5,false,SSP_ITW_132_D;SSP_ITW_132_U,1879506,0,1896799,0,true
+2001,WZ_113A_113D_LCM,0,SID_LCM_1,TR_S_317_LCM,5,false,SSP_LCM_113A_D;SSP_LCM_113D_U,525475,0,540275,0,true

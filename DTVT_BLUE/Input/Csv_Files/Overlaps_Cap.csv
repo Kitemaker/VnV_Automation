@@ -1,0 +1,164 @@
+ID,Name,Safety_Derogation,Overlap_Type,Overlap_MASC,For_CBTC_Train,Response_To_Restrictive_Binary_Delay_BM,ATC_Overlap_Timer,Additional_CBI_Time,D_Overlap,D_Overlap_CBI,Strike_In_Distance,Overlap_Switch_ID_List,Overlap_Release_BM_SDD_ID_List,Berth_Distance,Berth_Route_ID_List
+1,O_SI_100_D_HDS,true,CBI Critical Normal,true,true,0,82000,117000,4686,4686,240,SW_HDS_1695,0,10645,R_1_VLN_101A_HDS;R_2_VLN_101A_HDS
+2,O_SI_102_U_HDS,true,CBI Critical Normal,true,true,0,82000,117000,5132,5132,234,SW_HDS_1687,0,10724,R_11_HDS_101D_HDS;R_12_HDS_101D_HDS
+3,O_SI_5_U_ITW,true,Not Interlocked,true,true,0,82000,117000,5360,0,0,0,0,0,0
+4,O_SI_6_U_ITW,true,Not Interlocked,true,true,0,82000,117000,5360,0,0,0,0,0,0
+5,O_SI_27_D_ZD,true,Not Interlocked,false,true,0,82000,117000,2657,0,0,0,0,0,0
+6,O_SI_22_D_ZD,true,Not Interlocked,false,true,0,82000,117000,2657,0,0,0,0,0,0
+9,O_SI_3_D_VLN,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+10,O_SI_4_D_VLN,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+11,O_SI_3_U_VLN,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+12,O_SI_4_U_VLN,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+13,O_SI_9_D_HDS,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+14,O_SI_10_D_HDS,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+15,O_SI_9_U_HDS,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+16,O_SI_10_U_HDS,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+17,O_SI_1_D_HDS,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+18,O_SI_2_D_HDS,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+19,O_SI_1_D_ITW,true,Not Interlocked,false,true,0,82000,117000,7200,0,0,0,0,0,0
+20,O_SI_2_D_ITW,true,CBI Preferred Normal,true,true,0,82000,117000,7200,7200,806,SW_ITW_1615,0,13652,R_161A_ITW_4A_ITW;R_170A_ITW_4A_ITW;R_181A_ITW_4A_ITW;R_190A_ITW_4A_ITW
+1011,O_SI_17_U_CSN,true,CBI Critical Normal,true,true,0,82000,117000,6000,6000,930,SW_CSN_3309;SW_CSN_3313,0,15629,R_5_CSN_15_CSN;R_100A_CSN_15_CSN
+1013,O_SI_21_D_CSN,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1014,O_SI_4A_U_CSN,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1017,O_SI_12_D_CSN,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1018,O_SI_16_U_CSN,true,CBI Critical Normal,true,true,0,82000,117000,6000,6000,930,SW_CSN_3313;SW_CSN_3309,0,15687,R_4B_CSN_14_CSN;R_100A_CSN_14_CSN
+1020,O_SI_20_D_CSN,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1021,O_SI_3_U_VZG,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1022,O_SI_3_D_VZG,true,CBI Critical Normal,true,true,0,82000,117000,1154,1154,807,SW_VZG_3423,0,13629,R_9_VZG_5_VZG
+1023,O_SI_7_U_VZG,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1024,O_SI_7_D_VZG,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1025,O_SI_43_U_ZD,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1026,O_SI_43_D_ZD,true,CBI Critical Normal,true,true,0,82000,117000,8000,8000,615,SW_ZD_3503;SW_ZD_3501,0,14500,R_49_ZD_45_ZD;R_38_ZD_45_ZD
+1027,O_SI_4_U_VZG,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1028,O_SI_4_D_VZG,true,CBI Critical Normal,true,true,0,82000,117000,1118,1118,807,SW_VZG_3421,0,13375,R_10_VZG_6_VZG
+1029,O_SI_8_U_VZG,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1030,O_SI_8_D_VZG,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1031,O_SI_32_U_ZD,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1032,O_SI_32_D_ZD,true,CBI Critical Normal,true,true,0,82000,117000,8000,8000,615,SW_ZD_3503;SW_ZD_3501,0,14500,R_49_ZD_34_ZD;R_38_ZD_34_ZD
+1033,O_SI_57_U_ZD,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1034,O_SI_8_U_ND,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+1035,O_SI_9_U_ND,true,CBI Preferred Normal,true,true,0,82000,117000,9000,9000,930,SW_ND_3223,0,15173,R_3_ND_7_ND;R_101_ND_7_ND;R_111_ND_7_ND;R_121_ND_7_ND;R_130_ND_7_ND
+1036,O_SI_4_D_ND,true,CBI Preferred Normal,true,true,0,82000,117000,9000,9000,930,SW_ND_3211,0,14931,R_1_CSN_6_ND;R_2_CSN_6_ND
+1037,O_SI_5_D_ND,true,CBI Preferred Normal,true,true,0,82000,117000,9000,9000,930,SW_ND_3213,0,14937,R_1_CSN_7_ND;R_2_CSN_7_ND
+1038,O_SI_13_D_CSN,true,Not Interlocked,false,true,0,82000,117000,10000,0,0,0,0,0,0
+2003,O_SI_8_D_WPP,true,CBI Preferred Normal,true,true,0,82000,117000,2200,5400,807,SW_WPP_239,0,5799,R_17_WPP_10_WPP;R_16_WPP_10_WPP
+2004,O_SI_9_D_WPP,true,CBI Preferred Normal,true,true,0,82000,117000,2900,5400,807,SW_WPP_237,0,5945,R_16_WPP_11_WPP;R_17_WPP_11_WPP
+2005,O_SI_2A_D_SLW,true,CBI Preferred Normal,true,true,0,82000,117000,2500,5400,807,SW_SLW_261,0,4997,R_12_SLW_4_SLW;R_24_SLW_4_SLW
+2006,O_SI_10_D_SLW,true,Not Interlocked,true,true,0,82000,117000,2900,0,0,0,0,0,0
+2007,O_SI_5_D_SLW,true,Not Interlocked,true,true,0,82000,117000,2900,0,0,0,0,0,0
+2008,O_SI_22_D_SLW,true,CBI Critical Normal,true,true,0,82000,117000,2600,5500,766,SW_SLW_309,0,3197,R_2_OAS_24_SLW;R_1_OAS_24_SLW;R_190A_LCM_24_SLW
+2009,O_SI_13_D_SLW,true,CBI Critical Normal,true,true,0,82000,117000,2200,5500,766,SW_SLW_307,0,3297,R_111_LCM_15_SLW;R_2_OAS_15_SLW;R_1_OAS_15_SLW
+2010,O_SI_122_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2011,O_SI_122_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2012,O_SI_131_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2013,O_SI_133_U_LCM,true,CBI Preferred Normal,true,true,0,82000,117000,2200,3000,602,SW_LCM_377;SW_LCM_379,0,3500,R_190D_LCM_132D_LCM;R_121D_LCM_132D_LCM
+2014,O_SI_133_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2015,O_SI_135A_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2016,O_SI_140_D_LCM,true,Not Interlocked,true,true,0,82000,117000,2200,0,0,0,0,0,0
+2017,O_SI_142A_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2018,O_SI_160_375_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2019,O_SI_160_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2020,O_SI_151A_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2021,O_SI_162A_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2022,O_SI_112_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2024,O_SI_114_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2026,O_SI_164_417_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2027,O_SI_6_D_MDW,true,CBI Critical Normal,true,true,0,82000,117000,2300,6500,807,SW_MDW_433,0,3247,R_2_SVT_8_MDW;R_2_DMZ_8_MDW
+2028,O_SI_14_D_MDW,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2029,O_SI_134D_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2030,O_SI_153_405_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2031,O_SI_150D_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2032,O_SI_152A_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2033,O_SI_151D_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2034,O_SI_153_413_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2035,O_SI_161D_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2036,O_SI_163A_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2037,O_SI_162D_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2038,O_SI_164_415_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2039,O_SI_114_D_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2040,O_SI_164_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2041,O_SI_13_D_MDW,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2042,O_SI_5_D_MDW,true,CBI Preferred Normal,true,true,0,82000,117000,2300,8200,807,SW_MDW_427,0,150,R_1_SVT_7_MDW;R_1_DMZ_7_MDW
+2043,O_SI_4_D_GN,true,Not Interlocked,false,true,0,82000,117000,2600,0,0,0,0,0,0
+2044,O_SI_7_U_DMZ,true,CBI Critical Normal,true,true,0,82000,117000,2900,5500,766,SW_DMZ_519,0,10163,R_2_DMZ_5_DMZ;R_1_DMZ_5_DMZ
+2046,O_SI_11_D_DMZ,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2047,O_SI_12_D_DMZ,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2049,O_SI_14_D_GPP,true,CBI Preferred Normal,true,true,0,82000,117000,2200,6500,807,SW_GPP_569,0,3269,R_20A_GPP_16_GPP;R_120A_GPP_16_GPP;R_130A_GPP_16_GPP;R_13A_GPP_16_GPP;R_100A_GPP_16_GPP;R_110A_GPP_16_GPP
+2050,O_SI_19_U_ZD,true,CBI Preferred Normal,true,true,0,82000,117000,2200,3000,1084,SW_ZD_1801B,0,3438,R_7_ZD_17_ZD;R_104D_ZD_17_ZD
+2051,O_SI_4_U_ZD,true,CBI Preferred Normal,true,true,0,82000,117000,2600,3000,1084,SW_ZD_1833,0,10762,R_15_OAS_2A_ZD;R_3_OAS_2A_ZD;R_6_OAS_2A_ZD
+2052,O_SI_103_U_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2055,O_SI_112_U_ZD,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2056,O_SI_131_D_ZD,true,CBI Preferred Normal,true,true,0,82000,117000,2900,3000,602,SW_ZD_1913,0,3500,R_133A_ZD_132A_ZD
+2057,O_SI_133A_U_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2058,O_SI_132E_D_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2059,O_SI_143_1909_U_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2060,O_SI_140_D_ZD,true,CBI Preferred Normal,true,true,0,82000,117000,2900,3000,602,SW_ZD_1913,0,3500,R_142A_ZD_141A_ZD
+2061,O_SI_141E_D_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2062,O_SI_142A_U_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2063,O_SI_143_U_ZD,true,Not Interlocked,true,true,0,82000,117000,2900,0,0,0,0,0,0
+2064,O_SI_150_D_ZD,true,CBI Preferred Normal,true,true,0,82000,117000,2900,3000,602,SW_ZD_1915;SW_ZD_1917,0,3500,R_152A_ZD_151A_ZD
+2065,O_SI_151E_D_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2066,O_SI_152A_U_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2067,O_SI_153_U_ZD,true,Not Interlocked,true,true,0,82000,117000,2900,0,0,0,0,0,0
+2068,O_SI_150_1915_D_ZD,true,Not Interlocked,true,true,0,82000,117000,2900,0,0,0,0,0,0
+2069,O_SI_160E_D_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2070,O_SI_161A_U_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2071,O_SI_162_U_ZD,true,CBI Preferred Normal,true,true,0,82000,117000,2900,3000,602,SW_ZD_1905;SW_ZD_1907;SW_ZD_1903,0,3500,R_160D_ZD_161D_ZD
+2072,O_SI_5_D_ZD,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2073,O_SI_9_1865_U_OAS,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2074,O_SI_1_D_OAS,true,Not Interlocked,false,true,0,82000,117000,2600,0,0,0,0,0,0
+2075,O_SI_9_U_OAS,true,Not Interlocked,false,true,0,82000,117000,2600,0,0,0,0,0,0
+2076,O_SI_26_315_D_SLW,true,Not Interlocked,true,true,0,82000,117000,2900,0,0,0,0,0,0
+2077,O_SI_191_U_LCM,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2091,O_SI_12_U_WPP,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2092,O_SI_13_U_WPP,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2093,O_SI_10_U_SLW,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2094,O_SI_26_U_SLW,true,CBI Preferred Normal,true,true,0,82000,117000,2600,5500,766,SW_SLW_315,0,3100,R_8_SLW_24_SLW;R_100B_SLW_24_SLW
+2095,O_SI_17_U_SLW,true,CBI Preferred Normal,true,true,0,82000,117000,2200,7200,766,SW_SLW_317,0,3100,R_100B_SLW_15_SLW;R_3_SLW_15_SLW
+2096,O_SI_4A_D_CS,true,Not Interlocked,false,true,0,82000,117000,2300,0,0,0,0,0,0
+2097,O_SI_8_U_WPP,true,Not Interlocked,false,true,0,82000,117000,2400,0,0,0,0,0,0
+2098,O_SI_14_D_WPP,true,Not Interlocked,true,true,0,82000,117000,2300,0,0,0,0,0,0
+2101,O_SI_4_U_SVT,true,Not Interlocked,false,true,0,82000,117000,3700,0,0,0,0,0,0
+2102,O_SI_4_D_SVT,true,Not Interlocked,false,true,0,82000,117000,2300,0,0,0,0,0,0
+2103,O_SI_8_U_SVT,true,Not Interlocked,false,true,0,82000,117000,2830,0,0,0,0,0,0
+2104,O_SI_8_D_SVT,true,Not Interlocked,false,true,0,82000,117000,2300,0,0,0,0,0,0
+2105,O_SI_4_U_BLW,true,Not Interlocked,false,true,0,82000,117000,2700,0,0,0,0,0,0
+2106,O_SI_4_D_BLW,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2107,O_SI_8_U_BLW,true,Not Interlocked,true,true,0,82000,117000,2200,0,0,0,0,0,0
+2108,O_SI_12_D_BLW,true,CBI Preferred Normal,true,true,0,82000,117000,2600,8200,807,SW_BLW_641,0,7431,R_6_GN_2_GN
+2109,O_SI_4_U_GN,true,Not Interlocked,false,true,0,82000,117000,2600,0,0,0,0,0,0
+2110,O_SI_14_D_GN,true,CBI Preferred Normal,true,true,0,82000,117000,2600,5500,807,SW_GN_661,0,7745,R_20A_GN_16_GN;R_110A_GN_16_GN;R_13A_GN_16_GN;R_100A_GN_16_GN
+2112,O_SI_3A_D_CS,true,Not Interlocked,false,true,0,82000,117000,2400,0,0,0,0,0,0
+2113,O_SI_3_U_WPP,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2114,O_SI_3_D_WPP,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2115,O_SI_7_U_WPP,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2116,O_SI_15_D_WPP,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2117,O_SI_1_U_SLW,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2118,O_SI_1A_D_SLW,true,CBI Preferred Normal,true,true,0,82000,117000,2300,4400,766,SW_SLW_263,0,7745,R_7_SLW_3_SLW;R_15_SLW_3_SLW
+2119,O_SI_5_U_SLW,true,Not Interlocked,false,true,0,82000,117000,2400,0,0,0,0,0,0
+2120,O_SI_9_U_SLW,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2122,O_SI_3_U_SVT,true,Not Interlocked,false,true,0,82000,117000,3700,0,0,0,0,0,0
+2123,O_SI_3_D_SVT,true,Not Interlocked,false,true,0,82000,117000,2300,0,0,0,0,0,0
+2124,O_SI_7_U_SVT,true,Not Interlocked,false,true,0,82000,117000,2500,0,0,0,0,0,0
+2125,O_SI_7_D_SVT,true,Not Interlocked,false,true,0,82000,117000,2600,0,0,0,0,0,0
+2126,O_SI_3_U_BLW,true,Not Interlocked,false,true,0,82000,117000,2600,0,0,0,0,0,0
+2127,O_SI_3_D_BLW,true,Not Interlocked,false,true,0,82000,117000,2600,0,0,0,0,0,0
+2129,O_SI_11_D_BLW,true,Not Interlocked,false,true,0,82000,117000,2600,0,0,0,0,0,0
+2130,O_SI_3_U_GN,true,Not Interlocked,false,true,0,82000,117000,2600,0,0,0,0,0,0
+2131,O_SI_3_D_GN,true,Not Interlocked,false,true,0,82000,117000,2800,0,0,0,0,0,0
+2132,O_SI_7A_U_GN,true,Not Interlocked,false,true,0,82000,117000,3700,0,0,0,0,0,0
+2135,O_SI_3_U_DMZ,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2136,O_SI_3_D_DMZ,true,Not Interlocked,false,true,0,82000,117000,2300,0,0,0,0,0,0
+2138,O_SI_11_U_DMZ,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2139,O_SI_3_U_GPP,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2140,O_SI_3_D_GPP,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2141,O_SI_7A_U_GPP,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2143,O_SI_11_U_GPP,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2144,O_SI_4_U_DMZ,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2145,O_SI_4_D_DMZ,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2146,O_SI_12_U_DMZ,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2147,O_SI_4_U_GPP,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2148,O_SI_4_D_GPP,true,Not Interlocked,false,true,0,82000,117000,2200,0,0,0,0,0,0
+2149,O_SI_2_U_SLW,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0
+2150,O_SI_12_U_GN,true,Not Interlocked,false,true,0,82000,117000,3700,0,0,0,0,0,0
+2151,O_SI_12_U_GPP,true,Not Interlocked,false,true,0,82000,117000,2900,0,0,0,0,0,0

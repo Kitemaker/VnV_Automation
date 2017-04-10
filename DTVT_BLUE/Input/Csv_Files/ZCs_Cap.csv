@@ -1,0 +1,5 @@
+ID,Name,SSID,Urbalis_Sector_ID,ZC_Area_ID,CBI_ID_List,ATS_ID_List,Max_SCT_Validity_Distance,Max_Talkative_Trains,Default_Sweeping_Status_Outside_Of_Sweeping_Authorisation_Area
+7681,ZC_1,1,US_SCMA,SIA_ZC_1,IXL_1,ATS_1,12600,50,Activated
+7682,ZC_2,2,US_SCMA,SIA_ZC_2,IXL_1,ATS_1,12600,50,Activated
+7683,ZC_3,3,US_SCMA,SIA_ZC_3,IXL_2,ATS_2,12600,50,Activated
+7684,ZC_4,4,US_SCMA,SIA_ZC_4,IXL_2,ATS_2,12600,50,Activated

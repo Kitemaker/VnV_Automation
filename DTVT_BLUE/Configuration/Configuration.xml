@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+ <Project name="L1_SCMA" baseline="" uevol_baseline="" database_baseline="" sydt_version="">
+   
+    <SyDT name="" version="" path="" />
+   <RootFolder path="C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\SyDT_Verifier"/>
+   <CSVFiles directory="C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\SyDT_Verifier\Input\Csv_Files"/> 
+   <Rules directory="C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\SyDT_Verifier\Rules"/>"
+   <Constant file="C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\SyDT_Verifier\Input\Constant\constant_file.xml" />
+    <Urbalis_Sectors>
+      <Urbalis_Sector id="US_SCMA">
+        <Parameters>
+          <Param name="Up_Signification" Line="" value="Up"/>
+          <Param name="Down_Signification" value="Dn"/>
+        </Parameters>
+      </Urbalis_Sector>
+      <Tracks>
+        <Track name="TR_7A_ND_ZD" dirIncreasingKp="Up"/>
+        <Track name="TR_8_ND_ZD" dirIncreasingKp="Up"/>
+        <Track name="TR_S_EOT_3207_ND" dirIncreasingKp="Up"/>
+        <Track name="TR_S_EOT_3213_ND" dirIncreasingKp="Up"/>
+        <Track name="TR_S_EOT_3211_ND" dirIncreasingKp="Up"/>
+        <Track name="TR_S_EOT_3205_ND" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3201_ND" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3203_ND" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3223_ND" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3225_ND" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3255_CSN" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3257_CSN" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3273_CSN" dirIncreasingKp="Up"/>
+        <Track name="TR_S_EOT_3277_CSN" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3313_CSN" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3309_CSN" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3423_VZG" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3421_VZG" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3503_ZD" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3501_ZD" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3521_ZD" dirIncreasingKp="Up"/>
+        <Track name="TR_I_3523_ZD" dirIncreasingKp="Up"/>
+        <Track name="TR_7BX_ZD_ZD" dirIncreasingKp="Up"/>
+        <Track name="TR_EOT_3213X_ND" dirIncreasingKp="Up"/>
+      </Tracks>     
+    </Urbalis_Sectors>
+   
+  </Project>
+

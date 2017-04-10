@@ -1,0 +1,4 @@
+ID,Name,Lamp_List,Flashing_Lamp_List,Diagnostic_Lamp_List,Diagnostic_Alarm_List,Non_Commanded_Lamp_List,Signal_Failure_Timer,Signal_Failure_ATS_Timer,Type
+1,SLTY_ROUTE,None,None,None,None,None,0,0,Standard
+2,SLTY_ROUTE_UE,SPER,None,None,None,SRES,4,5053,Standard
+3,SLTY_ROUTE_SOVD,SPER;SOVD,None,None,None,SRES,0,5053,Standard

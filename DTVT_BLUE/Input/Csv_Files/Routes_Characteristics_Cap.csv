@@ -1,0 +1,4 @@
+ID,Name,Route_Setting_Forbidden_By_ATS_Operator,Route_Signal_Control_Delay
+1,RCH_NOMINAL,false,0
+2,RCH_CALL_ON,false,60
+3,RCH_ROUTE_CONFLICT,false,16

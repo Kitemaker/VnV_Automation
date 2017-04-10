@@ -1,0 +1,10 @@
+ID,Name,Maximum_Acceleration,T_ATO_Anticipation,Motoring_Jerk,Electrical_Brake_Time_Delay,Electrical_Brake_Time_Constant,TWU_Digital_Input_Timeout,TWU_Relays_Reopening_Delay,Maximum_Rollback_Acceleration
+1,RS_M5M6,1850,,,400,1500,60000,30000,1850
+2,RS_S1S2_1,1300,,,100,970,0,0,0
+3,RS_S1S2_2,1300,,,100,970,0,0,0
+4,RS_S1S2_3,1300,,,100,970,0,0,0
+5,RS_S1S2_4,1300,,,100,970,0,0,0
+6,RS_S3M4_1,1650,,,110,1150,0,0,0
+7,RS_S3M4_2,1650,,,110,1150,0,0,0
+8,RS_S3M4_3,1650,,,110,1150,0,0,0
+9,RS_S3M4_4,1650,,,110,1150,0,0,0

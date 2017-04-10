@@ -1,0 +1,9 @@
+ID,Name,Driverless,Block_Mode,Non_Regulated_Mode,Buffer_Function,MASC_Available,Train_Formation_Characteristics_ID_List,FSB_In_Case_Of_Overspeed,Automatic_SSP_Stop_In_MCS,Driverless_Condition
+1,RMR,false,false,true,Buffer Activated,MASC Not Available,TRFC_M5M6,false,false,Crew id
+2,RMF,false,false,true,Buffer Activated,MASC Not Available,TRFC_M5M6;TRFC_S1S2_1;TRFC_S1S2_2;TRFC_S1S2_3;TRFC_S1S2_4;TRFC_S3M4_1;TRFC_S3M4_2;TRFC_S3M4_3;TRFC_S3M4_4,false,false,Crew id
+3,PMF,false,false,false,Buffer Deactivated,MASC Available,TRFC_M5M6;TRFC_S1S2_1;TRFC_S1S2_2;TRFC_S1S2_3;TRFC_S1S2_4;TRFC_S3M4_1;TRFC_S3M4_2;TRFC_S3M4_3;TRFC_S3M4_4,true,false,Crew id
+4,AMF,false,false,false,Buffer Deactivated,MASC Available,TRFC_M5M6;TRFC_S3M4_1;TRFC_S3M4_2;TRFC_S3M4_3;TRFC_S3M4_4,false,false,Crew id
+5,ATB,true,false,false,Buffer Deactivated,MASC Available,TRFC_M5M6,false,false,Crew id
+6,DMF,true,false,false,Buffer Deactivated,MASC Available,TRFC_M5M6,false,false,Crew id
+7,ATC_BYPASS,false,false,true,Buffer Activated,MASC Not Available,TRFC_M5M6;TRFC_S1S2_1;TRFC_S1S2_2;TRFC_S1S2_3;TRFC_S1S2_4;TRFC_S3M4_1;TRFC_S3M4_2;TRFC_S3M4_3;TRFC_S3M4_4,false,false,Crew id
+8,ZUB,false,false,true,Buffer Activated,MASC Not Available,TRFC_M5M6;TRFC_S1S2_1;TRFC_S1S2_2;TRFC_S1S2_3;TRFC_S1S2_4;TRFC_S3M4_1;TRFC_S3M4_2;TRFC_S3M4_3;TRFC_S3M4_4,false,false,Crew id

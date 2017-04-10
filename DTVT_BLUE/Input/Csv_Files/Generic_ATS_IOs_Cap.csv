@@ -1,0 +1,3 @@
+ID,Name,Connection,Type,ATS_Signalisation_Area_ID,CBI_Signalisation_Area_ID,ZC_Signalisation_Area_ID,Critical,Technical_Room_ID
+1,GAIO_CBI_BRPOW,CBI,Input,SIA_ATS_1,SIA_IXL_1,0,Not Critical,TCR_EZD_S_3B_R
+2,GAIO_CBI_BRREQ,CBI,Input,SIA_ATS_1,SIA_IXL_1,0,Not Critical,TCR_EZD_S_3B_R

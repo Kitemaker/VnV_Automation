@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Global_Report", "Global_Report\Global_Report.pyproj", "{9F74D7C2-E756-4CB2-9330-8D00E1F61B80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTVT_VIEW", "DTVT_VIEW\DTVT_VIEW.csproj", "{96DA29CA-80EF-4064-8B74-BA5B1909C25A}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonTraining", "PythonTraining\PythonTraining.pyproj", "{BD835563-0906-466B-8359-CD4881447707}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DTVT_BLUE", "DTVT_BLUE\DTVT_BLUE.pyproj", "{568876EE-6558-4368-8A43-1436E33DBF83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F74D7C2-E756-4CB2-9330-8D00E1F61B80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F74D7C2-E756-4CB2-9330-8D00E1F61B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96DA29CA-80EF-4064-8B74-BA5B1909C25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96DA29CA-80EF-4064-8B74-BA5B1909C25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96DA29CA-80EF-4064-8B74-BA5B1909C25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96DA29CA-80EF-4064-8B74-BA5B1909C25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD835563-0906-466B-8359-CD4881447707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD835563-0906-466B-8359-CD4881447707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568876EE-6558-4368-8A43-1436E33DBF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568876EE-6558-4368-8A43-1436E33DBF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,544 @@
+List of Rules,Safety,Chain 1 Results,,,Chain2 Results,,,Result
+(Consolidated),,
+,,Chain1 PIC,Result,Comment,Chain2
+PIC,Result ,Comment,Result,Comment,
+Rule_AID_0003,Y,Anirudha,OK,CHECKED OK,Rahul,NOK,For DYO_SPER_S_709_301_PYT,DYO_SPER_S_711_301_PYT,DYO_SPER_S_713_301_PYT and DYO_SPER_S_715_301_PYT port input is defined instead of Output. Hence NOK.,NOK,For DYO_SPER_S_709_301_PYT,DYO_SPER_S_711_301_PYT,DYO_SPER_S_713_301_PYT and DYO_SPER_S_715_301_PYT port input is defined instead of Output. Hence NOK.,
+Rule_DB_ALA_0001,Y,Anirudha,OK,CHECKED OK,Rahul,OK,There is no UEVOL Entry Signals and rest of the approach locking is defined as per rule. Hence OK.,OK,There is no UEVOL Entry Signals and rest of the approach locking is defined as per rule. Hence OK.,
+Rule_DB_ALA_0004,Y,Anirudha,NOK,For Signal (e.g S_101_07_ALB) Distance_Approach_Locking value in SyDT(51108) is not match with ALS_Distance in RTI(51126) and same with few others.,Rahul,NOK,Since Approach_Locking_Partially_Defined_In_Uevol_Available = False for project hence maximum route release timer of the database is used. But SyPROS option is empty for same parameter. Hence NOK.,NOK,For Signal (e.g S_101_07_ALB) Distance_Approach_Locking value in SyDT(51108) is not match with ALS_Distance in RTI(51126) and same with few others.
+
+SyPROS for L1C needs to be updated with the "Approach_Locking_Partially_Defined_In_Uevol_Available" information.,
+Rule_DB_CBI_RCK_0003,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked Ok, as the project have only one CBI so this rule is respected.,OK,Checked Ok, as the project have only one CBI so this rule is respected.,
+Rule_DB_PSR_0007,Y,Anirudha,OK,CHECKED OK,Rohit,OK,This Rule shall be verified in Scheme Plan Verification.,OK ,PSR's will not change in L1C data. In L1C only few Modifications done in  depot NO change in the Mainline data. Hnece there will be no change in the Mainline PSR's from L1 to L1C. Hence this shall be OK.
+
+Note: In Depot PSR is constatnt 27 Kph.,
+Rule_TMS_CURV_0001,Y,Anirudha,OK,Checked, It is part of Kp consistency verification for the curve orientation against with civil inputs,Rohit,OK,This Rule shall be verified in Scheme Plan Verification.,OK,In L1C, Modifications done only in depot. Also in depot Curver Radius is 0. Hence Orientation should not be having any significance.,
+Rule_TMS_ESA_Trigger_0001,Y,Anirudha,OK,CHECKED OK, There is only 1 ZC Signalisation Area for Depot/Mainline,Rohit,OK,Checked OK , as project have only one ZC signalisation area & all the ESA is covered within that.,OK,Checked OK , as project have only one ZC signalisation area & all the ESA is covered within that.,
+Rule_TMS_ESA_Trigger_0010,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked OK, signal that protect the ESP & SPKS are origin signal of the route.,OK,Checked OK, signal that protect the ESP & SPKS are origin signal of the route.,
+Rule_DB_GAMA_0001,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked OK All blocks of Mainline covered by GAMA zone.,OK,Checked OK All blocks of Mainline covered by GAMA zone.,
+Rule_DB_GAMA_0002,Y,Anirudha,TBC,CHECKED OK,  but needs to  confirm why Tracks VPT02 and VPY are not among the Logical Track IDs for GZ_SDD_201_PYT,Rohit,OK,Checked OK All blocks of Depot (Except those which are outside the ATS area) covered by GAMA zone.,OK,VPT02 and VPY are chained to each other and is covered by GZ_SDD_202_PYT.
+
+Also all blocks of the depot covered by the ATC area has been covered by the GAMA Zone.,
+Rule_TMS_GAMA_Zone_0001,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked OK, for an interstation one Logical Position on each side of the track boundaries is defined.,OK,Checked OK, for an interstation one Logical Position on each side of the track boundaries is defined.,
+Rule_DB_General_0020,Y,Bhavya,OK,This will be verified during SySP verification. For result refer SySP verification report,Rohit,OK,This Rule shall be verified in Scheme Plan Verification.,OK,As for L1C, Modifications done only in depot. SP verification is performed only for depot. Refer SySP verification report. 
+,
+Rule_DB_General_0021,Y,Bhavya,OK,All ID's are unique,Rohit,OK,Result shall be verified during Parameter Consistency check. ,OK,All ID's are unique,
+Rule_DB_General_0022,Y,Bhavya,OK,Objects lies within Track Begin/End Kp values,Rohit,NOK,Checked Nok, signal S_644_217_PYT is situated on track VP01 at KP Value "-3492" which is outside the track Extrimity. Same way curvature ID-98 is also situated on VP01 which is outside the track extrimity.,NOK,Checked Nok, signal S_644_217_PYT is situated on track VP01 at KP Value "-3492" which is outside the track Extrimity. Same way curvature ID-98 is also situated on VP01 which is outside the track extrimity.,
+Rule_DB_General_0023,Y,Bhavya,OK,SSP Kp value lies within the specified zones,Rohit,OK, Checked OK, The location of SSP is lie between the KpBegin & KpEnd of the object where it is situated.,OK, Checked OK, The location of SSP is lie between the KpBegin & KpEnd of the object where it is situated.,
+Rule_DB_General_0026,Y,Bhavya,OK,Checked & found OK,Rohit,OK,Checked OK, Project not used •  “Nil”, ”nil”, “NIL”.,OK,Checked OK, Project not used •  “Nil”, ”nil”, “NIL”.,
+Rule_DB_General_0031,Y,Bhavya,OK,All names are unique and not reused,Rohit,OK,Result shall be verified during System Naming Rule verification.,OK,All names are unique and not reused. Also same will be checked during the SyNR verification,
+Rule_DB_General_0032,Y,Bhavya,NV,ID of Each equipment will be covered by Rule_DB_ATCEQUIP_0011. And reordering van not be verified,Rohit,NV, ID is obtained by the concatenation of SSTy & SSID but whteher these ID reodered or not can not verified at SyDT level.,NV, ID's are obtained by the concatenation of SSTy & SSID but whteher these ID's reodered or not can not verified at SyDT level.,
+Rule_DB_General_0034,Y,Bhavya,OK,Checked OK,Rohit,OK,Result shall be verified with KP Consistency Check.,OK,Tracks VPT01, VPT02, VP08, VP06 and VPY sharing Non UEVOL boundaries. Out of which only Track VPY has two grades defined. Rule is well respected for this track. For the rest of the tracks only one grade is defined on the track. ,
+Rule_DB_General_0036,Y,Bhavya,NV,This rule is related to DB generation and can not be verified,Rohit,OK,Result shall be verified during System Naming Rules verfication,NV,This rule is an information explaining the link between the "Object Used to Create Incremental Deployment complex Name" and the calculated object.
+
+Hence cannot be verified at SyDT level.,
+Rule_DB_General_0037,Y,Bhavya,OK,Checked OK,Rohit,OK,Checked OK, all the Uevol_territory track are in CBI_Signalisation Area.,OK,Checked OK, all the Uevol_territory track are in CBI_Signalisation Area.,
+Rule_TMS_General_0003,Y,Bhavya,OK,This rule to be verified during SyNR verification. For result refer SyNR Verification report of previous Baseline as there is no change in this BL,Rohit,OK,Result shall be verified during System Naming Rules verfication,OK,This rule will be covered during the SyNR verification. As there are only minor modifications in the SyDB from 6.2.0 to 7.14, SyNR verification is not considered for this verification session.
+
+No Naming changes from previous SyDT to the current one.,
+Rule_TMS_Overlap_0004,Y,Anirudha,NV,In SyDT Overlaps are defined with Type CBI Critical Normal and Non-Interlocked but it cannot be verified at SyDT level, it will be verified during FIVP,Rahul,NV,CBI should confirm that for below overlaps, Switches C_5_7_ALB;C_6_8_ALB and C_J1_J4_PYT;C_J2_J3_PYT shall be set and locked in normal.
+- O_S_105_11_ALB; - O_S_107_12_ALB; - O_S_602_205_PYT.,NV,In SyDT Overlaps are defined with Type CBI Critical Normal and Non-Interlocked but the point locked in the correct position or not   cannot be verified at SyDT level, it has to be verified during FIVP.,
+Rule_TMS_Overlap_0017,Y,Anirudha,OK,CHECKED OK, but for S_112_12_ALB why the overlap is Not Interlocked as D_overlap crosses the toe?,Rahul,NOK,Type of  Signal overlap S_507_74_LAN and S_707_88_SIS shall be changed to "Not Interlocked". Hence NOK ,NOK,Type of  Signal overlap S_507_74_LAN and S_707_88_SIS shall be changed to "Not Interlocked". Hence NOK ,
+Rule_TMS_Overlap_0024,Y,Anirudha,NOK,This condition prevails in the project( for Route R_112_106_ALB, the origin signal is S_112_12_ALB and the destination signal is S_106_07_ALB, whose opposite Route origin signal is S_101_07_ALB, whose routes are R_101_105_ALB;R_101_107_ALB falling in the overlap zone of S_112_12_ALB), The locking of routes has to be taken care by IXL and PSAM should review this for Non CBTC train.,Rahul,NOK,For below overlaps common blocks are covering between route and overlaps:
+- O_S_102_03_ALB,O_S_104_04_ALB,O_S_207_31_STO,O_S_208_31_ICA ETC. Hence NOK.,NOK,Refe to the chain 1 and chain 2 verifier comments,
+Rule_TMS_Overlap_0059,Y,Anirudha,OK,CHECKED OK, but for overlaps O_S_602_205_PYT; O_S_604_204_PYT there are no berthing, so how the Berth_distance is being calculated?,Rahul,NOK,Berth distances are defined for CBI Critical Normal associated with SSP Ids.Hence OK,OK, For overlaps O_S_602_205_PYT; O_S_604_204_PYT  berthing is defined and is inline with the rule.,
+Rule_TMS_Overlap_0061,Y,Anirudha,OK,CHECKED OK, there is no point inside berth distance,Rahul,OK,There is no point in berthing zone. Hence Ok.,OK,There is no point in berthing zone. Hence Ok.,
+Rule_TMS_Overlap_0064,Y,Anirudha,OK,CHECKED OK, No mixed traffic on Panama_L1, and D_overlap=D_overlap_CBI,Rahul,OK,Since there is no Mixed traffic or spacing , D_Overlap_CBI equals to D_Overlap. Hence Ok.,OK,Since there is no Mixed traffic or spacing , D_Overlap_CBI equals to D_Overlap. Hence Ok.,
+Rule_TMS_Overlap_0067,Y,Anirudha,OK,CHECKED OK, COEs entire block included in the berth zone of the Overlap,Rahul,OK,Berth Block Zones are common with Change of Ends Block. Hence OK.,OK,Berth Block Zones are common with Change of Ends Block. Hence OK.,
+Rule_TMS_Overlap_0069,Y,Anirudha,TBC,According to Generic step 2 of the Rule : The project shall define the Complete_Berth_Distance , but where is the project reference of Complete_Berth_Dsitance? Not mentioned in SyCR,Rahul,OK,Berth distance is defined 10 m and for every Critical Normal type overlaps there is only unique routes in berth blocks. Hence OK.,TBC,According to Generic step 2 of the Rule : The project shall define the Complete_Berth_Distance , but where is the project reference of Complete_Berth_Dsitance? Not mentioned in SyCR,
+Rule_TMS_PLATF_0001,Y,Swetha,OK,All platforms are related to only one track each. Hence only one platform is defined for each. Hence OK.,Rohit,OK,Checked OK, platform type is deifne as per the rule.,OK,All platforms are related to only one track each. Hence only one platform is defined for each. Hence OK.,
+Rule_TMS_PLATF_0006,Y,Swetha,OK,Max_Alignment_Distance is set to 0 since PSD_Presence is set to FALSE. Hence OK.,Rohit,OK,Checked OK, Max_Alignment_Distance  value is 0 as there is no PSD presence in the project.,OK,Checked OK, Max_Alignment_Distance  value is 0 as there is no PSD presence in the project.,
+Rule_DB_PRJ_0004,Y,Swetha,NOK,Calculated value of Epsilon_H does not match with the value defined in SyDT. Hence NOK.,Rohit,OK,Checked Ok, RTI Value & SyDT value is matching for Epsilon_H.,OK,Epsilon_H value calculated as 12 mm
+But  As per the rule the project team can choose a better resolution for Project.Epsilon_H, that is to say an inferior value, in order to optimize the energy control monitoring function and reduce the value of the other variables.
+
+Project choosed 6mm which is well inline with the RTI. Same shall be checked during the RTI Verification.,
+Rule_DB_PRJ_0008,Y,Swetha,OK,Moving_Block_TORR_Available is set to TRUE since CBI is Uevol one on PNM_L1. Hence OK.,Rohit,OK,Checked OK, Project is REG so the "Moving_Block_TORR_Available option is set to True.,OK,Checked OK, Project is REG so the "Moving_Block_TORR_Available option is set to True.
+Also CBI is the UEVOL one,
+Rule_DB_PRJ_0009,Y,Anirudha,TBC,As per CR atvcm00479721 : No Route_Release_Condition on PNM_L1 but there is no explaination for this when Project_Option.Moving_Block_TORR_Available=TRUE,Rohit,OK,Checked OK, Route_Release_Condition_Presence is set to False as there is No Route_Release_Condition on PNM_L1.,NOK,
+As per the defination of "3.2.95 ROUTE_RELEASE_CONDITION_PRESENCE", if Moving_Block_TORR_Available = True then Specific conditions for TORR in Moving block are used.
+
+For Panama L1 Moving_Block_TORR_Available  = True, and UEVOL is CBI one. Hence as per the rule ROUTE_RELEASE_CONDITION_PRESENCE set to False. This is the safety rule but CR atvcm00479721 concerned to this change is not validated by safety. 
+
+This needs to be justified.,
+Rule_DB_FSFB2_0007,Y,Swetha,NV,This rule cannot be verified in SyDT/SyDB level of verification.,Rohit,NV,this rule can not be verified. This rule should be taken care by the System degin team while generation of SyDB. ,NV,this rule can not be verified. This rule should be taken care by the System degin team while generation of SyDB. ,
+Rule_TMS_Route_0004,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked OK, Route is  constituted with sub-routes and Blocks.,OK,Checked OK, Route is  constituted with sub-routes and Blocks.,
+Rule_TMS_Route_0007,Y,Anirudha,NV,Setting of Switch of Group Type "Double Crossing" is validated during Testing, cannot be verified from SyDT, It can be validated during funtional testing,Rohit,NV,Checked, N/V. Switch movement in Normal/Reverese shall be ensured by CBI,NV,Setting of Switch of Group Type "Double Crossing" is validated during Testing, cannot be verified from SyDT, It can be validated during funtional testing,
+Rule_TMS_Route_0010,Y,Anirudha,NV,This cannot be verified at SyDT level. The same could be verifed during functional testing if Control Table contains this information,Rohit,OK,Checked OK, No route contain the opposite sub route of the same block.,OK,Checked OK, No route contain the opposite sub route of the same block.
+
+Checked in the SyDB data for each route, 
+1.if subroute with different directions exists
+2. Check if same blocks in the route exists. ,
+Rule_TMS_Route_0021,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked OK, Switch ID list is defined for each route. ,OK,Checked OK, Switch ID list is defined for each route. ,
+Rule_TMS_SDD_0001_2,Y,Bhavya,OK,Checked OK,Rahul,NOK,Since the Min SDD length should be greater than Inter_Axle distance +D_Joint i.e. 43 and 77 for train 1/2 and Train 3/4 respectively.
+But this rule is not followed for many SDD length like SDD_3_PYT, SDD_210_PYT etc. Hence NOK.,NOK,Since the Min SDD length should be greater than Inter_Axle distance +D_Joint i.e. 43 and 77 for train 1/2 and Train 3/4 respectively.
+But this rule is not followed for many SDD length like SDD_3_PYT, SDD_210_PYT etc. Hence NOK.,
+Rule_TMS_SDD_0013,Y,Bhavya,OK,Checked OK,,Rahul,NOK,Below Route Signals are not preceded:
+-S_FFA_PYT, - S_608_FFA_PYT; - S_610_FFA_PYT; S_612_FFA_PYT; S_614_FFA_PYT etc.. Hence NOK.,NOK,Below Route Signals are not preceded:
+-S_FFA_PYT, - S_608_FFA_PYT; - S_610_FFA_PYT; S_612_FFA_PYT; S_614_FFA_PYT etc.. Hence NOK.,
+Rule_TMS_SDD_0018,Y,Bhavya,OK,Siding_Presence set to "FALSE", Hence OK,Rahul,NOK,Since there is no siding in Panama L1 Project, this rule shall be NA in SyCR TM. Hence NOK.,NOK,Since there is no siding in Panama L1 Project, this rule shall be NA in SyCR TM. Hence NOK.,
+Rule_TMS_SDD_0022,Y,Bhavya,OK,Checked OK.,Rahul,OK,All SDD's containing equal or more than two SDDB's. Hence Ok.,OK,All SDD's containing more than two SDDB's. Hence Ok.,
+Rule_TMS_SDD_0035,Y,Bhavya,NV,False Clearance of SDD (Rusty Rails, bad preventive maintenance on SDD, non shunting rolling stocks) can not be verified.,Rahul,NV,this is an exported constraint to CBI sub system to ensure the correct detection.,NV,False Clearance of SDD (Rusty Rails, bad preventive maintenance on SDD, non shunting rolling stocks) can not be verified.,
+Rule_TMS_SDD_0037,Y,Bhavya,NOK,SSP Positions are not matching with rule,Rahul,OK,Maximum and Minumum length of train is 5252 cm and D_Rear_Sweeping is less than minimum train length. Hence Ok,NOK,SSP Positions are not matching with rule,
+Rule_TMS_SDD_0058,Y,Bhavya,OK,Checked & OK. Project contains only one urbalis sector,Rahul,OK,Since there is only one URBALIS sector is available. Hence Ok.,OK,Checked & OK. Project contains only one urbalis sector,
+Rule_TMS_SDD_0059,Y,Bhavya,OK,Checked & Found OK.,Rahul,OK,As per RTI(Generic Calculation), Max_SDD_Clearance_Timer= 0 is defined in PNML1. Hence OK.,OK,As per RTI(Generic Calculation), Max_SDD_Clearance_Timer= 0 is defined in PNML1. Hence OK.,
+Rule_TMS_SDD_0061,Y,Bhavya,NV,The rule is not verifiable,Rahul,NV,EMC contraint shalle be taken care while Installation of AxC. Shall be verify during installation.,NV,EMC contraint shalle be taken care while Installation of AxC. Hence cannot be verified at SyDT level. Constraint to T&C team.,
+Rule_TMS_SDD_0065,Y,Bhavya,NOK,Urbalis_Sector_Option.Specific_SDDB_Width_Presence is SET to "FALSE" for Panama. Hence this rule shall NOK.,Rahul,NOK,Since Specific_SDDB_Width_Presence= False and there is no GAP of Shunt , this rule shall become NA in SYCR TM and SyCR TM shall be updated. Hence NOK.,NOK,Since Specific_SDDB_Width_Presence= False and there is no GAP of Shunt , this rule shall become NA in SYCR TM and SyCR TM shall be updated. Hence NOK.,
+Rule_TMS_SDD_0068,Y,Bhavya,OK,Max_SDD_Clearence value is matching with RTI. The calculation part will be covered under RTI,Rahul,OK,As per RTI, Max_SDD_Clearance_Timer= 0s, all instances shall be verified during RTI verification. Hence Ok.,OK,Max_SDD_Clearence value is matching with RTI. The calculation part will be covered under RTI verification,
+Rule_DB_SIGAREA_0017,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked OK, all the signal  their SDDB is defined on same  signalisation Area.,OK,Checked OK, all the signal  their SDDB is defined on same  signalisation Area.,
+Rule_DB_SIGAREA_0038,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked OK, all the overlap is located in ATC Signalisation Area.,OK,Checked OK, all the overlap is located in ATC Signalisation Area.,
+Rule_DB_SIGAREA_0047,Y,Anirudha,NOK,CHECKED, there is only 1 Urbalis Sector for Panama L1, This Rule should not be applicable,Rohit,NOK,Checked Nok as only one urbalis sector is defined for Panam Line-1 so this rule should be defined as NA in SyCR TM,NOK,Checked Nok as only one urbalis sector is defined for Panam Line-1 so this rule should be defined as NA in SyCR TM,
+Rule_DB_SIGAREA_0051,Y,Anirudha,NV,This Rule is related to sum of the binary inputs in FSFB2 links which is not available in SyDT and SyDB is not yet released. Since the Rule is related to  ATC-ExportedConstraint- applicability is OK,Rohit,OK,Checked OK, FSFB2 link are within the specified range defined in the rule.,OK,From SyDB "FSFB2_Parameters_SyDB_PNML1", it is evident that there is only one link (CBI-ZC_ATC) with ZC Receptor ID 15361.
+
+And from the data interface files, ATC_7681_CBI_15361_Data_Interface_XSD_vAL_Plus_24_DBv7_1_4.xml, it is evident that only 609 objects defined which are lesser than 10000 links. Hence OK.
+,
+Rule_DB_SIGAREA_0056,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked Ok, as only one ZC is defined in the project so signal & its overlap is affeted in the Same ZC. ,OK,Checked Ok, as only one ZC is defined in the project so signal & its overlap is affeted in the Same ZC. ,
+Rule_TMS_Signal_0003,Y,Anirudha,NOK,CHECKED  but  Signals S_660_303_PYT, S_662_306_PYT, S_664_309_PYT , S_666_312_PYT of Type.Virtual are not found in Scheme Plan.,Rohit,OK,Checked Ok, All buffer stop signals which are only destination are having permanent restrictive lamp characteristics.,NOK,S_660_303_PYT, S_662_306_PYT, S_664_309_PYT , S_666_312_PYT  are End of partial spacing signals.
+
+But there is no spacing in the Panama. What is the reason to define EOP spacing signals.
+
+For Buffer stop signal rule is OK.,
+Rule_TMS_Signal_0018,Y,Anirudha,NOK,There is only 1 CBI Signalisation Area on Panama L1 and none of the  signals are defined as Conjugated Route Virtual Signal, hence this Rule is not applicable,Rohit,OK,Checked OK, as ther is only One CBI is present in the Project so no Conjugated Route Virtual Signal is defined.,NOK,There is only 1 CBI Signalisation Area on Panama L1 and none of the  signals are defined as Conjugated Route Virtual Signal, hence this Rule is not applicable,
+Rule_TMS_Signal_0098,Y,Anirudha,OK,In Panama L1 , there is no non-talkative or non-CBTC train since Mixed_Traffic=False but there are Signals with Signal_Type_Position=End of partial Spacing for some routes, it is the driver's responsibility to maintain the spacing.,Rohit,NV, This rule can not be verified at SyDT level as  No data of exported constraint defined for this function. Design to provide this detail or the list of Non-UEVOL signals if defined.,NV, This rule can not be verified at SyDT level. Presence of Non-UEVOL singal shall be confirmed with the project team. If exists, there shall be well defined procedures to manage these kind of signals.
+
+However same shall be confirmed with the T&C team.,
+Rule_TMS_Signal_0107,Y,Anirudha,OK,CHECKED OK,Rohit,OK,Checked OK, only one virtual signal of type position "END of Partial Spacing" is deployed inside DOP route. ,OK,Checked OK, only one virtual signal of type position "END of Partial Spacing" is deployed inside DOP route. ,
+Rule_Stopping_Area_0001,Y,Swetha,OK,All object used as Original Area of a Stopping Area does not contain any point. Hence OK.,Rohit,OK,Checked Ok, no point is present in the Stopping area.,OK,All object used as Original Area of a Stopping Area does not contain any point. Hence OK.,
+Rule_POSWI_0003,Y,Swetha,OK,All Switches are characterized with the following data :
+•  the switch type (constituted with one or two points),
+•  the convergent point(s) of the switch 
+•  the divergent point(s) of the switch 
+•  the point to point length between the two points of the track
+•  the maximum allowed speed for train when in diverted branch
+•  the status that defines if the switch is “auto normalized (true)” or not.
+•  the point motion time which define the time to change the position of the point. Both points of the switch have the same point motion time. Hence OK.
+
+Following characteristic is undefined: 
+-the real slope existing between the points of the switch(Slopes are not mentioned for inter tracks in SyDT). Hence cannot be verified.,Rohit,NOK,Checked Nok , as real slope existing between the points of the switch is not defined in SyDT.,OK,All Switches are characterized with the following data :
+•  the switch type (constituted with one or two points),
+•  the convergent point(s) of the switch 
+•  the divergent point(s) of the switch 
+•  the point to point length between the two points of the track
+•  the maximum allowed speed for train when in diverted branch
+•  the status that defines if the switch is “auto normalized (true)” or not.
+•  the point motion time which define the time to change the position of the point. Both points of the switch have the same point motion time. Hence OK.
+
+Following characteristic is undefined: 
+-Slopes are mentioned for the intertracks.,
+Rule_POSWI_0010,Y,Swetha,NV,This rule cannot be verified in SyDT/SyDB level of verification.,Rohit,NV,Not in V&V Scope. It is related to the Rolling stocks interface ,NV,Fouling point information will be provided  by the customer. Same will be checked during the Kp consistency verification.
+
+Also there are deployment rules which will take care of the deadlocking block calculations. Hence there shall not be any issue.
+
+However train width including in the fouling cannot be verified at SyDT level.,
+Rule_DB_Track_Container_0006,Y,Anirudha,OK,CHECKED OK, Direction_Of_Traffic is set to Both,Rohit,OK,Checked OK , as project is REG one so  Direction_Of_Traffic for all the track container is set to "Both". ,OK,Checked OK , as project is REG one so  Direction_Of_Traffic for all the track container is set to "Both". ,
+Rule_IUS_0001,Y,Swetha,OK,URBALIS_Sector_Number is set to 1 and only one Urbalis sector is defined in SyDT. Hence OK.,Rohit,NOK,Checked Nok as only one urbalis sector is defined for Panam Line-1 so this rule should be defined as NA in SyCR TM,NOK,Checked Nok as only one urbalis sector is defined for Panam Line-1 so this rule should be defined as NA in SyCR TM,
+Rule_IUS_0021,Y,Swetha,NOK,URBALIS_Sector_Number is set to 1 and only one Urbalis sector is defined in SyDT. Moral_Distance and C_Max_Block_Clearance_Timer value defined in RTI mismatch with SyDT value. Hence NOK.,Rohit,NOK,Checked Nok as only one urbalis sector is defined for Panam Line-1 so this rule should be defined as NA in SyCR TM,NOK,URBALIS_Sector_Number is set to 1 and only one Urbalis sector is defined in SyDT. Moral_Distance and C_Max_Block_Clearance_Timer value defined in RTI mismatch with SyDT value. Hence NOK.
+
+Also this rule shall be NA in SyCR TM,
+Rule_US_0002,Y,Swetha,NOK,As per SPECIFIC_RULE_IUS_0019 for project with more than one URBALIS Sector the field Moral_Time_Inter_Urbalis_Sector shall be set to the same value as "Moral_Time". Moral_Time_Inter_Urbalis_Sector is set to Moral_Time value.URBALIS_Sector_Number is set to 1 and only one Urbalis sector is defined in SyDT. Hence NOK.,Rohit,NOK,Checked NOK, Moral Time value in SyDT is defined as 15 s. but in SyCR it is defined as 24.28 s, so SyDT is not in line with the SyCR & RTI (Value = 24.69 s).,NOK,Refer to the both chain1 and chain2 verifier comments,
+SPECIFIC_RULE_TMS_SSP_0004,Y,Jyothi,NOK,All the three configuration in the rule are not followed for the positioninig of SSP, Design to presize the rule on which configuration the SSP position has been followed,Rohit,OK,Checked Ok, usung the begning position of platform each SSP is defined for both train characterstics.,OK,As per the rule, "• Using the beginning position of the platform for each train and therefore a service stopping point shall be positioned according to each train characteristics, this is applied on PNML1."
+
+Hence from the above statement it is evident that  first case is applied. And as per the chain 2 verifier comment it is the beginning of the platform used.,
+SPECIFIC_RULE_TMS_SSP_0012,Y,Swetha,OK,D_Rear_Joint_Sweeping is less than 4490 cm. Hence OK.,Rahul,OK,SSP position is placed in such a way that rear sweeping shall be allowed and smallest train cannot accommodate inside. Hence Ok.,OK,SSP position is placed in such a way that rear sweeping shall be allowed and smallest train cannot accommodate inside. Hence Ok.,
+SPECIFIC_RULE_TMS_SSP_0016,Y,Jyothi,OK,SSP accuracy required filled in SyDT as per the rule,Rahul,OK,As per SyCR rule, Strategy_3 is defined for Pre-Platfomr SSP only.,OK,As per SyCR rule, Strategy_3 is defined for Pre-Platfomr SSP only.,
+SPECIFIC_RULE_TMS_SSP_0017,Y,Jyothi,OK,C_Overrun_RMR_Max is set to 0 as per the rule.,Rahul,OK,As per SyCR and SyPROS, RMR zone presence =false and hence C_Overrun_RMR_Max = 0 cm.,OK,As per SyCR and SyPROS, RMR zone presence =false and hence C_Overrun_RMR_Max = 0 cm.,
+SPECIFIC_RULE_TMS_SIGNAL_0035,Y,Jyothi,OK,Other than Signal type function virtual, list of signal lamp type id has been defined.,Rahul,OK,Lamp types are defined as per SyCR appendix A.,OK,Lamp types are defined as per SyCR appendix A.,
+SPECIFIC_RULE_TMS_SIGNAL_0055,Y,Jyothi,OK,D_Signal_Override_Offset has been set to 0 as per the rule.,Rahul,Ok,D_Signal_Override_Offset = 0 and which is lesser than train length. Hence OK.,OK,D_Signal_Override_Offset = 0 and which is lesser than train length. Hence OK.,
+SPECIFIC_RULE_TMS_SIGNAL_0106,Y,Swetha,OK,DOP routes defined in the entry o f NON CBTC area from the CBTC area. Hence if any CBTC train , in the direction of NON CBTC to CBTC area, shunts ATC gate SDD,  NIAP will be propogated on ATC Gate SDD and the signal (entry to non CBTC) will be restrictive because of DOP condition. Hence CBTC trains are protected.,Rahul,NOK,Since Routes from Non-UEVOL to UEVOL area exists, Specific Condition shall be elaborated by which method first SDD of the CBTC area is protected. Either by Exported constraint to operator or by Spacing condition. Hence NOK.,OK,DOP routes defined in the entry o f NON CBTC area from the CBTC area. Hence if any CBTC train , in the direction of NON CBTC to CBTC area, shunts ATC gate SDD,  NIAP will be propogated on ATC Gate SDD and the signal (entry to non CBTC) will be restrictive because of DOP condition. Hence CBTC trains are protected.,
+SPECIFIC_RULE_TMS_SIGNAL_0101,Y,Swetha,OK,Checked OK. SDDBs are defined accordingly. ,Rahul,OK,Since only Route Signal is defined for PNM L1, two SDDB's are defined for each routes. Hence OK.,OK,Since only Route Signal is defined for PNM L1, two SDDB's are defined for each routes. Hence OK.,
+SPECIFIC_RULE_NOT_INTERLOCKED_REDUCED_OVERLAPS,Y,Swetha,OK,Not interlocked overlaps are defined accordingly. Hence OK.,Rahul,OK,For not interlocked overlaps, overlap distances are covering opposite signals. Hence Ok.,OK,For not interlocked overlaps, overlap distances are covering opposite signals. Hence Ok.,
+SPECIFIC_RULE_TMS_OVERLAP_XXXX,Y,Jyothi,OK,D_Overlap distance is greater than the distance of Signal&SDDB for signal without ssp.,Rahul,OK,D_Overlap > D_Signal_SDDB, Hence Ok.,OK,D_Overlap distance is greater than the distance of Signal&SDDB for signal without ssp.,
+SPECIFIC_RULE_TMS_OVERLAP_0025,Y,Jyothi,OK,An overlap zone is not included with signal with the same direction.,Ajay,OK,Checked ok, for overlap type CBI critical normal for CBTC train is true.,OK,An overlap zone is not included with signal with the same direction.,
+SPECIFIC_RULE_TMS_SDD_0002,Y,Jyothi,OK,SDD length has been defined as per the rule.,Ajay,NOK,Min and max SDD length are not defined in SyDT.,OK,Mainline_Secondary_Detection_Device_Max_Length::cm  set to 220000 cm in SyDT. (inline to SyCR)
+
+Mainline_Secondary_Detection_Device_Min_Length::cm set to 1439 cm in SyDT.(Inline to SyCR),
+SPECIFIC_RULE_TMS_SDD_0003,Y,Swetha,NOK,The length of SDD_4_PYT is 514 cm which is lesser than Min SDD Length(943 cm) and lies on VPT02(Depot).,Ajay,NOk,Min and max length in Depot are not defined.,OK,Depot_Secondary_Detection_Device_Min_Length::cm  set to 943 cm in SyDT (Inline to SyCR)
+
+Depot_Secondary_Detection_Device_Max_Length::cm set to 50000 cm in SyDT (Inline to SyCR),
+SPECIFIC_RULE_TMS_SDD_0008_3,Y,Swetha,OK,The distance between a signal and the boundary of the secondary detection device which is protected by it is greater or equal to D_Signal_Joint. Hence OK.,Rahul,NOK,D_Signal_Joint = D_Overlay+D_Driver_First_Axle and as per rule D_Driver_First_Axle value shall be provided by Customer and RTI shall be consistent with same. Hence NOK.,NOK,D_Signal_Joint = D_Overlay+D_Driver_First_Axle and as per rule D_Driver_First_Axle value shall be updated in the SyCR.
+
+This value shall be instantiated in the SyCR.,
+SPECIFIC_RULE_TMS_SDD_0009,Y,Swetha,NOK,The distance between the point and corresponding SDDB is lesser than the D_Toe_Joint for AG_S14_VPC_PYT, AG_J3_VPT01_PYT, AG_S18_VP08_PYT. Also D_Toe_Joint value for AG_S19_VP08_PYT, AG_S20_VP06_PYT, AG_S21_VP06_PYT is set to 897 cm in SyDT whereas in SyCR it states that for all points in the depot - except for AG_S2_VPY_PYT, AG_S6_VPT02_PYT and AG_J2_VPT02_PYT, the distance D_Toe_Joint::cm is set to 460 cm . The values used in calculation attached in SyCR under 2.26.1 SPECIFIC_RULE_DB_POINT_0003, does not match with the SyDT value.Hence NOK.,Rahul,NOK,For Points: AG_J3_VPT01_PYT & AG_S18_VP08_PYT, Safety distance is lesser than D_Toe_Joint. Hence NOK.,NOK,The distance between the point and corresponding SDDB is lesser than the D_Toe_Joint for AG_S14_VPC_PYT, AG_J3_VPT01_PYT, AG_S18_VP08_PYT. Also D_Toe_Joint value for AG_S19_VP08_PYT, AG_S20_VP06_PYT, AG_S21_VP06_PYT is set to 897 cm in SyDT whereas in SyCR it states that for all points in the depot - except for AG_S2_VPY_PYT, AG_S6_VPT02_PYT and AG_J2_VPT02_PYT, the distance D_Toe_Joint::cm is set to 460 cm . The values used in calculation attached in SyCR under 2.26.1 SPECIFIC_RULE_DB_POINT_0003, does not match with the SyDT value.Hence NOK.,
+SPECIFIC_RULE_TMS_SDD_0010,Y,Swetha,NOK,The distance between the Foulingpoint and corresponding SDDB is lesser than the D_Joint_FoulingPoint . The values used in calculation attached in SyCR under 2.26.1 SPECIFIC_RULE_DB_POINT_0003, does not match with the SyDT value. Hence NOK.,Rahul,NOK,For the below safety distances between FP and SDDB, lengths are lesser than D_Joint_Fouling_Point. Hence NOK.
+-FP_AG_J3,FP_AG_J4,FP_AG_S6,FP_AG_7,FP_AG_8,FP_AG_16,NOK,Worksheet in the specific rule SPECIFIC_RULE_DB_POINT_0003 seems to be not updated with the inputs of SyDT BL 7.1.4
+
+ The same shall  be rechecked,once the data is updated.,
+SPECIFIC_RULE_TMS_SDD_0029,Y,Jyothi,NOK,Min_Dynamic_SDD_Length defined in RTI for all trains as 27, design to confirm how the values in SyDT are calculated for mainline_Secondary_Detection_Device_Min_Length and Depot.,Rahul,OK,Minimum SD Length for Depot and Mainline are taken as per RTI value. Hence Ok.,OK,Min PSR for mainline and depot  is 45 Kph and 27 kph respectively. 
+
+With these speeds,  the Mainline_Secondary_Detection_Device_Min_Length and Depot_Secondary_Detection_Device_Min_Length are calculated in RTI are as 1439 and 943 cm respectively.
+
+Which are inline with the SyDT values.
+
+Also refer rules: 2.4.1 SPECIFIC_RULE_TMS_SDD_0002 & 2.4.2 SPECIFIC_RULE_TMS_SDD_0003.
+,
+SPECIFIC_RULE_TMS_SDD_0033,Y,Jyothi,NV,This rule shall be ensured by T&C team/during scheme plan verification.,Rahul,ok,Maximum distance between two counting heads are 2 m which is lesser than D_CountingHead_Max 6.20 m. Hence Ok.,OK,Maximum distance between two counting heads are 2 m which is lesser than D_CountingHead_Max 6.20 m. Hence Ok.,
+SPECIFIC_RULE_TMS_SDD_0034,Y,Jyothi,NV,This rule shall be ensured by T&C team.,Rahul,NOK,Minimum counting head distance is 0 m which is lesser than D_CountingHead_Min of 1.20. Hence NOK.
+-E_3_5_PYT & E_3_5_ALB; E_4_6_PYT & E_4_6_ALB etc.,OK,Min SDD length is greater than 120 cm. Hence this rule is OK.,
+SPECIFIC_RULE_TMS_SDD_0076,Y,Jyothi,NOK,SDDs linked with point are mentioned with checkable as False.
+SDD_204_PYT
+SDD_205_PYT
+SDD_206_PYT
+SDD_207_PYT
+SDD_208_PYT
+SDD_47B_FCO
+SDD_48B_FCO
+SDD_87_SIS
+SDD_90_SIS,Rahul,OK,Below SDDs are defined as not checkable even these are present within ZC area with Points and not a first sdd in zc area. Hence NOK.
+-SDD_205_PYT and SDD_206_PYT,NOK,SDDs linked with point are mentioned with checkable as False.
+SDD_204_PYT
+SDD_205_PYT
+SDD_206_PYT
+SDD_207_PYT
+SDD_208_PYT
+SDD_47B_FCO
+SDD_48B_FCO
+SDD_87_SIS
+SDD_90_SIS
+
+Constraint explained in the Rule_DB_SIGAREA_0031 is not respected well. Hence there shall be exported constraints defined.,
+SPECIFIC_RCD_SDD_0001,Y,Jyothi,OK,D_Overlay is set to 0.,Ajay,OK,Checked ok, D_overlay is defined as zero.,OK,Checked ok, D_overlay is defined as zero.,
+SPECIFIC_RCD_TMS_SSA_xxxx,Y,Swetha,OK,There are no opposite signals in the depot. Hence there are no opposite routes. Hence the configuration explained in the rule doesn’t  exist. Hence OK.,Rahul,NOK,In case of opposite route, SDD length is lower than NIAP_Head_Correction. Hence NOK.,NOK,In case of opposite route, SDD length is lower than NIAP_Head_Correction. Hence NOK.,
+SPECIFIC_RULE_TMS_SDD_00X1,Y,Jyothi,OK,Restrictive_Signal_Received_By_ZC is set to 0 as per RTI SDD_TORR_Constraint.,Rahul,NOK,SD shall defined which methods they have followed for non cbtc trains or exported constraint shall be provided. Hence NOK.,NOK,SD shall defined which methods they have followed for non cbtc trains or exported constraint shall be provided. Hence NOK.,
+SPECIFIC_RULE_TMS_SDD_0046,Y,Swetha,NOK,Following are the list of points which includes deadlocking blocks at the time it also respected specific_TMS_SDD_0009. 
+AG_13_V2_SMI
+AG_S13_VPC_PYT
+AG_S15_VPG_PYT
+AG_S7_VPO_PYT
+AG_S9_VP01_PYT
+AG_S20_VP06_PYT
+AG_S21_VP06_PYT
+Hence NOK.,Rahul,OK,All deadlocking blocks are placed after the signal protecting that point. Hence Ok.,NOK,Following are the list of points which includes deadlocking blocks at the time it also respected specific_TMS_SDD_0009. 
+AG_13_V2_SMI
+AG_S13_VPC_PYT
+AG_S15_VPG_PYT
+AG_S7_VPO_PYT
+AG_S9_VP01_PYT
+AG_S20_VP06_PYT
+AG_S21_VP06_PYT
+Hence NOK.,
+SPECIFIC_RULE_TMS_SDD_0058,Y,Swetha,OK,Only one urbalis sector is defined in this baseline.,Dilip,OK,From the SyDT it has been verified that, the specific data such as Max_SDD_Clearance_Timer is same for 2 Urbalis sector i.e. for both the sector it is set to "0" Hence this rule is inline with SyDT. 
+Note: As PNML1C have signale Urbalis sectro this rule is not applicable to this line i.e. PNML1C.,OK,From the SyDT it has been verified that, the specific data such as Max_SDD_Clearance_Timer is same for 2 Urbalis sector i.e. for both the sector it is set to "0" Hence this rule is inline with SyDT. 
+Note: As PNML1C have signale Urbalis sectro this rule is not applicable to this line i.e. PNML1C.,
+SPECIFIC_RULE_TMS_SDD_0059,Y,Swetha,OK,Max_SDD_Clearance_Timer is set to 0 ms in SyDT and RTI. Hence OK.,Dilip,OK,As the "Mx_SDD_Clearance_Timer" is set to "0" in SyDT it is clear that, for PNML1C the project chose the first option i.e. independent of the SDDs location. Hence this rule is inline with SyDT.,OK,As the "Mx_SDD_Clearance_Timer" is set to "0" in SyDT it is clear that, for PNML1C the project chose the first option i.e. independent of the SDDs location. Hence this rule is inline with SyDT.,
+SPECIFIC_RULE_TMS_SDD_0060,Y,Swetha,OK,Checked OK. CBI_Signalisation_Area_Number is set to 1. hence no inter-CBI scenario will be there. Max_SDD_Clearance_Timer is set to 0 ms in SyDT and RTI.,Dilip,NOK, From SyDT & RTI it is clear that "Max_SDD_Clearance_Timer" is set to '0" Hence this rule is inline with SyDT.  and in SyCR Rule matrix this rule not applicable to PNML1C.,NOK, From SyDT & RTI it is clear that "Max_SDD_Clearance_Timer" is set to '0" Hence this rule is inline with SyDT.  and in SyCR Rule matrix this rule not applicable to PNML1C.,
+SPECIFIC_RULE_DB_GENERAL_0016,Y,Swetha,OK,On the PNML1 project, the value of the “Init_TSR_Speed” is set to 27km/h. Hence OK.,Ajay,OK,Checked ok, Init_TSR speed is defined as 27 km/h.,OK,Checked ok, Init_TSR speed is defined as 27 km/h.,
+SPECIFIC_RULE_DB_GENERAL_0017,Y,Swetha,OK,In PNML1 project, the “Door_Closing_Warning_Time” is set to 3000 ms. Hence OK.,Ajay,OK,Checked ok, Door closing warning time is lined with SyDT.,OK,In PNML1 project, the “Door_Closing_Warning_Time” is set to 3000 ms. Hence OK.,
+SPECIFIC_RULE_DB_GENERAL_0019,Y,Swetha,OK,To be verified during parameter consistency check.,Ajay,OK,It is general rule for considering  nearest round up values in mm, and the data structure defines it in cm.,OK,This rule will be covered during the Kp consistency check. As there are only minor modifications in the SyDB from 6.2.0 to 7.14, complete KP consistency check verification is not considered for this verification session.
+
+Kp's impacted is covered in the CR consistecny check,
+SPECIFIC_RULE_DB_GENERAL_0039,Y,Swetha,NOK,There are few more signals and SDDBs defined in SyDB than that of track survey. Also no data defined in input documents regarding RIO and Switches.,Dilip,OK,From SyDB it has been Verified that all CBI's RIOs, Switches, Points, Signals & SDD are described in the System Parameter database. Hence this rule is inline with SyDT.,NOK,There are few more signals and SDDBs defined in SyDB than that of track survey. Also no data defined in input documents regarding RIO and Switches.,
+SPECIFIC_RULE_DB_GENERAL_0033,Y,Jyothi,OK,Defined as measurable in SyDT as per the rule.,Ajay,OK,Checked for Power supply is NA, SPKS kp measurable is defined as false.,OK,Checked for Power supply is NA, SPKS kp measurable is defined as false.,
+SPECIFIC_RULE_DB_SIGAREA_0031,Y,Jyothi,OK,Conditions in the rule respected.,Rahul,NOK,Since SDD_204_PYT and SDD_207_PYT are first SDD with Points, project shall defined the specific conditions for same. Hence NOK.,TBC,Since SDD_204_PYT and SDD_207_PYT are first SDD with Points in the ATC Zone. The conditions as explained in the rule shall be exported to the operator.,
+SPECIFIC_RULE_DB_SIGAREA_0062,Y,Jyothi,OK,Rule is respected for mainline as detailed.,Rahul,OK,Points AG_S6_VPT02 , AG_J2_VPT02, AG_14_VPT02 etc. are less than the  d_Beacon_to_EOA_min + Length_train – Distance_head_antenna = 69.375m, in that case as per rule, ATC zone is only performed in RM mode. Hence OK.,OK,Points AG_S6_VPT02 , AG_J2_VPT02, AG_14_VPT02 etc. are less than the  d_Beacon_to_EOA_min + Length_train – Distance_head_antenna = 69.375m, in that case as per rule, ATC zone is only performed in RM mode. Hence OK.,
+SPECIFIC_RULE_RMF_SPEED,Y,Jyothi,OK,RM_Forward_Speed set to 15kmph.,Ajay,OK,Checked ok, RM_Forward_Max_Speed is defined as 15km/h in lined with SyDT.,OK,Checked ok, RM_Forward_Max_Speed is defined as 15km/h in lined with SyDT.,
+SPECIFIC_RULE_DEVIATED_SPEED,Y,Jyothi,OK,Deviated Speed set for normal direct and deviated as 50 and 27 respectively.,Ajay,OK,Checked ok, SyCR data is in lined with SyDT.,OK,Deviated Speed set for normal direct and deviated as 50 and 27 respectively.,
+SPECIFIC_RULE_DIRECT_SPEED,Y,Jyothi,OK,Direct train speed set for normal direct and deviated as 91 and 27 respectively.,Ajay,OK,Checked ok, SyCR data is in lined with SyDT.,OK,Direct train speed set for normal direct and deviated as 91 and 27 respectively.,
+SPECIFIC_RULE_RESCUE_SPEED,Y,Jyothi,OK,Rescue train max speed set to 15kph.,Ajay,OK,Checked ok, Rescue train max speed is inlined with SyDT.,OK,Checked ok, Rescue train max speed is inlined with SyDT.,
+SPECIFIC_C_ALTERNATE_PILOTING_MAX_SPEED,Y,Jyothi,OK,C alternate piloting max speed set to 0.,Ajay,OK,Checked ok, SyCR data is inlined with SyDT.,OK,C alternate piloting max speed set to 0.,
+SPECIFIC_RULE_BSR_SPEED,Y,Jyothi,OK,BSR speed set to 0.,Ajay,OK,Checked ok, BSR speed is defined as zero.,OK,Checked ok, BSR speed is defined as zero.,
+SPECIFIC_RULE_RMR_SPEED,Y,Jyothi,OK,RM reverse max speed set to 0.,Ajay,OK,Checked ok, RM_Reverse_Max_Speed is defined as zero,OK,Checked ok, RM_Reverse_Max_Speed is defined as zero,
+SPECIFIC_RULE_Rollback_SPEED,Y,Jyothi,NOK,Rollback max speed is not as per RTI which is 0.59m/s and in SyDT it is defined as 2268mph,Ajay,NOK,Checked, Roll back max speed is lined with RTI for PNML2 and PNML1 is not defined in SyCR document.,NOK,Rollback max speed is not as per RTI which is 0.59m/s (2124 mph) and in SyDT it is defined as 2268mph
+
+Also refer to chain 2 comment,
+SPECIFIC_RULE_DB_ATCEQUIP_0012,Y,Bhavya,OK,ZC & LC (ATC_Equipment.Name) naming/ parameter size matching with SyPD ,Ajay,OK,Checked ok, ZC field names called with SIA_ZC.,OK,ZC & LC (ATC_Equipment.Name) naming/ parameter size matching with SyPD ,
+SPECIFIC_RULE_TMS_REGUL_0001,Y,Bhavya,OK,Junction stratergy for all point zone is defined as "Normal" & found OK,Ajay,NV,For PNML1 at the junction point is normal, . A train at a junction is routed if it is the next expected train (with respect to the timetable order), otherwise it will wait to be routed. If the predicted arrival time (at the junction) of next expected train is under one minute the system shall wait for this train and route it through junction. So it can't be verified at SyDT, it's a operator interface level.,OK,Junction stratergy for all point zone is defined as "Normal" & found OK,
+SPECIFIC_RULE_TMS_ESA_TRIGGER_0005,Y,Bhavya,OK,Checked & found OK,Ajay,OK,Checked ok, ESA trigger area located in ZC signalisation area.,OK,Checked ok, ESA trigger area located in ZC signalisation area.,
+SPECIFIC_RULE_TMS_ESA_TRIGGER_0009,Y,Bhavya,NOK,SPK's matching with SYCR but as mentione in SyCR, SPK's should be coherent with TMS as well. But SPK's list not found in TMS,Ajay,OK,Checked ok, ESA activated defined signals are in lined with SyDT,NOK,SPK's matching with SYCR but as mentione in SyCR, SPK's should be coherent with TMS as well. But SPK's list not found in TMS,
+SPECIFIC_RULE_DB_LINE_0002,Y,Bhavya,OK,Checked & found OK,Ajay,OK,Checked ok, C_Extreme_Advance_Delay is lined with SyDT.,OK,Checked ok, C_Extreme_Advance_Delay is lined with SyDT.,
+SPECIFIC_RULE_RMF_TIME_VALIDITY,Y,Bhavya,OK,Checked & found OK,Ajay,OK,Checked ok, RMF time validity is defined as zero.,OK,Checked ok, RMF time validity is defined as zero.,
+SPECIFIC_RULE_AID_0004,Y,Bhavya,TBC,SyID is required to verify this Rule,Rahul,NOK,RAMS Analysis report in english shall be provided to check the criticality for AID. ,TBC,,
+SPECIFIC_RULE_TMS_SWITCH_0001,Y,Bhavya,OK,Checked & found OK.
+Differed point id is 0 for all Points ,Ajay,OK,Checked ok,Point of type double is defined with naming point ID.,OK,Checked & found OK.
+Differed point id is 0 for all Points ,
+SPECIFIC_RULE_NIAP_NTAP_0001,Y,Bhavya,OK,Checked & found OK,Ajay,NOK,As per rule NIAP_NTAP_Head_Extrapolation = Max(Mainline.CBTC_Max_Speed for all the current Urbalis_Sector Mainlines,Max_Not_U400_Speed with speed of 15 km/h for PNML1. But the speed is defined as 91km/h.,OK,Urbalis_Sector.NIAP_NTAP_Head_Extrapolation = Max(Mainline.CBTC_Max_Speed for all the current Urbalis_Sector Mainlines,Max_Not_U400_Speed) = Max (91,15) = 91 kph.Hence OK,
+SPECIFIC_RULE_NIAP_NTAP_0002,Y,Bhavya,OK,Checked & found OK,Ajay,OK,Checked ok, SyCR data is lined with SyDT.,OK,Checked ok, SyCR data is lined with SyDT.,
+SPECIFIC_RULE_DB_CBI_0004,Y,Bhavya,OK,Checked & found OK,Ajay,OK,Checked ok, SyCR data is inlined with SyDT.,OK,Checked ok, SyCR data is inlined with SyDT.,
+SPECIFIC_RULE_DB_ZC_0003,Y,Bhavya,NOK,ZC.Max_SCT_Validity_Distance value is not matching as mentioned in rule,Ajay,NOK,From the rule ZC.Max_SCT_Validity_Distance equals Max_SCT_Survival_Duration*Trains_Max_Speed. But CBTC train speed from RTI is 90 kph & SyDT is 91 kph and from RIS-TS doc MP1CM-ET-20-000 -A00-40545-(A)-50-281016-Especificación de interfaces SIG  MR_Vol4 train max speed is 88 kph.,NOK,From the rule ZC.Max_SCT_Validity_Distance equals Max_SCT_Survival_Duration*Trains_Max_Speed. But CBTC train speed from RTI is 90 kph & SyDT is 91 kph and from RIS-TS doc MP1CM-ET-20-000 -A00-40545-(A)-50-281016-Especificación de interfaces SIG  MR_Vol4 train max speed is 88 kph.,
+SPECIFIC_RULE_TMS_COE_00X1,Y,Bhavya,OK,Checked & found OK,Rahul,NOK,For below Down COE's direction is not same same as signal direction with respect to its exit route. Hence NOK.
+-COE_9_DN_ALB, COE_29_DN_STO etc.,NOK,For below Down COE's direction is not same same as signal direction with respect to its exit route. Hence NOK.
+-COE_9_DN_ALB, COE_29_DN_STO etc.,
+SPECIFIC_RULE_TMS_COE_0002,Y,Bhavya,NOK,SSP Positions are not matching with rule,Ajay,NOK,As per rule D_Rear_Joint_Sweeping = 44,90 m, but for COD's:COD_201_BT_PYT, COD_202_BT_PYT of D_COE_Tail_To_Joint length is 42.26mtrs.,NOK,As per rule D_Rear_Joint_Sweeping = 44,90 m, but for COD's:COD_201_BT_PYT, COD_202_BT_PYT of D_COE_Tail_To_Joint length is 42.26mtrs.,
+SPECIFIC_RULE_TMS_COE_0012,Y,Bhavya,NOK,Head_Correction value in SyDT is mismatching with RTI,Ajay,OK,NIAP tail correction & Head correction are defined in RTI.  Automatic protection propagation direction Local automatic protection propagation speed (Maximum of the local [PSR, TSR] ) these constraints are prefered for automatic protection.
+,OK,COE is placed very far from the ATC Gate. Nearest COE is on track V1 and V2 which is seperated by tracks VPT01 and VPT02 tracks respectively from the ATC Gate. Whose lengths are greater than the Head correction (161 Mtr). Hence this rule is OK,
+SPECIFIC_RULE_DB_BUFFER_0001,Y,Bhavya,NOK,Head correction value is not matching with RTI ,Ajay,NOK,As per rule For projects with bi-directional operation, the length of avalibility buffers shall be equal to Max (Urbalis_Sector.Head_Correction ; Urbalis_Sector.NIAP_Tail_Correction). So it is defined max value of head correction But, in the note: calculation for PNML1 is not mentioned. SyDT  and RTI of head_correction values are not matching.,OK,As per the RTI, 
+Head_Correction = 161.66 Mtr
+NIAP Tail correction = 19.77 Mtr
+PNM has bidirectional operation, Hence avalibility buffers shall be equal to Max (Urbalis_Sector.Head_Correction ; Urbalis_Sector.NIAP_Tail_Correction) = Max(161.66,19.77) =161.66 Mtr
+Note: in the rule is not mandatory
+
+In SyDT Availability_Buffer_Zone_Length set to 164 Mtr ( Which is greater than the actual value) Hence OK from safety point of view.,
+SPECIFIC_RULE_DB_PRJ_0005,Y,Bhavya,OK,Checked & found OK,Ajay,OK,Checked ok, Max SCT survial duration is lined with SyDT.,OK,Checked ok, Max SCT survial duration is lined with SyDT.,
+SPECIFIC_RULE_DB_PRJ_0006,Y,Bhavya,OK,Distance between Signal & SSP is less than 1000cm and inline with rules,Ajay,OK,Checked ok, Interlocked overlap's are defined in the project and D_min restrictive signal is in lined with SyDT.,OK,Distance between Signal & SSP is less than 1000cm and inline with rules,
+SPECIFIC_RULE_Overlap_Type_0001,Y,Jyothi,OK,CBI critical normal and not interlocked overlaps are used.,Ajay,OK,Checked ok, for overlap type CBI critical normal for CBTC train is true.,OK,CBI critical normal and not interlocked overlaps are used.
+
+Checked ok, for overlap type CBI critical normal for CBTC train is true.,
+SPECIFIC_RULE_DB_PSR_0001,Y,Jyothi,OK,All the inter tracks are defined with 45 and 27 speeds.,Ajay,OK,On reverse branch both safety and functionaly speed is defined for all point on the line.,OK,All the inter tracks of PSR's are defined with 45 and 27 speeds. ,
+SPECIFIC_RULE_DB_PSR_0005,Y,Jyothi,TBC,PSR data to be provided.,Ajay,OK,PSR value is defined for mainline track in curvatures areas.,OK,Panama L1 is in revenue service. There are only minor changes in the tracks of the depot.
+No changes in the PSR data. Hence OK,
+SPECIFIC_RULE_TMS_PLATF_0003,Y,Jyothi,OK,C_Late_Change_Distance is set to 20000cms as per the rule.,Ajay,OK,C_Late_Change_Distance  is not filled in the SyDT.,OK,C_Late_Change_Distance is set to 20000cms as per the rule.,
+SPECIFIC_RULE_TMS_SL_0009,Y,Jyothi,OK,No Siding is intersecting with platform area.,Rahul,OK,There is no common part of Platform inside stabling / sleeping zone. Hence Ok.,OK,There is no common part of Platform inside stabling / sleeping zone. Hence Ok.,
+SPECIFIC_RULE_STOPPING_AREA_0003,Y,Jyothi,OK,Default Stop has been defined as per the priority order.,Rahul,NOK,For below stopping areas are not defined as per rule like every unique stopping area set be True and in case two common stopping areas one should be true as per priority order.
+-COD_201_BT_PYT, TFT_VPT01_201,COD_202_BT_PYT,
+TFT_VPT02_202,COD_45_BT_FCO,COD_73_BT_LAN,PF_VIRT_DN,
+PF_VIRT_UP,VIE_78_SIS,VIE_75_SIS,COD_90_DN_SIS,VIE_90_SIS,VIE_87_SIS,NOK,For below stopping areas are not defined as per rule like every unique stopping area set be True and in case two common stopping areas one should be true as per priority order.
+-COD_201_BT_PYT, TFT_VPT01_201,COD_202_BT_PYT,
+TFT_VPT02_202,COD_45_BT_FCO,COD_73_BT_LAN,PF_VIRT_DN,
+PF_VIRT_UP,VIE_78_SIS,VIE_75_SIS,COD_90_DN_SIS,VIE_90_SIS,VIE_87_SIS,
+SPECIFIC_RULE_DB_POINT_0003,Y,Jyothi,NOK,Values defined in SyCR/RTI are not matching with the values defined in SyDT.,Ajay,ok,Checked ok, Safety calculation data is inlined in SyDT and manually deadlocking distance calculation is true for the project.,NOK,The worksheet attached to the rule shall be updated with the latest data of 7.1.4 and then to be reverified.,
+SPECIFIC_RULE_US_0002,Y,Jyothi,NOK,Emergency_Route_Release_Information_Available is set to true and the value of Moral_Time_Inter_Urbalis_Sector shall be set to calculated value of RTI which is 24.28s, but SyDT is defined with 15s.,Dilip,OK,And this clear from SyDT that with "Emergency_Route_Release_Information_Available = true, the Moral_Time (15 sec) data must be chosen between 0 and a maximum value (24.69 sec). Hence this rule is inline with SyDT.
+
+Note: As PNML1C have Single Urbalis sector this rule can be removed from SyCR.,NOK,Emergency_Route_Release_Information_Available is set to true and the value of Moral_Time_Inter_Urbalis_Sector shall be set to calculated value of RTI which is 24.28s, but SyDT is defined with 15s.,
+SPECIFIC_RULE_IUS_0005,Y,Jyothi,OK,AP_Tail_Correction is set to the value defined in SyDT is as per SyCR and RTI.,Ajay,NOK,Checked AP_tail correction is set greatest of all sector for PNML2, But for PNML1 is not mention in SyCR document.,OK,For Panama L1 there is only one Urbalis sector, and AP_tail_Correction value is inline with the RTI doc.,
+SPECIFIC_RULE_IUS_0018,Y,Jyothi,NOK,Only one urbalis sector for Line 1, and the Moral distance in RTI for train 1 is 509 which is inline with SyDT. While considering the max value from train 1 to train 4 then moral distance shall be 838.,Ajay,OK,Checked ok, SyCR data is lined with SyDT.,OK,For Panama L1 there is only one Urbalis sector, Hence as per the rule, Moral time and Moral_time_inter_urbalis_sector is same. Also they are inline with RTI.,
+SPECIFIC_RULE_IUS_0019,Y,Jyothi,OK,Moral_Time is seto to 15s and is inline with RTI.,Ajay,OK,Checked ok, SyCR data is lined with SyDT.,OK,Moral_Time is seto to 15s and is inline with RTI.,
+SPECIFIC_RULE_IUS_0020,Y,Jyothi,OK,AP_Reduction_On_Uncontrolled_Point is set to 16m which is inline with RTI and panama line 1 is having only one urbalis sector.,Ajay,OK,Checked ok, SyCR data is lined with SyDT.,OK,AP_Reduction_On_Uncontrolled_Point is set to 16m which is inline with RTI and panama line 1 is having only one urbalis sector.,
+SPECIFIC_ATO_RESET_AVAILABLE,Y,Jyothi,OK,All the values defined in SyDT are inline with SyCR.,Rahul,Ok,Data is correctly defined in SyDT for ATO reset. Hence OK.,OK,Data is correctly defined in SyDT for ATO reset. Hence OK.,
+SPECIFIC_PATTERN_0001,Y,Jyothi,OK,SSPs, SDDB and Signals are located as per the rule.,Rahul,NOK,As per rule there are two types of train formation 3 cars and 5 cars but in data only 3 cars formations are defined. Hence NOK.,NOK,As per rule there are two types of train formation 3 cars and 5 cars but in data only 3 cars formations are defined. Hence NOK.,
+SPECIFIC_PATTERN_0002,Y,Jyothi,OK,All the 3 stations STO,SMI and FCO are defined as per the rule.,Rahul,NOK,As per rule there are two types of train formation 3 cars and 5 cars but in data only 3 cars formations are defined. Hence NOK.,NOK,As per rule there are two types of train formation 3 cars and 5 cars but in data only 3 cars formations are defined. Hence NOK.,
+SPECIFIC_PATTERN_DEPOT_0001,Y,Swetha,NOK,Checked, NOK. The objects position in the depot, for the tracks VP01/VP02/VP03/VP04, is not according to attachment in SyCR.,Rahul,NOK,Signal Positions for VP01/VP02/VP03/VP04 should be placed before SDDB, refer NOK for rule DEROGATION_RULE_TMS_SIGNAL_0001. Hence NOK.,NOK,Signal Positions for VP01/VP02/VP03/VP04 should be placed before SDDB, refer NOK for rule DEROGATION_RULE_TMS_SIGNAL_0001. Hence NOK.,
+SPECIFIC_ATS_GAMA_ZONE_0001,Y,Jyothi,OK,Gama zones are defined as per the rule.,Rahul,NOK,Since Each Gama Zone is related with SDD and further with elementary zones but for below Gama Zones this rule is not respected and taken different SDD for Gama deployment. Hence NOK.
+-GZ_SDD_201_PYT;GZ_SDD_201_PYT etc. ,NOK,Since Each Gama Zone is related with SDD and further with elementary zones but for below Gama Zones this rule is not respected and taken different SDD for Gama deployment. Hence NOK.
+-GZ_SDD_201_PYT;GZ_SDD_201_PYT etc. ,
+SPECIFIC_ATS_ESA_0001,Y,Swetha,OK,The length of the ESA is defined by the number of blocks. Hence OK.,Rahul,NOK,ESP is defined for both the tracks but SPKS is defined in track V2 only and there is no specific rule for SPKS as well. Hence NOK.,NOK,ESP is defined for both the tracks but SPKS is defined in track V2 only and there is no specific rule for SPKS as well. Hence NOK.,
+SPECIFIC_ATS_BUFFER_ZONE_0001,Y,Swetha,NV,This rule cannot be verified from SyDT/SyDB. Hence N/V.,Rahul,OK,Since Buffer zone is defined through individual blocks only hence minimal size of the buffer zone is one block. Hence OK.,OK,Since Buffer zone is defined through individual blocks only hence minimal size of the buffer zone is one block. Hence OK.,
+SPECIFIC_RULE_ESP_IMPLEMENTATION_0001,Y,Swetha,OK,For PNML1, per platform, these 2 physical ESPs are managed by one logical ESP declared in SyDT. On the SyDT, there is only one ESP per station. ESP is undefined for platform PF_VIRT_UP and PF_VIRT_DN since it is virtual platforms.,Dilip,NOK,As ESP's Kp's declared in Scheme plan and Logical Kp's are in with SyDT. But "RULE_ESP_IMPLEMENTATION_0001" is not listed in "Traceability Matrix": Hence TM has to be updated with this rule. ,NOK,As ESP's Kp's declared in Scheme plan and Logical Kp's are in with SyDT. But "RULE_ESP_IMPLEMENTATION_0001" is not listed in "Traceability Matrix": Hence TM has to be updated with this rule. ,
+SPECIFIC_RULE_ESP_IMPLEMENTATION_0002,Y,Swetha,NOK,The logical KP of an ESP in each track does not equals the KP of the middle of the plateform for this track. Hence NOK.,Dilip,NOK,As Kp's of Logical ESP are equal to Centre of Platform; Hence this rule is inline with SyDT. But "RULE_ESP_IMPLEMENTATION_0002" is not listed in "Traceability Matrix": TM has to be updated with this rule. ,NOK,The logical KP of an ESP in each track does not equals the KP of the middle of the plateform for this track. Hence NOK.
+
+"RULE_ESP_IMPLEMENTATION_0002" is not listed in "Traceability Matrix": TM has to be updated with this rule. ,
+SPECIFIC_RULE_SPKS_IMPLEMENTATION_0001,Y,Swetha,NOK,The Logical KP of  SPKS does not corresponds to the middle of the area covered by this SPKS for logical track.,Dilip,NOK,The logical Kp's value of SPKS is not inline with Middle of the Logical track V1 & V2. Hence this rule is not inline with SyDT; also "RULE_SPKS_IMPLEMENTATION_0001" is not listed in "Traceability Matrix": TM has to be updated with this rule. ,NOK,The Logical KP of  SPKS does not corresponds to the middle of the area covered by this SPKS for logical track.
+
+RULE_SPKS_IMPLEMENTATION_0001" is not listed in "Traceability Matrix": TM has to be updated with this rule. ,
+SPECIFIC_RULE_GAMA_ZONE_IMPLEMENTATION_0001,Y,Swetha,NOK,Many Logical KP does not lies within the GAMA zone. Hence NOK.,Rahul,NOK,Since Each Gama Zone is related with SDD and further with elementary zones but for below Gama Zones this rule is not respected and taken different SDD for Gama deployment. Hence NOK.
+-GZ_SDD_201_PYT;GZ_SDD_201_PYT etc. ,NOK,Since Each Gama Zone is related with SDD and further with elementary zones but for below Gama Zones this rule is not respected and taken different SDD for Gama deployment. Hence NOK.
+-GZ_SDD_201_PYT;GZ_SDD_201_PYT etc. ,
+SPECIFIC_RULE_PSR_0001,Y,Swetha,OK,No PSR is repeated(No different PSR with same speed). Hence OK.,Rahul,Ok,As per rule PSR values are unique w.r.t. track/ direction / kp value. Hence OK.,OK,As per rule PSR values are unique w.r.t. track/ direction / kp value. Hence OK.,
+SPECIFIC_RULE_PSR_0002,Y,Swetha,NOK,The length of PSR_P_10964_DN_V1_S is less than 3 times of train.Also PSR speed of PSR_P_10269_DN_V1_S and PSR_P_11055_DN_V1_S is lesser than PSR speed of PSR_P_10964_DN_V1_S, but PSR speed of PSR_P_10964_DN_V1_S should be PSR speed max (PSR_P_10269_DN_V1_S; PSR_P_11055_DN_V1_S). Hence NOK
+The length of PSR_P_13237_DN_V1_S is less than 3 times of train.Also PSR speed of PSR_P_13030_DN_V1_S and PSR_P_13328_DN_V1_S is lesser than PSR speed of PSR_P_13237_DN_V1_S, but PSR speed of PSR_P_13237_DN_V1_S should be PSR speed max (PSR_P_13030_DN_V1_S; PSR_P_13328_DN_V1_S). Hence NOK
+The length of PSR_P_14208_DN_V1_S is less than 3 times of train.Also PSR speed of PSR_P_13635_DN_V1_S and PSR_P_14299_DN_V1_S is lesser than PSR speed of PSR_P_13237_DN_V1_S, but PSR speed of PSR_P_13237_DN_V1_S should be PSR speed max (PSR_P_13635_DN_V1_S ; PSR_P_14299_DN_V1_S). Hence NOK
+The length of PSR_P_15283_DN_V1_S is less than 3 times of train.Also PSR speed of PSR_P_15063_DN_V1_S and PSR_P_15373_DN_V1_S is lesser than PSR speed of PSR_P_15283_DN_V1_S, but PSR speed of PSR_P_15283_DN_V1_S should be PSR speed max (PSR_P_15063_DN_V1_S; PSR_P_15373_DN_V1_S). Hence NOK
+The length of PSR_P_890_DN_V2_S is less than 3 times of train.Also PSR speed of PSR_P_648_DN_V2_S and PSR_P_923_DN_V2_S is lesser than PSR speed of PSR_P_15283_DN_V1_S, but PSR speed of PSR_P_15283_DN_V1_S should be PSR speed max (PSR_P_648_DN_V2_S ; PSR_P_923_DN_V2_S). Hence NOK
+The length of PSR_P_1200_DN_V2_S is less than 3 times of train.Also PSR speed of PSR_P_923_DN_V2_S and PSR_P_1328_DN_V2_S is lesser than PSR speed of PSR_P_15283_DN_V1_S, but PSR speed of PSR_P_15283_DN_V1_S should be PSR speed max (PSR_P_923_DN_V2_S; PSR_P_1328_DN_V2_S). Hence NOK.,Rahul,NOK,For below list of PSR's, rule is not respected. Hence NOK.
+-PSR_P_2202_DN_V1_F;PSR_P_5443_DN_V1_F;PSR_P_6737_DN_V1_F etc.,NOK,For below list of PSR's, rule is not respected. Hence NOK.
+-PSR_P_2202_DN_V1_F;PSR_P_5443_DN_V1_F;PSR_P_6737_DN_V1_F etc.,
+SPECIFIC_RULE_PSR_TRACK_SURVEY_IMPLEMENTATION_0001,Y,Swetha,TBC,To be disscused with Design. No PSR details are defined in Track Survey.,Rahul,Ok,Since for Mainline there is no change in PSR and track survery was not performed. And for depot PSR value is fixed. Hence Ok.,OK,Since for Mainline there is no change in PSR and track survery was not performed. And for depot PSR value is fixed. Hence Ok.,
+SPECIFIC_RULE_PSR_DEVIATED_INTERTRACK,Y,Swetha,NOK,PSR in deviated intertracks is set to 45km/h in mainline but not in depot(Inter track PSR is set to 27 km/h). ,Rahul,Ok,Safety and Functional PSR for Intertracks are 45kph. Hence Ok.,NOK,PSR in deviated intertracks is set to 45km/h in mainline but not in depot(Inter track PSR is set to 27 km/h). ,
+SPECIFIC_RULE_DEADLOCKING_0001,Y,Swetha,NOK,Deadlocking_Block_List and Fouling_Point_Blokc_List defined in the attachments of CR ATVCM00 495168 and CR ATVCM00 495189 does not match with Deadlocking_Block_List and Fouling_Point_Blokc_List present in SyDB. Hence NOK.,Rahul,NOK,For below points  Deadlocking_Block_List and the Fouling_Point_Block_List are not configured as per CR ATCVM00495168:
+-AG_11_V2_FCO, AG_S12_VPC_PYT,AG_S13_VPC_PYT,AG_S14_VPC_PYT,AG_J1_VPT01_PYT,AG_J2_VPT02_PYT,AG_J3_VPT01_PYT,AG_J4_VPT02_PYT. Hence NOK.,NOK,For below points  Deadlocking_Block_List and the Fouling_Point_Block_List are not configured as per CR ATCVM00495168:
+-AG_11_V2_FCO, AG_S12_VPC_PYT,AG_S13_VPC_PYT,AG_S14_VPC_PYT,AG_J1_VPT01_PYT,AG_J2_VPT02_PYT,AG_J3_VPT01_PYT,AG_J4_VPT02_PYT. Hence NOK.,
+SPECIFIC_BYPASSABLE_FOULING_IN_SIGNAL,Y,Swetha,OK,BYPASSABLE_FOULING_IN_SIGNAL is set to FALSE for all points of line. Hence OK.,Rahul,Ok,Bypassable_Fouling_In_Signal = Flase for all points. Hence OK.,OK,Bypassable_Fouling_In_Signal = Flase for all points. Hence OK.,
+SPECIFIC_RULE_DRM_0005,Y,Swetha,OK,Buffer_Function is defined accordingly. Hence  OK.,Ajay,OK,Checked ok, Manual mode for buffer functin is not activated.,OK,Checked ok, Manual mode for buffer functin is not activated.,
+SPECIFIC_RULE_BUFFER_0001,Y,Swetha,OK,Up_Buffer_Zone_Block_ID_List and Down_Buffer_Zone_Block_ID_List are defined accordingly. Hence OK.,Rahul,Ok,Up/Dn_Buffer_Zone_Block_ID_List is defined as per CR. Hence Ok.,OK,Up/Dn_Buffer_Zone_Block_ID_List is defined as per CR. Hence Ok.,
+DEROGATION_RULE_TMS_SIGNAL_0002,Y,Swetha,OK,Checked OK. Signals are set to approachable for those whose distance between Signal and SSP is lesser than D_Safety_Margin_Reduce + ATO_Min_Approach_Distance_Min or D_Safety_Margin_Reduce + ATO_Min_Approach_Distance_Max (depending on the where the signal is placed). Following are made as approachable signal and is expressed in TMS.
+S_102_03_ALB 
+S_104_04_ALB 
+S_202_26_STO 
+S_307_47A_FCO 
+S_402_56_SMI .,Rahul,Ok,For below signals Signal_Approachable = true as per SyCR derogated rule. Hence Ok.,OK,Checked OK. Signals are set to approachable for those whose distance between Signal and SSP is lesser than D_Safety_Margin_Reduce + ATO_Min_Approach_Distance_Min or D_Safety_Margin_Reduce + ATO_Min_Approach_Distance_Max (depending on the where the signal is placed). Following are made as approachable signal and is expressed in TMS.
+S_102_03_ALB 
+S_104_04_ALB 
+S_202_26_STO 
+S_307_47A_FCO 
+S_402_56_SMI .,
+DEROGATION_RULE_TMS_SIGNAL_0001,Y,Swetha,NOK,This rule is respected in the depot for the following signals :
+- S_635_217_PYT
+- S_637_217_PYT
+- S_639_217_PYT
+- S_641_217_PYT
+But for S_602_205_PYT Overlap(O_S_602_205_PYT = 2817) is defined in SyDT whereas the calculated value is 207 cm,Rahul,NOK,For Signal S_635_217_PYT,S_637_217_PYT,S_639_217_PYT, SDDs are before the signal. Hence NOK.,NOK,This rule is respected in the depot for the following signals :
+- S_635_217_PYT
+- S_637_217_PYT
+- S_639_217_PYT
+- S_641_217_PYT
+But for S_602_205_PYT Overlap(O_S_602_205_PYT = 2817) is defined in SyDT whereas the calculated value is 207 cm,
+DEROGATION_RULE_TMS_OVERLAP_0001,Y,Swetha,OK,Checked OK. D_Overlap is greater than the distance between a Signal and SSP of same direction.,Rahul,NOK,For below signals Overlap shall be defined since distance between SSP and signals are lesser than D_Overlap calculated. And Signal defined for derogation rules is not correct.Hence NOK.
+-S_509_75_LAN;S_711_FFA_SIS;S_709_FFA_SIS,NOK,For below signals Overlap shall be defined since distance between SSP and signals are lesser than D_Overlap calculated. And Signal defined for derogation rules is not correct.Hence NOK.
+-S_509_75_LAN;S_711_FFA_SIS;S_709_FFA_SIS,
+Non- Safety Rules,,,,,,,,,,
+Rule_DB_ALA_0005,N,Shruthi,OK,As per the rule, there are no ALS block that can be reached by at least two different path. Hence OK,,,,=E165,=F165,
+Rule_DB_ATCEQUIP_0004,N,Shruthi,OK,Each train is equipped with one and only one ATC equipment with CC type.,,,,OK,Each train is equipped with one and only one ATC equipment with CC type.,
+Rule_DB_ATCEQUIP_0007,N,Shruthi,OK,Only one Trackside OMAP in the project. Hence OK,,,,OK,Only one Trackside OMAP in the project. Hence OK,
+Rule_DB_ATCEQUIP_0008,N,Shruthi,OK,SSID of CC is in the range given in System Interface Document,,,,OK,SSID of CC is in the range given in System Interface Document,
+Rule_DB_CC_0001,N,Shruthi,OK,Not more than 3 redundant NTP servers are defined. As there is only one Urbalis Sector, CC will synchronise it self. ,,,,OK,Not more than 3 redundant NTP servers are defined. As there is only one Urbalis Sector, CC will synchronise it self. ,
+Rule_DB_ZC_0002,N,Shruthi,OK,For Each ZC,list of ATS, CBI with which ZC is connected is defined.,,,,OK,For Each ZC,list of ATS, CBI with which ZC is connected is defined.,
+Rule_DB_ATS_SS_0002,N,Shruthi,OK,Only one ATS is defined to manage depot and mainline,,,,OK,Only one ATS is defined to manage depot and mainline,
+Rule_DB_CBI_0005,N,Shruthi,OK,CBI.Switch_Over_Hour and CBI.Switch_Over_Minutes is defined for CBI,,,,OK,CBI.Switch_Over_Hour and CBI.Switch_Over_Minutes is defined for CBI,
+Rule_DB_CBI_SS_0002,N,Shruthi,OK,CBI maintenance timers- Switch_Slow_Motion_Timer, Switch_Discrepancy_Timer, Switch_Concordance_Timer, Min_Occupation_Timer and Signal_Failure_Timer are multiples of 500ms. Hence oK,,,,=E173,=F173,
+Rule_DB_CBIEQUIP_0002,N,Shruthi,OK,For each CBI, 2 equipment CLC_N and CLC_R are defined.,,,,OK,For each CBI, 2 equipment CLC_N and CLC_R are defined.,
+Rule_DB_CBI_RCK_0001,N,Shruthi,OK,“Route To Set”, “Route To Release”, “Cycle To Set” and “Cycle To Release” for each Route Cycle Key is defined.,,,,=E175,=F175,
+Rule_TMS_COE_0004,N,Shruthi,TBC,At SyDB no such parameter available. Same to be confirmed with System design.,,,,=E176,=F176,
+Rule_TMS_COE_0009,N,Shruthi,OK,COD has several SSP defined for different directions for same TRFC.,,,,OK,COD has several SSP defined for different directions for same TRFC.,
+Rule_TMS_COE_0013,N,Shruthi,OK,For each COE, ony one COD is defined. Hence Ok,,,,OK,For each COE, ony one COD is defined. Hence Ok,
+Rule_TMS_COE_0028,N,Shruthi,OK,For REG project, “Change_Of_Ends_Zones Traffic_Direction_Self_Normalized” is set  to “false”,,,,OK,For REG project, “Change_Of_Ends_Zones Traffic_Direction_Self_Normalized” is set  to “false”,
+Rule_TMS_Cycle_0001,N,Shruthi,OK,Cycles are used for TurnBack only. Hence OK,,,,OK,Cycles are used for TurnBack only. Hence OK,
+Rule_TMS_Cycle_0008,N,Shruthi,OK,Cycle.Inconsistent_Route_ID_List is set to 0 . Hence OK,,,,OK,Cycle.Inconsistent_Route_ID_List is set to 0 . Hence OK,
+RCD_Discrimination_0003,N,Shruthi,OK,Rear Front Sweeping Function is used in the project. Hence Ok,,,,OK,Rear Front Sweeping Function is used in the project. Hence Ok,
+Rule_TMS_DA_0005,N,Shruthi,TBC,Uncertainty_Zone_Constraint_Presence = FALSE in SyPROS and SyDT. Need confirmation,,,,NOK,This rule intendst to avoid running of trian in manual mode when In the case of a train inserted into a talkative AP that splits a NIAP in two NIAP, after the NIAP in front of the train is deleted.
+it is recommended that a route origin signal be located :
+• At least at the end of the static or dynamic discrimination area or of the area for front-sweeping,
+
+The above condition is achieved by rules Rule_TMS_SSP_0012, Rule_TMS_SDD_0037, RCD_Descrimination_0005 and RCD_Descrimination_0006.
+
+Incase NIAP Head correction croses the head the first SDDB of signal befor the train head min loc reaches, constraint has to be exported to the operator, so that the train will be run manually till the downstream the uncertainty zone,
+Rule_DRM_0001,N,Shruthi,OK,Driving modes are defined in the project.Hence Ok,,,,OK,Driving modes are defined in the project.Hence Ok,
+Rule_DRM_0004,N,Shruthi,OK,DrivingMode.Block mode is set to False for all driving modes,,,,OK,DrivingMode.Block mode is set to False for all driving modes,
+Rule_TMS_ESA_Trigger_0006,N,Shruthi,OK,ESA Trigger has only one logical Kp, per track .,,,,OK,ESA Trigger has only one logical Kp, per track .,
+Rule_TMS_ESA_Trigger_0007,N,Shruthi,OK,ESA Trigger protecting a track has only logical kp on the track.,,,,OK,ESA Trigger protecting a track has only logical kp on the track.,
+Rule_DB_General_0001,N,Shruthi,OK,Name of all elements are unique except for ZC,,,,OK,Name of all elements are unique except for ZC,
+Rule_DB_General_0002,N,Shruthi,OK,IP address of all equipments are unique except for CBI and MIB IP address.,,,,OK,IP address of all equipments are unique except for CBI and MIB IP address.,
+Rule_DB_General_0003,N,Shruthi,OK, Corrected_Trolley_value is set to 0 when there is no value defined. ,,,,OK, Corrected_Trolley_value is set to 0 when there is no value defined. ,
+Rule_DB_General_0004,N,Shruthi,OK,Conventional direction is defined as UP in this project. Hence Ok,,,,OK,Conventional direction is defined as UP in this project. Hence Ok,
+Rule_DB_General_0005,N,Shruthi,Nok,As per the rule, depot track naming is not in the order. ,,,,Nok,As per the rule, depot track naming is not in the order. ,
+Rule_DB_General_0006,N,Shruthi,OK,Will be verified during SyNR verification. Hence Ok,,,,OK,Will be verified during SyNR verification. Hence Ok,
+Rule_DB_General_0011,N,Shruthi,OK,TRUC and TRFC are defined in the project. Hence Ok,,,,OK,TRUC and TRFC are defined in the project. Hence Ok,
+Rule_DB_General_0024,N,Shruthi,OK,This rule is a generic statement. Cannot be verified at SyDT level.,,,,OK,This rule is a generic statement. Cannot be verified at SyDT level.,
+Rule_TMS_General_0001,N,Shruthi,OK,This rule is a recommendation. Cannot be verified at SyDT level,,,,OK,This rule is a recommendation. Cannot be verified at SyDT level,
+Rule_TMS_General_0002,N,Shruthi,OK,This rule is a recommendation. Cannot be verified at SyDT level,,,,OK,This rule is a recommendation. Cannot be verified at SyDT level,
+Rule_TMS_General_0005,N,Shruthi,OK,Length of interstation is less than 100000 m,,,,OK,Length of interstation is less than 100000 m,
+RCD_TMS_Overlap_0044,N,Shruthi,OK,D_Overlap distance is defined for all overlaps of the project. ,,,,OK,D_Overlap distance is defined for all overlaps of the project. ,
+Rule_TMS_PLATF_0014,N,Shruthi,OK,Pre platform SSP are located before the platform and in the direction of travel.,,,,OK,Pre platform SSP are located before the platform and in the direction of travel.,
+Rule_DB_FSFB2_0005,N,Shruthi,TBC,There are no ZC Remote IO. Hence OK,,,,OK,There are no ZC Remote IO. Hence OK,
+Rule_DB_FSFB2_0006,N,Shruthi,TBC,Need confirmation. Not sure how to verify this?,,,,OK,There are only 9 CBI type RIO defined in the SyDB. Hence for CBI 9 (RIO type nodes) and one ZC type node is possible which is less than 140.Hence OK,
+Rule_DB_NVFB2_0001,N,Shruthi,TBC,Need confirmation,,,,NV,This rule if an information related to how to use IDRF file during SyDB generation while dealing with NVFSB2 table. Hence cannot be verified during SyDT level.,
+RCD_HILC_0001,N,Shruthi,OK,Standard HILC is used for signal, point, destination signal blocking and unblocking, SDD in operation.,,,,OK,Standard HILC is used for signal, point, destination signal blocking and unblocking, SDD in operation.,
+Rule_DB_RIO_0002,N,Shruthi,NOk,Remote_IO_Racks is not as per the rule definition,,,,NOk,Remote_IO_Racks is not as per the rule definition,
+Rule_DB_RIO_0003,N,Shruthi,OK,IP address of Remote IO is defined according to [REF 15] document,,,,OK,IP address of Remote IO is defined according to [REF 15] document,
+Rule_DB_RIO_0007,N,Shruthi,OK,Consistency between IO_Mapping and Remote_IO is verified and is matching. Hence Ok,,,,OK,Consistency between IO_Mapping and Remote_IO is verified and is matching. Hence Ok,
+Rule_DB_ROUTE_0001,N,Shruthi,OK,All the routes belong to CBI Signalisation area. ,,,,OK,All the routes belong to CBI Signalisation area. ,
+Rule_TMS_Route_0005,N,Shruthi,OK,Fleet mode(Auto route) is set to True for a few routes,,,,OK,Fleet mode(Auto route) is set to True for a few routes,
+Rule_TMS_Route_0032,N,Shruthi,OK,All routes set by CBI Monitoring ATS function is set to Fleet Mode ,,,,OK,All routes set by CBI Monitoring ATS function is set to Fleet Mode ,
+Rule_TMS_Specific_Route_0001,N,Shruthi,OK,Specific Route of type DOP are defined in the project,,,,OK,Specific Route of type DOP are defined in the project,
+Rule_TMS_Specific_Route_0024,N,Shruthi,OK,Specific Route of type DOP are defined to prevent a train to stop over a switch area,,,,OK,Specific Route of type DOP are defined to prevent a train to stop over a switch area,
+Rule_TMS_Specific_Route_0025,N,Shruthi,OK,Specific Routes of type DOP only are defined. Hence Ok,,,,OK,Specific Routes of type DOP only are defined. Hence Ok,
+Rule_SDD_Group_In_Operation_0002,N,Shruthi,OK,1 ZC and 1 ATS in the project. Hence Ok,,,,OK,1 ZC and 1 ATS in the project. Hence Ok,
+Rule_SDD_Group_In_Operation_0003,N,Shruthi,OK,A SDD is part of only one SDD_Group_In_Operation,,,,OK,A SDD is part of only one SDD_Group_In_Operation,
+Rule_SDD_Group_In_Operation_0004,N,Shruthi,OK,Repartition of the Secondary Detection Devices defined in the CBI IO_Mapping is followed in this project,,,,OK,Repartition of the Secondary Detection Devices defined in the CBI IO_Mapping is followed in this project,
+Rule_SDD_Group_In_Operation_0005,N,Shruthi,OK,SDD's checkable are part of SDD_Group_In_Operation,,,,OK,SDD's checkable are part of SDD_Group_In_Operation,
+Rule_SDD_Group_In_Operation_0007,N,Shruthi,OK,Only 6 SDD_Group in Operation is defined in 1 ZC. hence OK,,,,OK,Only 6 SDD_Group in Operation is defined in 1 ZC. hence OK,
+Rule_SDD_Group_In_Operation_0008,N,Shruthi,OK,A SDD _Group_In_Operation does not contain more than 100 SDD's,,,,OK,A SDD _Group_In_Operation does not contain more than 100 SDD's,
+Rule_TMS_SDD_0021,N,Bupenra,NV,N/V,  line breakdown into secondary detection devices can't be verified.,,,,NV,N/V,  line breakdown into secondary detection devices can't be verified.,
+Rule_TMS_SDD_0031,N,Bupenra,OK,Ok,for  each SDD quantity of receiver is define as 1.,,,,OK,Ok,for  each SDD quantity of receiver is define as 1.,
+Rule_TMS_SDD_0032,N,Bupenra,OK,Ok, Kp of the SDD boundary is situated in the middle of overlay interval.,,,,OK,Ok, Kp of the SDD boundary is situated in the middle of overlay interval.,
+Rule_TMS_SDD_0040,N,Bupenra,OK,Ok with comments, in turnback areas all the axle counter are deployed in same sector, while all Axle Counter counting heads belonging to the same turnback area zone shall be connected to the same Axle Counter cubicle shall be verified by T&C during installation.,,,,OK,Ok with comments, in turnback areas all the axle counter are deployed in same sector, while all Axle Counter counting heads belonging to the same turnback area zone shall be connected to the same Axle Counter cubicle shall be verified by T&C during installation.,
+Rule_TMS_STABL_0001,N,Bupenra,OK,Ok,Stabling location is set in mainline,depot & platform and Energy_Monitoring_Inhibition_Area_ID is defined 0.,,,,OK,Ok,Stabling location is set in mainline,depot & platform and Energy_Monitoring_Inhibition_Area_ID is defined 0.,
+Rule_TMS_STABL_0003,N,Bupenra,OK,Ok,all stablig locations length are greater than formation_length.,,,,OK,Ok,all stablig locations length are greater than formation_length.,
+Rule_DB_SIGAREA_0002,N,Bupenra,OK,Ok, signalization area is defined by all Secondary Detection Devices located in the area.,,,,OK,Ok, signalization area is defined by all Secondary Detection Devices located in the area.,
+Rule_DB_SIGAREA_0005,N,Bupenra,OK,Ok,signalisation area corresponding to a ZC area type contains approximately 323 blocks.,,,,OK,Ok,signalisation area corresponding to a ZC area type contains approximately 323 blocks.,
+Rule_DB_SIGAREA_0006,N,Bupenra,OK,Ok,102 SDD are defined in ZC signalisation area.,,,,OK,Ok,102 SDD are defined in ZC signalisation area.,
+Rule_DB_SIGAREA_0007,N,Bupenra,OK,ok,GAMA_Zone_Presence is set "TRUE" and Elementary GAMA is less than 200.,,,,OK,ok,GAMA_Zone_Presence is set "TRUE" and Elementary GAMA is less than 200.,
+Rule_DB_SIGAREA_0008,N,Bupenra,OK,OK, ESA defined in AC signalisation area is less than 100.,,,,OK,OK, ESA defined in AC signalisation area is less than 100.,
+Rule_DB_SIGAREA_0026,N,Bupenra,OK,Ok, Only one Cbi signalisation area is defined in this B.L.,,,,OK,Ok, Only one Cbi signalisation area is defined in this B.L.,
+Rule_DB_SIGAREA_0036,N,Bupenra,OK,Ok, we have only one area of each signalization area type i.e CBI, ZC, ATS, ATS_LOCAL SERVER & ATS_CENTRAL_SERVER defined in this B.L.,,,,OK,Ok, we have only one area of each signalization area type i.e CBI, ZC, ATS, ATS_LOCAL SERVER & ATS_CENTRAL_SERVER defined in this B.L.,
+Rule_DB_SIGAREA_0045,N,Bupenra,OK,Ok,data interface between an ATS and a CBI  contains 2035 bits.,,,,OK,Ok,data interface between an ATS and a CBI  contains 2035 bits.,
+Rule_DB_SIGAREA_0050,N,Bupenra,OK,Ok, all techincal rooms are  linked with equipments that generate both input and output for Remote_IO.,,,,OK,Ok, all techincal rooms are  linked with equipments that generate both input and output for Remote_IO.,
+Rule_DB_SIGAREA_0058,N,Bupenra,NOK,NOK, as Test_Track_Presence is defined "FALSE" in SyPROS, this rule should be made NA in SyCR TM.,,,,NOK,NOK, as Test_Track_Presence is defined "FALSE" in SyPROS, this rule should be made NA in SyCR TM.,
+Rule_DB_SIGAREA_0060,N,Bupenra,OK,ALL SDD have been defined in CBI signalisation area, hence all wayside equipments will come inside the CBI signalisation area only.,,,,OK,ALL SDD have been defined in CBI signalisation area, hence all wayside equipments will come inside the CBI signalisation area only.,
+RCD_Signal_0001,N,Bupenra,OK,Ok,the distance between SSP and the next signal is more than 2m meter.,,,,OK,Ok,the distance between SSP and the next signal is more than 2m meter.,
+RCD_Signal_0002,N,Bupenra,NV,N/V,Relocation Balises position can't be verified from SyDT.,,,,NV,N/V,Relocation Balises position can't be verified from SyDT.,
+Rule_TMS_Signal_0012,N,Bupenra,OK,Ok, signals protecting the points are placed before the deadlocking blocks.,,,,OK,Ok, signals protecting the points are placed before the deadlocking blocks.,
+Rule_TMS_Signal_0032,N,Bupenra,OK,Ok, as all the signals and direction indicators are defined on UEVOL track.,,,,OK,Ok, as all the signals and direction indicators are defined on UEVOL track.,
+Rule_TMS_Signal_0069,N,Bupenra,OK,Ok, Signal_Failure_Timer=3000ms & Signal_Failure_ATS_Timer=4073,4660 in SyDT which is as per RTI,,,,OK,Ok, Signal_Failure_Timer=3000ms & Signal_Failure_ATS_Timer=4073,4660 in SyDT which is as per RTI,
+Rule_TMS_SSP_0001,N,Bupenra,OK,OK, ssp is localized in platform & stabling location.,,,,OK,OK, ssp is localized in platform & stabling location.,
+Rule_TMS_SSP_0002,N,Bupenra,NV,The head of the train should be positioned at service stopping point once stopped can't be verified at SyDT level it should be check during field test.,,,,NV,The head of the train should be positioned at service stopping point once stopped can't be verified at SyDT level it should be check during field test.,
+Rule_TMS_SSP_0003,N,Bupenra,OK,Ok,SSP is defined on both up & down directions on line.,,,,OK,Ok,SSP is defined on both up & down directions on line.,
+Rule_TMS_SSP_0008,N,Bupenra,OK,NOK, SSP is not set on stabling location, SSP_ID_List is not linked with stabling.,,,,OK,NOK, SSP is not set on stabling location, SSP_ID_List is not linked with stabling.,
+RCD_Stopping_Area_0001,N,Bupenra,NOK,NOK, for Stabling_Location no SSP is defined. ,,,,NOK,NOK, for Stabling_Location no SSP is defined. ,
+RCD_Stopping_Area_0002,N,Bupenra,OK,Ok, only one stopping area is created in case 2 object which generate stopping areas, have the same location i.e their Track, Kp_Begin, Kp_End are identical.,,,,OK,Ok, only one stopping area is created in case 2 object which generate stopping areas, have the same location i.e their Track, Kp_Begin, Kp_End are identical.,
+Rule_Stopping_Area_0002,N,Bupenra,OK,OK,Default_Stop is defined for all original stopping area.,,,,OK,OK,Default_Stop is defined for all original stopping area.,
+Rule_TMS_Switch_0002,N,Bupenra,OK,Ok,for each point junction strstegy is define as "NORMAL".,,,,OK,Ok,for each point junction strstegy is define as "NORMAL".,
+Rule_SYS_DIM_0003,N,Bupenra,OK,OK, only 9 cbi remote-io is defined in SyDT.,,,,OK,OK, only 9 cbi remote-io is defined in SyDT.,
+Rule_SYS_DIM_0007,N,Bupenra,NOK,NOK,as only one urbalis sctor is defined in this B.L this rule should be made NA in SyCR TM.,,,,NOK,NOK,as only one urbalis sctor is defined in this B.L this rule should be made NA in SyCR TM.,
+Rule_SYS_DIM_0009,N,Bupenra,OK,Ok, only 88 MIB address are used.,,,,OK,Ok, only 88 MIB address are used.,
+Rule_SYS_DIM_0013,N,Bupenra,OK,Ok, total 263 blocks are used, and they are within the specified range[1:3000].,,,,OK,Ok, total 263 blocks are used, and they are within the specified range[1:3000].,
+Rule_SYS_DIM_0015,N,Bupenra,OK,Ok, only 58 stopping areas are used, and their ID's are within specified limit i.e[1;1000].,,,,OK,Ok, only 58 stopping areas are used, and their ID's are within specified limit i.e[1;1000].,
+Rule_SYS_DIM_0016,N,Bupenra,OK,Ok, only 1 ESAs are used in this B.L.,,,,OK,Ok, only 1 ESAs are used in this B.L.,
+Rule_SYS_DIM_0017,N,Bupenra,OK,Ok, as per rule 226 Elementary_Gama zones are defined.,,,,OK,Ok, as per rule 226 Elementary_Gama zones are defined.,
+Rule_TECHROOM_0001,N,Bupenra,NOK,Nok, for technical room CCO_PYT & CES_PYT Track_ID & Station_ID is not defined.,,,,NOK,Nok, for technical room CCO_PYT & CES_PYT Track_ID & Station_ID is not defined.,
+Rule_TECHROOM_0002,N,Bupenra,OK,Ok,all switches, signlas, SDDB & SPK's are linked to the nearest technical room.,,,,OK,Ok,all switches, signlas, SDDB & SPK's are linked to the nearest technical room.,
+Rule_TECHROOM_0004,N,Bupenra,OK,OK, all switches, signlas, SDDB & SPK's of a station are affected in the same technical room.,,,,OK,OK, all switches, signlas, SDDB & SPK's of a station are affected in the same technical room.,
+Rule_TECHROOM_0005,N,Bupenra,OK,OK, all switches, signlas, SDDB & SPK's located in CBI area are affected in the technical room located in the CBI area.,,,,OK,OK, all switches, signlas, SDDB & SPK's located in CBI area are affected in the technical room located in the CBI area.,
+Rule_TECHROOM_0006,N,Bupenra,NOK,Nok, for technical room CCO_PYT & CES_PYT Track_ID & Station_ID is not defined.,,,,NOK,Nok, for technical room CCO_PYT & CES_PYT Track_ID & Station_ID is not defined.,
+Rule_DB_Track_Container_0004,N,Bupenra,OK,Ok,total 263 blocks are used in this B.L.,,,,OK,Ok,total 263 blocks are used in this B.L.,
+Rule_DB_TCHAIN_0001,N,Bupenra,OK,OK, track chainig is defined according to ascending Track_ID.,,,,OK,OK, track chainig is defined according to ascending Track_ID.,
+Rule_DB_REGUL_0004,N,Bupenra,OK,Ok,Train_Wakeup_Delay_Max is defined 0, as Train_Remote_Wakeup is "FALSE" in SyPROS.,,,,OK,Ok,Train_Wakeup_Delay_Max is defined 0, as Train_Remote_Wakeup is "FALSE" in SyPROS.,
+Rule_DB_TRAINS_0001,N,Bupenra,OK,OK,Train_Formation_Characteristics ID is defined from [1:24].,,,,OK,OK,Train_Formation_Characteristics ID is defined from [1:24].,
+Rule_DB_TRAINS_0004,N,Bupenra,OK,OK, FSB_In_Case_Of_Overspeed is defined "false" for both TRFC_3 & TRFC_N3.,,,,OK,OK, FSB_In_Case_Of_Overspeed is defined "false" for both TRFC_3 & TRFC_N3.,
+Rule_DB_TRAINS_0005,N,Bupenra,OK,All theTRFC linked to ssp in the platform, hence train stop in staion is managed by URBALIS System.,,,,OK,All theTRFC linked to ssp in the platform, hence train stop in staion is managed by URBALIS System.,
+RCD_IUS_0001,N,Bupenra,NOK,Nok,as only one urbalis sector is defined in this B.L, this rule should be made NA in SyCR TM.,,,,NOK,Nok,as only one urbalis sector is defined in this B.L, this rule should be made NA in SyCR TM.,
+RCD_IUS_0002,N,Bupenra,NOK,Nok,as only one urbalis sector is defined in this B.L, this rule should be made NA in SyCR TM.,,,,NOK,Nok,as only one urbalis sector is defined in this B.L, this rule should be made NA in SyCR TM.,
+Rule_IUS_0002,N,Bupenra,NOK,Nok,as only one urbalis sector is defined in this B.L, this rule should be made NA in SyCR TM.,,,,NOK,Nok,as only one urbalis sector is defined in this B.L, this rule should be made NA in SyCR TM.,
+Rule_IUS_0003,N,Bupenra,NOK,Nok,as only one urbalis sector is defined in this B.L, this rule should be made NA in SyCR TM.,,,,NOK,Nok,as only one urbalis sector is defined in this B.L, this rule should be made NA in SyCR TM.,
+Rule_TMS_SDD_0070,Y,Bupenra,NV,Installation constraint cannot be verified.,Shruthi,NV,This rule cannot be verified at SyDT level,NV,Installation constraint cannot be verified.,
+Rule_DB_ALA_0003,Y,Swetha,OK,RTI_Depot_No_ATC_Emergency_Route_Release_Time is set to 24000ms in RTI whereas in SyDT it is set to 25000 ms. Hence NOK. ,Shruthi,OK,Value of parameter "RTI_Depot_No_ATC_Emergency_Route_Release_Time" is not exactly matching with RTI. But safety point of view 1s difference can be ignored. Hence Ok,OK,Value of parameter "RTI_Depot_No_ATC_Emergency_Route_Release_Time" is not exactly matching with RTI. But safety point of view 1s difference can be ignored. Hence Ok,
+Rule_DB_ATCEQUIP_0006,N,Prabhakar,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,,,,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,
+Rule_MASC_0001,Y,Swetha,OK,Checked OK. Project.Project_Option.MASC_Commitment_Available is set to “false”, hence the value of System_Constraints_Constant.MASC_Survival_Time is set to “0”. ,Shruthi,OK,MASC_Survival_Time is set to 0 as MASC_Commitment_Available is False. Hence Ok,OK,Checked OK. Project.Project_Option.MASC_Commitment_Available is set to “false”, hence the value of System_Constraints_Constant.MASC_Survival_Time is set to “0”. ,
+Rule_DB_ATS_SS_0008,N,Prabhakar,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,,,,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,
+Rule_DB_BUFFER_0002,Y,Swetha,OK,Only one urbalis sector is used. Hence OK.,Bupendra,NOK,NOK,  the length of the availability buffer zone is set 164cm, but we have only one urbalis sector in this B.L, so it should be set to  "0".,NOK,NOK,  the length of the availability buffer zone is set 164cm, but we have only one urbalis sector in this B.L, so it should be set to  "0".,
+Rule_DB_CBI_SS_0008,N,Prabhakar,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,,,,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,
+Rule_DB_CBI_RCK_0004,Y,Swetha,OK,CBI_Routes_Cycles_Control_Key.Type is set to Route Cycle Control Key. Hence OK.,Shruthi,OK,All CBI_Routes_Cycles_Control_Key.Type are equal to Route Cycle Control Key.,OK,CBI_Routes_Cycles_Control_Key.Type is set to Route Cycle Control Key. Hence OK.,
+Rule_TMS_COE_0015,N,Prabhakar,OK,for Platfroms which has same KP as COD has same set of SSP's ,,,,OK,for Platfroms which has same KP as COD has same set of SSP's ,
+Rule_TMS_COE_0032,N,Prabhakar,OK,NO COD has same duo Kp begin & End with different directkon,,,,OK,NO COD has same duo Kp begin & End with different directkon,
+Rule_DB_PSR_0003,N,Prabhakar,NOK,Functional PSR's on the  beginning of the VP06 and VP08  ware not defined. These tracks has ATC signalization boundaries on them,,,,NOK,Functional PSR's on the  beginning of the VP06 and VP08  ware not defined. These tracks has ATC signalization boundaries on them,
+Rule_DB_PSR_0004,Y,Swetha,OK,Safety PSR are defined accordingly. Hence OK.,Shruthi,NOk,PSR not defined for tracks VP06(-20.83) and VP08(-64.29) which are part of ATC area in depot.,NOK,PSR not defined for tracks VP06(-20.83) and VP08(-64.29) which are part of ATC area in depot.,
+Rule_TMS_Cycle_0012,Y,Swetha,NOK,Cycle_Route_Strike_In_Distance defined in SyDT doe not match with calculated value. Hence NOK.,Shruthi,OK,Cycle_Route_Strike_In_Distance is equal to the length between the signal origin of this route (the one used after turnback) and the boundary of the Change Of End.,NOK,Cycle_Route_Strike_In_Distance defined in SyDT doe not match with calculated value. Hence NOK.,
+Rule_TMS_Cycle_0015,Y,Swetha,OK,Routes and Strike-In distances are filled accordingly. Hence OK.,Bupendra,OK,OK, the link between Route_Id_List field and Strike-In Distance field, the route is captured according to the sequence of those routes in the cycle.,OK,OK, the link between Route_Id_List field and Strike-In Distance field, the route is captured according to the sequence of those routes in the cycle.,
+Rule_TMS_DA_0003,Y,Swetha,NOK,Min_Vehicle_Length and D_Overhang_Min_Vehicle values are rounded up in SyDT. D_Non_Shunt_Min_Vehicle value defined in SyDT(460 cm) mismatch with Train Characteristics(2000 mm). Hence NOK.,Shruthi,OK,Smallest Train formation and its non shunting distance is defined in the project.,NOK,Min_Vehicle_Length and D_Overhang_Min_Vehicle values are rounded up in SyDT. D_Non_Shunt_Min_Vehicle value defined in SyDT(460 cm) mismatch with Train Characteristics(2000 mm). Hence NOK.,
+Rule_DB_General_0009,Y,Swetha,NOK,No grades defined in Entry of Track V1.,Shruthi,Nok,Grade not defined at the ATC/Non ATC boundary for tracks VP06,VP08 in Depot,NOK,Grade not defined at the ATC/Non ATC boundary for tracks VP06,VP08, VPY in Depot,
+Rule_DB_General_0010,N,Prabhakar,NOK,On Track VP08,  Track container is not defined from SDDB E_302_207_PYT which is the ATC signalization boundary
+
+Same with VPT01,  Track container is not starting at the signalization boundary.,,,,NOK,On Track VP08,  Track container is not defined from SDDB E_302_207_PYT which is the ATC signalization boundary
+
+Same with VPT01,  Track container is not starting at the signalization boundary.,
+Rule_DB_General_0025,Y,Swetha,OK,The timer “T_CBI_No_Point_Reverse_Detection_Timeout” is set to zero since this is REG project.  Hence OK.,Bupendra,OK,OK, T_CBI_No_Point_Reverse_Detection_Timeout defined 0.,OK,OK, T_CBI_No_Point_Reverse_Detection_Timeout defined 0.,
+Rule_DB_General_0029,Y,Swetha,NOK,TSR_Change_Timer value defined in SyDT(357 s) does not match with RTI(355.22 s) . Hence NOK.,Shruthi,OK,Value of Parameter "TSR_Change_Timer" is not exactly matching with RTI. But safety point of view, 1s difference can be ignored. Hence Ok ,NOK,TSR_Change_Timer value defined in SyDT(357 s) does not match with RTI(355.22 s) . Hence NOK.,
+Rule_DB_General_0035,Y,Swetha,OK,CBI_Safety_SDD_Occupation_Delay value is rounded up in SyDT. Hence OK.,Shruthi,OK,Value of the “CBI_Safety_SDD_Occupation_Delay” is matching with RTI. Hence Ok,OK,Value of the “CBI_Safety_SDD_Occupation_Delay” is matching with RTI. Hence Ok,
+Rule_DB_Line_0003,Y,Swetha,OK,Min_Vehicle_Length is defined by the project. Hence OK.,Shruthi,OK,D_Non_Shunt_Min_Vehicle and Min_Vehicle_Length are defined.,OK,D_Non_Shunt_Min_Vehicle and Min_Vehicle_Length are defined.,
+Rule_DB_MSS_SS_0005,N,Prabhakar,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,,,,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,
+Rule_DB_MSSEQUIP_0002,N,Prabhakar,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,,,,OK,This will be verified in the SyAP addressing plan consistency check. Refer SyAP VR.,
+Rule_TMS_Overlap_0002,Y,Swetha,NOK,Following overlaps are set to CBI Critical Normal inspite of no points in the overlap extremity.
+O_S_504_70_LAN
+O_S_507_74_LAN
+O_S_704_84_SIS
+O_S_707_88_SIS,Shruthi,NOk,For signal S_108_08_ALB, is inside the range of Max(D_Overlap_Outline, D_Overlap_CBI) distance and marked Not Interlocked overlap.,NOK,Refer Chain1 and Chain2 comments,
+Rule_TMS_Overlap_0010,Y,Swetha,NOK,Following overlaps are set to CBI Critical Normal inspite of no points in the overlap extremity.
+O_S_504_70_LAN
+O_S_507_74_LAN
+O_S_704_84_SIS
+O_S_707_88_SIS,Shruthi,NOk,For signal S_108_08_ALB and S_206_30_STO, is inside the range of Max(D_Overlap_Outline, D_Overlap_CBI) distance and marked Not Interlocked overlap.,NOK,Refer Chain1 and Chain2 comments,
+Rule_TMS_Overlap_0029,Y,Swetha,OK,Checked OK.Route signal is covered by the strike-in of an interlocked overlap, the overlap will be set when the route is set and locked. The project wants this behaviour.,Shruthi,OK,Route signals are covered by the strike-in of an interlocked overlap. Hence as per the rule, overlap is set when route is set.,OK,Checked OK.Route signal is covered by the strike-in of an interlocked overlap, the overlap will be set when the route is set and locked. The project wants this behaviour.,
+Rule_TMS_Overlap_0033,Y,Swetha,OK,Checked OK. No incompatibility between any overlap and any route.,Rahul,OK,All signal overlap type Critical Normal consists of Switch ID List in case if the respective switch fouling point. Hence OK.,OK,All signal overlap type Critical Normal consists of Switch ID List in case if the respective switch fouling point. Hence OK.,
+Rule_TMS_Overlap_0035,Y,Swetha,OK,Overlap_Switch_ID_List is defined by the project. Hence OK.,Shruthi,Ok,Switch ID list is defined for overlaps whose points and Fouling Points intersect the D_Overlap_CBI,OK,Switch ID list is defined for overlaps whose points and Fouling Points intersect the D_Overlap_CBI,
+Rule_DB_PRJ_0003,N,Prabhakar,OK,ATO_Activation_In_MCS set to None in SyPROS. Also SyDT is inlinw with SyPROS,,,,OK,ATO_Activation_In_MCS set to None in SyPROS. Also SyDT is inlinw with SyPROS,
+Rule_DB_PRJ_0007,N,Prabhakar,OK,Project_Option.Emergency_Route_Release_Information_Available set to True in SyDT, PNM is REG project and CBI is UEVOL one,,,,OK,Project_Option.Emergency_Route_Release_Information_Available set to True in SyDT, PNM is REG project and CBI is UEVOL one,
+Rule_DB_ROUTE_0003,N,Prabhakar,OK,In PNM L1 there is only one CBI signalization area. Hence this rule is OK,,,,OK,In PNM L1 there is only one CBI signalization area. Hence this rule is OK,
+Rule_TMS_SDD_0017,Y,Swetha,OK,A scissors crossover (double crossing) are splitted into two secondary detection devices when the device used is an axle counter. Hence OK.,Shruthi,OK,Crossovers are split in 2 SDD (axle counter). Hence OK,OK,A scissors crossover (double crossing) are splitted into two secondary detection devices when the device used is an axle counter. Hence OK.,
+Rule_TMS_SDD_0056,N,Prabhakar,OK,In PNM L1C, Axle counters are used. Hence D_Joint  will be 0.,,,,OK,In PNM L1C, Axle counters are used. Hence D_Joint  will be 0.,
+Rule_DB_SIGAREA_0043,N,Prabhakar,OK,From ATC equipments cap it is evident that only 24 trains defined which is less than 55 and also only one ZC defined.,,,,OK,From ATC equipments cap it is evident that only 24 trains defined which is less than 55 and also only one ZC defined.,
+Rule_DB_SIGAREA_0082,N,Prabhakar,OK,As per SyPROS, there is no local ATS in the panama L1. hence no ATS_Local signalization area defined . ,,,,OK,As per SyPROS, there is no local ATS in the panama L1. hence no ATS_Local signalization area defined . ,
+Rule_TMS_Signal_0005,N,Prabhakar,OK,For Panama L1 to L1c, modifiactions pertaing only to depot. Mainline there is no change.  Hence this rule shall be OK . (L1 is already in revenue),,,,OK,For Panama L1 to L1c, modifiactions pertaing only to depot. Mainline there is no change.  Hence this rule shall be OK . (L1 is already in revenue),
+Rule_TMS_Signal_0009,Y,Swetha,OK,Checked OK. All signals are linked to secondary dectection device accordingly.,Shruthi,OK,All signals are linked to a Secondary Detection Device,OK,Checked OK. All signals are linked to secondary dectection device accordingly.,
+Rule_TMS_Signal_0034,Y,Swetha,OK,All Signals protect the SSD in upstream. Hence OK.,Shruthi,OK,Signals protect the SDD upstream the signal. Signals of type SLT_End are at the end of track and does not protect any SDD,OK,Signals protect the SDD upstream the signal. Signals of type SLT_End are at the end of track and does not protect any SDD,
+Rule_POSWI_0005,Y,Swetha,OK,Checked OK. Points are characterized with following appropriately : 
+- the Kp position of the point toe,
+•  the Kp position of the fouling point,
+•  the distance between the beginning of the point and the toe 
+•  the distance between the toe and the ending of the point heel for the normal branch
+•  the distance between the toe and the ending of the point heel for the divergent branch. Hence OK.,Shruthi,OK,Toe Kp, D_Toe_joint, D_Normal_Toe_Fouling_Point_Joint and D_Reverse_Toe_Fouling_Point_Joint are defined for all the points. Hence ok,OK,Checked OK. Points are characterized with following appropriately : 
+- the Kp position of the point toe,
+•  the Kp position of the fouling point,
+•  the distance between the beginning of the point and the toe 
+•  the distance between the toe and the ending of the point heel for the normal branch
+•  the distance between the toe and the ending of the point heel for the divergent branch. Hence OK.,
+Rule_SYS_DIM_0006,N,Prabhakar,OK,only 24 trains defined in the projects,,,,OK,only 24 trains defined in the projects,
+Rule_SYS_DIM_0012,N,Prabhakar,OK,Checked OK,,,,OK,Checked OK,
+Rule_DB_Track_Container_0007,N,Prabhakar,OK,Checked OK. No_Evacuation_wayside is different from None only on the mainline tracks,,,,OK,Checked OK. No_Evacuation_wayside is different from None only on the mainline tracks,
+Rule_DB_TRAINS_0006,Y,Swetha,OK,C_Max_Mov_Train_Immo is set to zero. Hence OK.,Bupendra,OK,Ok, C_Max_Mov_Train_Immo is defined 0 in SyDT.,OK,Ok, C_Max_Mov_Train_Immo is defined 0 in SyDT.,
+Rule_CBTC_SPEED,Y,Swetha,NOK,CBTC_Max_Speed speed is set to 91 kmph in SyDT and 90 kmph in RTI. Hence NOK.,Bupendra,OK,OK, CBTC_Max_Speed is defined 91Km/h,NOK,CBTC_Max_Speed speed is set to 91 kmph in SyDT and 90 kmph in RTI. Hence NOK.,
+Rule_Depot_SPEED,Y,Swetha,NOK,Depot_Max_Speed is undefined in SyCR. Hence NOK.,Shruthi,OK,Depot_Max_Speed is defined in the project.,NOK,Depot_Max_Speed is undefined in SyCR. Hence NOK.,
+Rule_Rollback_Max_Distance,Y,Swetha,OK,SyDT data matches with RTI data. Hence OK.,Shruthi,OK,Rollback_Max_Distance is much smaller than the Safety_Rollback_Triggering distance. Hence Ok,OK,Rollback_Max_Distance is much smaller than the Safety_Rollback_Triggering distance. Hence Ok,
+Safety_Rollback_Triggering,Y,Swetha,OK,C_Safety_Rollback_Triggering value defined in SyDT matches with RTI. Hence OK.,Bupendra,NOK,NOK, for TRFC_N3 C_Safety_Rollback_Triggering is defined 51 cm, while in RTI for both train it is defined 50cm.,NOK,NOK, for TRFC_N3 C_Safety_Rollback_Triggering is defined 51 cm, while in RTI for both train it is defined 50cm.,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,

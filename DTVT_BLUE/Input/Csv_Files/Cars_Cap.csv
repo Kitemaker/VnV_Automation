@@ -1,0 +1,6 @@
+ID,Name,Car_Type,Car_Length,Passengers_Mass,Empty_Mass,Full_Loaded_Mass,Rotating_Mass,Distance_Front_Head_Front_Bogie,Distance_Front_Head_Rear_Bogie,Distance_Rear_Head_Front_Bogie,Distance_Rear_Head_Rear_Bogie,Number_Of_Doors,Wheel_Type,Wheel_Min_Circumference,Wheel_Max_Circumference
+1,CAR_M5M6_TC,Trailer,2030,15341,31545,46886,4375,487,1687,1445,345,4,Iron,238,264
+2,CAR_M5M6_M1,Motorized,1889,15658,32197,47855,4375,345,1545,1545,345,4,Iron,238,264
+3,CAR_M5M6_M2,Motorized,1889,15599,32076,47675,4375,345,1545,1545,345,4,Iron,238,264
+4,CAR_S1S2,Motorized,1530,11600,24400,36000,2700,485,1530,1530,485,3,Iron,196,217
+5,CAR_S3M4,Motorized,1549,12075,22850,34925,2700,466,1549,1549,466,2,Iron,196,222

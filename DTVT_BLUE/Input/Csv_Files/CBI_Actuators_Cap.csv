@@ -1,0 +1,5 @@
+ID,Name,Type,Critical,Signal_ID_List,Route_ID_List,Technical_Room_ID
+1001,CBIAC_49_ZD,Route Conflict,Redundant Input,0,R_45A_ZD_49_ZD;R_45A_ZD_38_ZD;R_34A_ZD_49_ZD;R_34A_ZD_38_ZD;R_55_ZD_38_ZD;R_55_ZD_49_ZD,TCR_SET_S_4A_R
+1002,CBIAC_55_ZD,Route Conflict,Redundant Input,0,R_49_ZD_55_ZD;R_38_ZD_55_ZD,TCR_SET_S_4A_R
+2001,CBIAC_113_DMZ,Route Conflict,Redundant Input,0,R_110_DMZ_113_DMZ,TCR_DMZ_M_5D_L
+2002,CBIAC_101_DMZ,Route Conflict,Redundant Input,0,R_6_DMZ_8_DMZ,TCR_DMZ_M_5D_L

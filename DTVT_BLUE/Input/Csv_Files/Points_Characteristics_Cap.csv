@@ -1,0 +1,12 @@
+ID,Name,Type,Position_Normal,Deviated_Train_Speed_Max,Direct_Train_Speed_Max,Part_Of_Simplified_DSJ,Fouling_Propagation
+1,PTCH_80_25,Normal_Direct,None,25,80,false,true
+2,PTCH_80_40,Normal_Direct,None,40,80,false,true
+3,PTCH_80_50,Normal_Direct,None,50,80,false,true
+4,PTCH_80_70,Normal_Direct,None,70,80,false,true
+5,PTCH_80_80,Normal_Direct,None,80,80,false,true
+6,PTCH_70_40,Normal_Direct,None,40,70,false,true
+7,PTCH_70_50,Normal_Direct,None,50,70,false,true
+8,PTCH_25_25,Normal_Direct,None,25,25,false,true
+9,PTCH_70_25,Normal_Direct,None,25,70,false,true
+10,PTCH_70_70,Normal_Direct,None,70,70,false,true
+11,PTCH_40_40,Normal_Direct,None,40,40,false,true

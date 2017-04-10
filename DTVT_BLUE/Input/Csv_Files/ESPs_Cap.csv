@@ -1,0 +1,5 @@
+ID,Name,Monitored_In_Block_Mode,Localisation_In_Platform_ID,Localisation_In_Technical_Room_ID,Logical_Track_ID_List,Logical_Kp_ListLogical_KpValue,Logical_Kp_ListLogical_KpCorrected_Trolley_Value,Basic_Multitrack_Zone_ID_List,Signal_ID_List,Route_ID_List,Switch_ID_List,Critical,Technical_Room_ID
+1,ESP_ITW_3B_LU,false,PF_ITW_3B_LU,0,0,0,0,BMZ_RG_2_98,0,R_22_VLN_3_ITW;R_13_VLN_3_ITW;R_103A_ITW_3A_ITW;R_150A_ITW_3A_ITW;R_161A_ITW_3A_ITW;R_170A_ITW_3A_ITW;R_181A_ITW_3A_ITW;R_190A_ITW_3A_ITW,0,Input-Output Redundant,TCR_ITW_S_3B_R
+1001,ESP_ND_8_RD,false,PF_ND_8_RD,0,0,0,0,BMZ_NZ_2_10,SI_4_U_ND,R_1_CSN_6_ND;R_2_CSN_6_ND;R_111_ND_6_ND;R_121_ND_6_ND;R_130_ND_6_ND;R_101_ND_6_ND,0,Input-Output Redundant,TCR_ND_M_8_R
+2001,ESP_GPP_5E_LU,false,PF_GPP_5E_LU,0,0,0,0,BMZ_GP_1_71,0,R_130A_GPP_9_GPP;R_20A_GPP_9_GPP;R_120A_GPP_9_GPP;R_110A_GPP_9_GPP;R_100A_GPP_9_GPP;R_13A_GPP_9_GPP;R_10_GPP_9_GPP;R_7A_GPP_9_GPP,0,Input-Output Redundant,TCR_GPP_M_5E_L
+2002,ESP_GN_1A_LU,false,PF_GN_1A_LU,0,0,0,0,BMZ_GN_1_81,0,R_12_GN_9_GN;R_20A_GN_9_GN;R_7A_GN_9_GN;R_13A_GN_9_GN;R_100A_GN_9_GN;R_110A_GN_9_GN,0,Input-Output Redundant,TCR_GN_M_1A_L

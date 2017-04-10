@@ -1,0 +1,20 @@
+ID,Name,Secondary_Detection_Device_Type,D_Joint,D_Joint_Without_GoS,D_Overlay,Max_SDD_Clearance_Timer,ZC_Reset,Checkable,ZC_Automatic_In_Operation,ZC_Automatic_Reset,Train_Tracer_Type,Buffering,D_Max_AC_To_Equipment_Station,Bypass_NIAP_Creation_CBTC_Exit
+1,SDDC_AC_C0R0,Axle Counter,0,0,0,0,false,false,false,false,None,true,0,false
+2,SDDC_AC_C1R0,Axle Counter,0,0,0,0,false,true,true,false,None,true,0,false
+3,SDDC_AC_C1R1,Axle Counter,0,0,0,0,true,true,true,true,None,true,0,false
+4,SDDC_AC_C1R1_STL,Axle Counter,0,0,0,0,true,true,true,true,None,false,0,false
+5,SDDC_AC_C0R0_TT,Axle Counter,0,0,0,0,false,false,false,false,NIAP creation from ATC Gate,true,0,true
+6,SDDC_AC_C1R1_DOV1,Axle Counter,0,0,319,0,true,true,true,true,None,true,0,false
+7,SDDC_AC_C1R1_DOV2,Axle Counter,0,0,321,0,true,true,true,true,None,true,0,false
+8,SDDC_AC_C1R1_DOV3,Axle Counter,0,0,282,0,true,true,true,true,None,true,0,false
+9,SDDC_AC_C1R1_DOV4,Axle Counter,0,0,284,0,true,true,true,true,None,true,0,false
+10,SDDC_AC_C1R1_DOV5,Axle Counter,0,0,322,0,true,true,true,true,None,true,0,false
+11,SDDC_AC_C1R1_DOV6,Axle Counter,0,0,144,0,true,true,true,true,None,true,0,false
+12,SDDC_AC_C1R1_DOV7,Axle Counter,0,0,181,0,true,true,true,true,None,true,0,false
+13,SDDC_AC_C1R1_DOV8,Axle Counter,0,0,214,0,true,true,true,true,None,true,0,false
+14,SDDC_AC_C1R1_DOV9,Axle Counter,0,0,178,0,true,true,true,true,None,true,0,false
+15,SDDC_AC_C1R1_DOV10,Axle Counter,0,0,145,0,true,true,true,true,None,true,0,false
+16,SDDC_AC_C1R1_DOV,Axle Counter,0,0,200,0,true,true,true,true,None,true,0,false
+17,SDDC_AC_C1R1_STL_DOV,Axle Counter,0,0,200,0,true,true,true,true,None,false,0,false
+18,SDDC_AC_C1R1_INTERCBI,Axle Counter,0,0,0,0,true,true,true,true,None,true,0,false
+19,SDDC_AC_C0R0_TT_STL,Axle Counter,0,0,0,0,false,false,false,false,NIAP creation from ATC Gate,false,0,true

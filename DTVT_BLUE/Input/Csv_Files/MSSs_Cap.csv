@@ -1,0 +1,2 @@
+ID,Name,SSID,Urbalis_Sector_ID,MSS_Area_ID,IP_Address_Blue,IP_Address_Red,MIB_IP_Address_Blue,MIB_IP_Address_Red,Subnet_Mask_Blue,Subnet_Mask_Red,Gateway_IP_Address_Blue,Gateway_IP_Address_Red,IP_Address_Maintenance,Subnet_Mask_Maintenance,MSS_Equipment_ID_List
+23041,MSS,1,US_SCMA,SIA_MSS,10.1.13.80,10.2.13.80,10.1.13.80,10.2.13.80,255.255.0.0,255.255.0.0,10.1.31.254,10.2.31.254,10.7.13.80,255.255.0.0,1;2

@@ -1,0 +1,5 @@
+ID,Name,Connection,Platform_ID,CBI_Signalisation_Area_ID,Type_List,ZC_Signalisation_Area_ID,Critical,Technical_Room_ID
+1,ZCA_ZC1,CBI,PF_ITW_3B_LU,SIA_IXL_1,Platform ATO Start Button,SIA_ZC_1,Input-Output Redundant,TCR_ITW_S_3B_R
+1001,ZCA_ZC2,CBI,PF_ND_8_RD,SIA_IXL_1,Platform ATO Start Button,SIA_ZC_2,Input-Output Redundant,TCR_ND_M_8_R
+2001,ZCA_ZC4_1,CBI,PF_GPP_5E_LU,SIA_IXL_2,Platform ATO Start Button,SIA_ZC_4,Input-Output Redundant,TCR_GPP_M_5E_L
+2002,ZCA_ZC4_2,CBI,PF_GN_1A_LU,SIA_IXL_2,Platform ATO Start Button,SIA_ZC_4,Input-Output Redundant,TCR_GN_M_1A_L

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tables>
+  
+  <!--
+      List of Tables and Columns used in the Rules ,Before executing test Rule script has to check
+      that all Tables and columns exist in the SyDT CSV files 
+      Developer needs to update this file whenever an new Table or Column is added in the source code 
+  -->
+  <!--
+      Author: Saleem Javed
+      Updated : 2017-09-04
+  -->
+  
+  <Table name="Points_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="" type=""/>
+    <Column name="" type=""/>
+    <Column name="" type=""/>    
+  </Table>
+  <Table name="Routes_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="Switch_ID_List" type="list"/>
+  </Table>
+  <Table name="Signals_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="" type=""/>
+  </Table>
+  <Table name="SDDB_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="" type=""/>
+  </Table>
+  <Table name="Switchs_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="Convergent_Point_ID_List" type="list"/>
+    <Column name="Divergent_Point_ID_List" type="list"/>
+  </Table>
+  <Table name="Tracks_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="" type=""/>
+  </Table>
+  <Table name="Secondary_Detection_Devices_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="Point_ID_List" type="list"/>
+  </Table>
+  <Table name="Signalisation_Areas_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="Area_Boundary_Secondary_Detection_Device_ID_List" type="list"/>
+    <Column name="Area_Type" type="str"/>
+  </Table> 
+  
+</Tables> 
+
+ 
+  
+

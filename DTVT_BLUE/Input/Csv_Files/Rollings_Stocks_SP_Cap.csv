@@ -1,0 +1,10 @@
+ID,Rolling_Stock_ID,Emergency_Braking_Traction_Cut_Off_Latency_Max,Emergency_Braking_Coasting_Latency_Max,Worst_Case_Emergency_Braking_Rate_Tunnel,Worst_Case_Emergency_Braking_Rate_Open_Area,Worst_Degraded_Case_Emergency_Braking_Rate_Tunnel,Worst_Degraded_Case_Emergency_Braking_Rate_Open_Area
+1,RS_M5M6,1387,1150,855,822,855,822
+2,RS_S1S2_1,1337,585,800,710,800,740
+3,RS_S1S2_2,1337,585,800,710,800,740
+4,RS_S1S2_3,1337,585,800,710,800,740
+5,RS_S1S2_4,1337,585,800,710,800,740
+6,RS_S3M4_1,1227,860,750,650,750,658
+8,RS_S3M4_2,1227,885,750,650,750,658
+9,RS_S3M4_3,1227,865,750,650,750,658
+10,RS_S3M4_4,1217,895,750,650,750,658

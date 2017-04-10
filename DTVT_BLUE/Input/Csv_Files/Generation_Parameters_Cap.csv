@@ -1,0 +1,2 @@
+ID,Maximal_Block_Length,Minimal_Block_Length,Depot_Secondary_Detection_Device_Max_Length,Depot_Secondary_Detection_Device_Min_Length,Mainline_Secondary_Detection_Device_Max_Length,Mainline_Secondary_Detection_Device_Min_Length,ATP_Cycle_Duration
+1,204000,10,0,0,204000,2713,200

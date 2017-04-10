@@ -1,0 +1,2 @@
+ID,Name,Urbalis_Sector_ID_List,Up_Signification,Down_Signification,CBI_Cycle_Duration,Restart_CBI_Time_CBTC,Restart_CBI_Time_Block_Mode,Conventional_Description_Direction,Conventional_Description_Direction_Reading_Way,C_Extreme_Advance_Delay,ATS_Central_Server_Area_ID_List,Min_Vehicle_Length,Min_Head_Opposite_Shunting_Axle_Vehicle_Length
+1,LI_SCMA,US_SCMA,Up,Dn,500,117,0,Up,Right to Left,60,SIA_CATS,3060,2670

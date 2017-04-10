@@ -1,0 +1,2 @@
+ID,External_Master_Clock_Type,IP_Address,Subnet_Mask,Gateway_IP_Address,Secondary_IP_Address,Secondary_Subnet_Mask,Secondary_Gateway_IP_Address
+1,Main,10.5.10.182,255.255.255.0,10.5.31.254,10.5.10.183,255.255.255.0,10.6.31.254

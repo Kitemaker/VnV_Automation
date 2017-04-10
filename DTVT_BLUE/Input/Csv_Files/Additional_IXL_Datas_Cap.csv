@@ -1,0 +1,8 @@
+ID,Name,Type_Of_Information,Point_ID,Object_ID,CBI_ID,Port_Type,Default_Value,Technical_Room_ID,Critical
+1001,AIXLD_45A_49_ZD,Last Subroute of Route,0,R_45A_ZD_49_ZD,IXL_1,Output,None,TCR_ZD_M_4A_R,Not Critical
+1002,AIXLD_34A_38_ZD,Last Subroute of Route,0,R_34A_ZD_38_ZD,IXL_1,Output,None,TCR_ZD_M_4A_R,Not Critical
+1003,AIXLD_55_49_ZD,Last Subroute of Route,0,R_55_ZD_49_ZD,IXL_1,Output,None,TCR_ZD_M_4A_R,Not Critical
+1004,AIXLD_55_38_ZD,Last Subroute of Route,0,R_55_ZD_38_ZD,IXL_1,Output,None,TCR_ZD_M_4A_R,Not Critical
+1005,AIXLD_49_55_ZD,Last Subroute of Route,0,R_49_ZD_55_ZD,IXL_1,Output,None,TCR_ZD_M_4A_R,Not Critical
+2001,AIXLD_6_101_DMZ,Last Subroute of Route,0,R_6_DMZ_101_DMZ,IXL_2,Output,None,TCR_DMZ_M_5D_L,Redundant Output
+2002,AIXLD_110_113_DMZ,Last Subroute of Route,0,R_110_DMZ_113_DMZ,IXL_2,Output,None,TCR_DMZ_M_5D_L,Redundant Output

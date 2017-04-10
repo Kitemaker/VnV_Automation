@@ -1,0 +1,3 @@
+ID,MSS_Equipment_Type,IP_Address_Blue,IP_Address_Red,MIB_IP_Address_Blue,MIB_IP_Address_Red,Subnet_Mask_Blue,Subnet_Mask_Red,Gateway_IP_Address_Blue,Gateway_IP_Address_Red,IP_Address_Maintenance,Subnet_Mask_Maintenance,Technical_Room_ID
+1,Server1,10.1.13.81,10.2.13.81,10.1.13.81,10.2.13.81,255.255.0.0,255.255.0.0,10.1.31.254,10.2.31.254,10.7.13.81,255.255.0.0,TCR_LCM_M_0
+2,Server2,10.1.13.82,10.2.13.82,10.1.13.82,10.2.13.82,255.255.0.0,255.255.0.0,10.1.31.254,10.2.31.254,10.7.13.82,255.255.0.0,TCR_LCM_M_0

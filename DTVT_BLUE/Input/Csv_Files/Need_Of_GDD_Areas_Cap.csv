@@ -1,0 +1,5 @@
+ID,Name,Secondary_Detection_Device_ID_List,Basic_Multitrack_Zone_ID_List,ZC_Actuator_ID_List
+1,NGDD_ITW_4B_RD,0,BMZ_NGDD_1_97,0
+1001,NGDD_ND_7_LU,0,BMZ_NGDD_1_11,0
+3,NGDD_GPP_6E_RD,0,BMZ_NGDD_2_70,0
+4,NGDD_GN_2A_RD,0,BMZ_NGDD_1_80,0
