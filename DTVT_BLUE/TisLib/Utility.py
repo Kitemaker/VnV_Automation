@@ -2,6 +2,8 @@ import sys
 import os.path
 import logging
 import xml.etree.ElementTree as ET
+from openpyxl import workbook, worksheet, cell
+from openpyxl import load_workbook
 
 
 def Arrange(DeviceID:list,Kp:list,rev:bool):
@@ -29,8 +31,8 @@ def Arrange(DeviceID:list,Kp:list,rev:bool):
 def getSDDBBetSignals(KpSig1:int,KpSig2:int,Track:str,SDDBData:dict):   
     count=0
     try:
-        sddbKps = SDDBData.sddb_kp
-        sddbTrack = SDDBData.sddb_trackID
+        sddbKps = GetKpValue(SDDBData['KpValue'],SDDBData['KpCorrected_Trolley_Value'])
+        sddbTrack = SDDBData['Track_ID']
         sddbTrackKps = []
         for item in range(len(sddbTrack)):
             if(sddbTrack[item] == Track):
@@ -68,18 +70,17 @@ def GetLogger(logFile):
 
     return logger
 
-def GetProjectConstants(constantfile:str):
+def GetProjectConstants(configfile:str):
     """Returns the dictionalry of project constants defined in the constant file
        constantfile= full path of constant file
     """
     tis_logger=logging.getLogger('Tis_Logger')
     proj_const=dict()
-    try:
-        tis_logger.info("Reading project constant from " + constantfile)
-        config = ET.parse(constantfile)
+    try:    
+        config = ET.parse(configfile)
         rootXml = config.getroot()
-        const_file_node = rootXml.find("Constant")
-        const_file = ET.parse(const_file_node.attrib['file'])   
+        const_file_node = rootXml.find("ConstantFile")
+        const_file = ET.parse(const_file_node.attrib['path'])   
         const_root_xml = const_file.getroot()
 
         for el in const_root_xml.findall('constant'):
@@ -90,7 +91,7 @@ def GetProjectConstants(constantfile:str):
                 tis_logger.error("Method=GetProjectConstants , Module=Utility" +  sys.exc_info()[0])
                 continue
     except:
-       tis_logger.error("Method=GetProjectConstants , Module=Utility" +  sys.exc_info()[0])
+       tis_logger.error("Method=GetProjectConstants , Module=Utility" ,  sys.exc_info()[0])
     finally:
         return proj_const
 
@@ -126,6 +127,41 @@ def ConvertToString(listInput:list):
 
     return out_text
 
+def GetKpValue(kpValue:list,kpTrolleyValue:list):
+    kp=list()
+    try:    
+        if (len(kpValue) == len(kpTrolleyValue)):
+            for i in range(len(kpValue)):
+                kp.append(int(kpValue[i]) + int(kpTrolleyValue[i]))
 
+            return kp
+               
+        else:
+            return None
+        
+    except:
+        print("Unexpected error:" + sys.exc_info()[0])
+        return None
 
-
+def Get_C_Late_Change_Distance(InputFile:str):
+    """ Input File must be in .xlsx format and Input must be in 'Sheet1' 
+        returns dictionary of platform name and its C_Late_Change_Distance
+    """
+    c_late_change_dist = dict()
+    try:
+        
+        input_wb = load_workbook(InputFile)
+        input_ws = input_wb.get_sheet_by_name('Sheet1')
+        col_A = input_ws['A']
+        col_B = input_ws['B']
+        for index in range(1,len(col_A)):
+            if col_B[index].value != None:
+                c_late_change_dist[str.strip(col_A[index].value)] = int(col_B[index].value)
+            else:
+                break        
+    except:
+        logging.getLogger('Tis_Logger').error(sys.exc_info()[0])
+        c_late_change_dist = None
+    finally:
+        input_wb.close()
+        return c_late_change_dist 

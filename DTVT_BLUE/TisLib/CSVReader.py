@@ -24,6 +24,8 @@ class CSVReader(object):
         self.Signalisation_Areas_Cap = 'Signalisation_Areas_Cap'
         self.Switchs_Cap = 'Switchs_Cap'
         self.Tracks_Cap = 'Tracks_Cap'
+        self.Service_Stopping_Points_Cap='Service_Stopping_Points_Cap'
+        self.Platforms_Cap = 'Platforms_Cap'
 
 
         for item in self.files:            
@@ -50,6 +52,12 @@ class CSVReader(object):
  
             for i in range(len(title_row)):
                 file_dict[str.rstrip(title_row[i].strip())]  = columns[i][1:]
+            
+            # remove any whitespace 
+            for key,value in file_dict.items():
+                for item in value:
+                    item = item.strip()
+                    item = item.rstrip()
 
         except FileNotFoundError:
             self.logger.error("File Not found, Please check the path" + "Module: CSVReader.py Method:ReadCsvFile") 

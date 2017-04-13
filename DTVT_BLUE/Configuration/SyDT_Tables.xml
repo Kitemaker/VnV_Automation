@@ -18,43 +18,73 @@
     <Column name="" type=""/>
     <Column name="" type=""/>    
   </Table>
+  
   <Table name="Routes_Cap">
     <Column name="ID" type="str"/>
     <Column name="Name" type="str"/>
     <Column name="Switch_ID_List" type="list"/>
   </Table>
+  
   <Table name="Signals_Cap">
     <Column name="ID" type="str"/>
     <Column name="Name" type="str"/>
     <Column name="" type=""/>
+    <Column name="KpValue" type="int"/>
+    <Column name="KpCorrected_Trolley_Value" type="int"/>
+    <Column name="Track_ID" type="str"/>
+    <Column name="Direction" type="str"/>
+    <Column name="Signal_Type_Function" type="str"/>
+    <Column name="SSP_ID" type ="str" />
   </Table>
+  
   <Table name="SDDB_Cap">
     <Column name="ID" type="str"/>
     <Column name="Name" type="str"/>
-    <Column name="" type=""/>
+    <Column name="KpValue" type="str"/>
+    <Column name="KpCorrected_Trolley_Value" type="str"/>
+    <Column name="Track_ID" type="str"/>
   </Table>
+  
   <Table name="Switchs_Cap">
     <Column name="ID" type="str"/>
     <Column name="Name" type="str"/>
     <Column name="Convergent_Point_ID_List" type="list"/>
     <Column name="Divergent_Point_ID_List" type="list"/>
   </Table>
+  
   <Table name="Tracks_Cap">
     <Column name="ID" type="str"/>
     <Column name="Name" type="str"/>
     <Column name="" type=""/>
   </Table>
+  
   <Table name="Secondary_Detection_Devices_Cap">
     <Column name="ID" type="str"/>
     <Column name="Name" type="str"/>
     <Column name="Point_ID_List" type="list"/>
   </Table>
+  
   <Table name="Signalisation_Areas_Cap">
     <Column name="ID" type="str"/>
     <Column name="Name" type="str"/>
     <Column name="Area_Boundary_Secondary_Detection_Device_ID_List" type="list"/>
     <Column name="Area_Type" type="str"/>
-  </Table> 
+  </Table>
+  
+  <Table name="Service_Stopping_Points_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="KpValue" type="int"/>
+    <Column name="KpValue" type="int"/>
+    <Column name="KpCorrected_Trolley_Value" type="int"/>
+  </Table>
+  
+  <Table name="Platforms_Cap">
+    <Column name="ID" type="str"/>
+    <Column name="Name" type="str"/>
+    <Column name="C_Late_Change_Distance" type="int"/>
+    <Column name="Platform_Length" type="int"/>    
+  </Table>
   
 </Tables> 
 

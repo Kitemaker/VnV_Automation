@@ -5,8 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DTVT_VIEW"
         mc:Ignorable="d"
-        Title="DTVT_View" Height="800" Width="1000" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="DTVT BLUE" Height="800" Width="1000" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="WndMain_Closing">
     <Grid x:Name="GridMain" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
-        
+        <Menu x:Name="menu" Height="30" VerticalAlignment="Top" Width="1000" FontSize="14.667" FontFamily="Calibri" HorizontalAlignment="Left" >
+            <MenuItem x:Name="fileMenu"  Header="File" Height="30" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Padding="15,5,8,3">
+                <MenuItem x:Name="newPrjMenu"  Header="New Project" Click="newPrjMenu_Click"/>
+                <MenuItem x:Name="openPrjMenu" Header="Open Project" Click="openPrjMenu_Click"/>
+                <MenuItem x:Name="savePrjMenu" Header="SaveProject"/>
+                <MenuItem x:Name="exitPrjMenu" Header="Exit" Click="exitPrjMenu_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="dataMenu"  Header="Data" Height="30" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Padding="15,5,8,3">
+                <MenuItem x:Name="rulesMenu"  Header="Import Rules" Click="rulesMenu_Click" />
+                <MenuItem x:Name="csvMenu" Header="Import CSV Folder" Click="csvMenu_Click"/>
+                <MenuItem x:Name="sydtMenu" Header="Import SyDB"/>
+                <MenuItem x:Name="constMenu" Header="Import Constants" Click="constMenu_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="helpMenu"  Header="Help" Height="30" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Padding="15,5,8,3">
+                <MenuItem x:Name="userManualMenu"  Header="User Manual"/>
+                <MenuItem x:Name="aboutMenu" Header="About.."/>
+
+            </MenuItem>
+
+        </Menu>
+
+        <Grid  HorizontalAlignment="Left" Height="732" Margin="10,30,0,0" VerticalAlignment="Top" Width="300">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="70*"/>
+            </Grid.RowDefinitions>
+
+            <Grid  Grid.Row ="0" HorizontalAlignment="Left" Height="200" Margin="5,5,0,0" VerticalAlignment="Top" Width="285" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="150*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="lblPrjName"  Content="Project Name"  Grid.Column ="0" Grid.Row="0" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtPrjName" Grid.Column ="1" Grid.Row="0" Height="23" Margin="0,10,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="140" >
+                    <TextBox.BindingGroup>
+                        <BindingGroup/>
+                    </TextBox.BindingGroup>
+                </TextBox>
+                <Label x:Name="lblPrjBline"  Content="Project Baseline"  Grid.Column ="0" Grid.Row="1" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtPrjBline" Grid.Column ="1" Grid.Row="1" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="lblUevolBline"  Content="Uevol Baseline"  Grid.Column ="0" Grid.Row="2" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtUevolBline" Grid.Column ="1" Grid.Row="2" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="lbldbBline"  Content="DB Baseline"  Grid.Column ="0" Grid.Row="3" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtdbBline" Grid.Column ="1" Grid.Row="3" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="lblSyDTVer"  Content="SyDT Version"  Grid.Column ="0" Grid.Row="4" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtSyDTVer" Grid.Column ="1" Grid.Row="4" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+            </Grid>
+
+            <DockPanel  Grid.Row ="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Height="Auto" MinWidth="100"  Margin="10">                
+                    <TabControl x:Name="tabControl"  DockPanel.Dock="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Height="Auto" MinWidth="100"> 
+                        <TabItem x:Name="tabCsvFiles" Header="CSVs">
+                        <Grid Background="White">
+                            <ListBox x:Name="listCsvFiles" HorizontalAlignment="Left" Height="200" Margin="2,2,0,0" VerticalAlignment="Top" Width="200"/>
+                        </Grid>
+                        </TabItem>
+                        <TabItem x:Name="tabResults" Header="Results">
+                            <Grid Background="White">
+                          
+                        </Grid>
+                    </TabItem>
+                    </TabControl> 
+            </DockPanel>
+
+        </Grid>
+
+
+
     </Grid>
 </Window>

@@ -6,7 +6,7 @@
     <ProjectGuid>568876ee-6558-4368-8a43-1436e33dbf83</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>Rules\RULE_DB_ROUTE_0003.py</StartupFile>
+    <StartupFile>Rules\RULE_TMS_PLATF_0003.py</StartupFile>
     <SearchPath>TisLib\</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -26,10 +26,22 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Rules\RCD_SIGNAL_0001.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Rules\RULE_DB_ROUTE_0003.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Rules\RULE_TMS_PLATF_0003.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\RULE_TMS_SIGNAL_0012.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TisLib\Configuration.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TisLib\SydbReader.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TisLib\Utility.py">
@@ -60,6 +72,9 @@
     <Content Include="Configuration\SyDT_Tables.xml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Input\Constant\constant_generic.xml" />
+    <Content Include="Input\Constant\C_Late_Change_Distance.xlsx" />
+    <Content Include="Input\Constant\Tracks_Direction.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.5" />

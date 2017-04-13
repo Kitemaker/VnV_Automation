@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
  <Project name="L1_SCMA" baseline="" uevol_baseline="" database_baseline="" sydt_version="">
    
-    <SyDT name="" version="" path="" />
-   <RootFolder path="C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\SyDT_Verifier"/>
-   <CSVFiles directory="C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\SyDT_Verifier\Input\Csv_Files"/> 
-   <Rules directory="C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\SyDT_Verifier\Rules"/>"
-   <Constant file="C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\SyDT_Verifier\Input\Constant\constant_file.xml" />
+   <SyDB path = "C:\Users\295563\Documents\01 PROJECTS\VnV\SCMA\SCMA_4.3.1\INPUTS\SyDB_4.3.1\DataPackage oF SCMA _RO_4.3.1\RO_4.3.1_SyDB\SyDB_SCMA_RO_4.3.1.xml" />   
+   <RootFolder path="C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\SyDT_Verifier"/>   
+   <C_Late_Change_Distance path ="C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_BLUE\Input\Constant\C_Late_Change_Distance.xlsx"/>
+   <ConstantFile path="C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_BLUE\Input\Constant\constant_generic.xml"/>
+   <C_Late_Change_Distance path="C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_BLUE\Input\Constant\C_Late_Change_Distance.xlsx"/>
+   <Tracks_Direction path="C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_BLUE\Input\Constant\Tracks_Direction.xlsx"/>
     <Urbalis_Sectors>
       <Urbalis_Sector id="US_SCMA">
         <Parameters>

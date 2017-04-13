@@ -25,8 +25,15 @@ proj_const = dict()
 proj_const = Utility.GetProjectConstants(config.config_File_Path)
 print("Executing " + os.path.basename(__file__))
 tis_log.info("Executing " + os.path.basename(__file__))
-# ==========================================================================================================
+# =======================================================================================================================
 
+
+### =========Rule RULE_DB_ROUTE_0003 ========================================================================================
+# Author : Saleem Javed
+# Updated 10 April 2017
+# Caps Used : Signals_Cap ,Routes_Cap ,Switchs_Cap ,Points_Cap, Secondary_Detection_Devices_Cap,Signalisation_Areas_Cap
+# Constant used :  None 
+###======================================================================================================================
 
 csv_reader = CSVReader.CSVReader(config.csv_folder_path)
 SyDT = csv_reader.SyDT    

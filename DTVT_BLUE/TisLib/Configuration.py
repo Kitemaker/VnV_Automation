@@ -14,13 +14,20 @@ class Configuration(object):
             self.config_File_Path = self.root_folder_path + "\\Configuration\\Configuration.xml"
             self.csv_folder_path =  self.root_folder_path + "\\Input\\Csv_Files"
             self.csv_files=dict()
+            # Decalare variables
             self.project_name = ''
             self.project_baseline = ''
             self.uevol_baseline = ''
             self.database_baseline = ''
             self.sydt_version = ''
+            self.sydb_file_path = ''
+            self.C_Late_Change_Distance_File_Path = ''
+            # read Configuration.xml
             self.__readConfiguration(self.config_File_Path)
+            # read CSV File Names
             self.__readCsvFileNames(self.csv_folder_path)
+           
+
 
         except:
             self.tis_logger.error("Module: Configuration.py" , sys.exc_info()[0] )
@@ -32,12 +39,14 @@ class Configuration(object):
             config=ET.parse(ConfigFile)
             root_node = config.getroot()
             
-            self.project_name=root_node.attrib['name']
+            self.project_name= root_node.attrib['name']
             self.project_baseline=root_node.attrib['baseline']
             self.project_name=root_node.attrib['name']
             self.uevol_baseline=root_node.attrib['uevol_baseline']
             self.database_baseline=root_node.attrib['database_baseline']
             self.sydt_version=root_node.attrib['sydt_version']
+            self.C_Late_Change_Distance_File_Path = root_node.find('C_Late_Change_Distance').attrib['path']
+            self.sydb_file_path = root_node.find('SyDB').attrib['path']
         except:
             self.tis_logger.error( sys.exc_info()[0] + "Module: Configuration.py" + "Method:ReadConfiguration")
 
