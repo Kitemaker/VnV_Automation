@@ -79,7 +79,7 @@
 	<constant name="D_Train_Head_First_Door" unit="cm"/>
 	<constant name="Restrictive_Signal_Received_By_ZC"/>
 	<constant name="LC_Change_Timer" value="392" unit="s"/>
-	<constant name="Stopping_Accuracy" unit="cm"/>
+	<constant name="Stopping_Accuracy" value ="50" unit="cm"/>
 	<constant name="t_CC_EB_Activation" unit="ms"/>
 	<constant name="t_SURVIVAL_ZC_to_CBI" unit="ms"/>
 	<constant name="Safe_Buffer_Zone_Length" value="790" unit="m"/>
@@ -121,4 +121,9 @@
 	<constant name="Min_Dynamic_SDD_Length_2CBI_2ZC" unit="cm"/>
 	<constant name="ZC_SDD_Occupation_Delay" unit="ms"/>
 	<constant name="Dist_RUZ_end_to_CBTC_Frontier" unit="m"/>
+	<constant name ="Local_D_Joint" value = "0" unit ="cm"/>
+	<constant name ="Loc_Error_Platform" value = "100" unit ="cm"/>
+	<constant name ="Loc_Error_Stabling" value = "100" unit ="cm"/>
+	<constant name ="Loc_Error_Others" value = "230" unit ="cm"/>
+	
 </constants>
