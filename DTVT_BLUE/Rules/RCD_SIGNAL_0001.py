@@ -14,7 +14,8 @@ from TisLib import Utility, Configuration , CSVReader
 try:
     # Get Tis_Logger and specify the log file name   
     log_file_path = os.path.join(root_folder + "\\Logs\\" , os.path.basename(__file__).split('.')[0] + '.log')
-    result_file_path = os.path.join(root_folder + "\\Results\\" ,'Test_Results_' + os.path.basename(__file__).split('.')[0] + '.xlsx')
+    result_file_name = os.path.basename(__file__).split('.')[0] + '.xlsx'
+    result_file_path = os.path.join(root_folder + "\\Results\\" ,'Test_Results_' + result_file_name)
     tis_log = Utility.GetLogger(log_file_path)
 except:
     print("Error while creating logger")
@@ -49,16 +50,12 @@ ssp_name = ssp_cap['Name']
 ssp_kp = Utility.GetKpValue(ssp_cap['KpValue'],ssp_cap['KpCorrected_Trolley_Value'])
 
 # Create report file
+global_test_results = list()
 wbReport = workbook.Workbook()
 wsRpt=wbReport.active
 wsRpt.title = "Test_Results"
 rwCount = 1
-wsRpt.cell(row = rwCount, column = 1, value = "Signal")
-wsRpt.cell(row = rwCount, column = 2, value = "Signal_Kp")
-wsRpt.cell(row = rwCount, column = 3, value = "SSP")
-wsRpt.cell(row = rwCount, column = 4, value = "SSP_Kp")
-wsRpt.cell(row = rwCount, column = 5, value = "Distance between Signal and SSP")
-wsRpt.cell(row = rwCount, column = 6, value = "Result")
+Utility.WriteToWorkSheet(wsRpt,rwCount,["Signal","Signal_Kp", "SSP","SSP_Kp", "Distance between Signal and SSP","Result"])
 rwCount = rwCount+1
 
 for index in range(len(sig_ssp)):
@@ -78,25 +75,18 @@ for index in range(len(sig_ssp)):
             if _dist >= 200 :
                  tis_log.info('Signal:' + _sig  + ', SSP: '+ _linked_ssp_name + ' ,Distance: ' + str( _dist))
                  _result = 'OK'
+                 global_test_results.append(_result)
             else:
                 tis_log.error('Signal:' + _sig  + ', SSP: '+ _linked_ssp_name + ' ,Distance: ' + str( _dist))
                 _result = 'NOK'
-
-            wsRpt.cell(row = rwCount, column = 1, value = _sig)
-            wsRpt.cell(row = rwCount, column = 2, value = _sig_kp)
-            wsRpt.cell(row = rwCount, column = 3, value = _linked_ssp_name)
-            wsRpt.cell(row = rwCount, column = 4, value = _linked_ssp_kp)
-            wsRpt.cell(row = rwCount, column = 5, value = str(_dist))
-            wsRpt.cell(row = rwCount, column = 6, value = _result)
+                global_test_results.append(_result)
+            
+            Utility.WriteToWorkSheet(wsRpt,rwCount,[_sig,_sig_kp,_linked_ssp_name,_linked_ssp_kp,str(_dist),_result])           
             rwCount = rwCount+1
 
         except:
             tis_log.error( "Module:RCD_SIGNAL_0001.py" + "Method:__main__ " +"item =" + sig_ssp[index]  + "\t" +  sys.exc_info()[0])        
 
 # Save Report
-try:
-    wbReport.save(result_file_path)
-    tis_log.info("Report generated successfully at " + result_file_path ) 
-    print("Report generated successfully at " + result_file_path )
-except:
-    tis_log.error("Unexpected error in writing report :"+ sys.exc_info()[0])
+
+Utility.SaveReport(wbReport,global_test_results,root_folder,result_file_name)

@@ -88,8 +88,8 @@
 	<constant name="ACS2000_Timer_For_Memorization" value="20"/>
 	<constant name="D_SDDB_Overlap_End"/>
 	<constant name="Min_RMZ_Protection" unit="cm"/>
-	<constant name="Min_RMR_Protection" unit="m"/>
-	<constant name="Min_RMR_Protection_Forward" unit="m"/>
+	<constant name="Min_RMR_Protection" value = "1586" unit="cm"/>
+	<constant name="Min_RMR_Protection_Forward" value = "411"  unit="cm"/>
 	<constant name="C_EMI_Onboard_Margin_Train1"/>
 	<constant name="Max_EOA_Distance" unit="cm"/>
 	<constant name="Route_Signal_Control_Delay_ID_List"/>

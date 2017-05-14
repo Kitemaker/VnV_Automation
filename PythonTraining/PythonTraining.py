@@ -14,6 +14,10 @@ import TisLib.SydbReader
 #for k,v in const.items():
 #   print(k,' => ' ,v)
 
-sdb = TisLib.SydbReader.SydbReader(r'C:\Users\295563\Documents\01 PROJECTS\VnV\SCMA\SCMA_4.3.1\INPUTS\SyDB_4.3.1\DataPackage oF SCMA _RO_4.3.1\RO_4.3.1_SyDB\SyDB_SCMA_RO_4.3.1.xml')
+#sdb = TisLib.SydbReader.SydbReader(r'C:\Users\295563\Documents\01 PROJECTS\VnV\SCMA\SCMA_4.3.1\INPUTS\SyDB_4.3.1\DataPackage oF SCMA _RO_4.3.1\RO_4.3.1_SyDB\SyDB_SCMA_RO_4.3.1.xml')
 
-print(sdb.Get_Point_Deadlocking_Block_ID_List('PT_W1719A_HDS'))
+#print(sdb.Get_Point_Deadlocking_Block_ID_List('PT_W1719A_HDS'))
+
+import Trg_Test
+import Trg_Test.Constants
+

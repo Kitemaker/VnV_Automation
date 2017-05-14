@@ -26,6 +26,11 @@ class CSVReader(object):
         self.Tracks_Cap = 'Tracks_Cap'
         self.Service_Stopping_Points_Cap='Service_Stopping_Points_Cap'
         self.Platforms_Cap = 'Platforms_Cap'
+        self.TRFC_Cap = 'TRFC_Cap'
+        self.Lines_Cap = 'Lines_Cap'
+        self.Platforms_Cap = 'Platforms_Cap'
+        self.Stablings_Location_Cap = 'Stablings_Location_Cap'
+        self.Reverse_Movement_Zones_Cap = 'Reverse_Movement_Zones_Cap'
 
 
         for item in self.files:            

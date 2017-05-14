@@ -1,4 +1,4 @@
-#========================Template =========================================================================
+#========================Template ============================================================================================
 import sys
 import os,os.path
 import logging
@@ -14,7 +14,8 @@ from TisLib import Utility, Configuration , CSVReader
 try:
     # Get Tis_Logger and specify the log file name   
     log_file_path = os.path.join(root_folder + "\\Logs\\" , os.path.basename(__file__).split('.')[0] + '.log')
-    result_file_path = os.path.join(root_folder + "\\Results\\" ,'Test_Results_' + os.path.basename(__file__).split('.')[0] + '.xlsx')
+    result_file_name = os.path.basename(__file__).split('.')[0] + '.xlsx'
+    result_file_path = os.path.join(root_folder + "\\Results\\" ,'Test_Results_' + result_file_name)
     tis_log = Utility.GetLogger(log_file_path)
 except:
     print("Error while creating logger")
@@ -25,7 +26,7 @@ proj_const = dict()
 proj_const = Utility.GetProjectConstants(config.config_File_Path)
 print("Executing " + os.path.basename(__file__))
 tis_log.info("Executing " + os.path.basename(__file__))
-# ==========================================================================================================
+### ======== Template Ends=======================================================================================================
 
 csv_reader = CSVReader.CSVReader(config.csv_folder_path)
 SyDT = csv_reader.SyDT  
@@ -41,7 +42,8 @@ Signal_Type_Function = signal_cap['Signal_Type_Function']
 
 sigUp,sigUpKp,sigDn,sigDnKp = [],[],[],[]
 sigIdSortedUp,sigIdSortedDn = [],[]
-
+# Create report file
+global_test_results = list()
 wbReport = workbook.Workbook()
 wsRpt=wbReport.active
 wsRpt.title = "Rule_TMS_SDD_0013"
@@ -109,11 +111,9 @@ for tr in tracks_cap['Name']:
         wsRpt.cell(row = rwCount, column = 10, value = str(sddbCount))
         if(sddbCount==0):            
             tis_log.error("SDDB Count =0 for  " + signal_name[signals_id.index(sigIdSortedDn[i])]+" , " + signal_name[signals_id.index(sigIdSortedDn[i+1])])
+            global_test_results.append('NOK')
+        else:
+            global_test_results.append('OK')
         rwCount=rwCount+1
-try:
-    wbReport.save(result_file_path)
-    tis_log.info("Report generated successfully at " + result_file_path + "\nTracks Checked: "+str(len(signal_track)) + "\nSignal Couples Checked: " +str(rwCount) ) 
-    print("Report generated successfully at " + result_file_path + "\nTracks Checked: "+str(len(signal_track)) + "\nSignal Couples Checked: " +str(rwCount))
-except:
-    tis_log.error("Unexpected error in writing report excel :"+ sys.exc_info()[0])
+Utility.SaveReport(wbReport,global_test_results,root_folder,result_file_name)
 
