@@ -1,31 +1,19 @@
-###=====================Template ==========================================================================================
-import sys
-import os,os.path
+### ========= Template =========================================================================
+import sys , os , os.path
 import logging
 from openpyxl import workbook, worksheet
-
 # add root folder in search path
 root_folder = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
 sys.path.append(root_folder)
-
-import TisLib
-from TisLib import Utility, Configuration , CSVReader
-
-try:
-    # Get Tis_Logger and specify the log file name   
-    log_file_path = os.path.join(root_folder + "\\Logs\\" , os.path.basename(__file__).split('.')[0] + '.log')
-    result_file_name = os.path.basename(__file__).split('.')[0] + '.xlsx'
-    result_file_path = os.path.join(root_folder + "\\Results\\" ,'Test_Results_' + result_file_name)
-    tis_log = Utility.GetLogger(log_file_path)
-except:
-    print("Error while creating logger")
-
-config = Configuration.Configuration(root_folder)
-# read constant
-proj_const = dict()
-proj_const = Utility.GetProjectConstants(config.config_File_Path)
-print("Executing " + os.path.basename(__file__))
-tis_log.info("Executing " + os.path.basename(__file__))
+import DtvtLib
+from DtvtLib import Utility, Configuration , CSVReader
+param = Utility.Initialise(root_folder,__file__)
+log_file_path    = param['log_file_path']
+result_file_name = param['result_file_name']
+result_file_path = param['result_file_path']
+dtvt_log         = param['dtvt_log']
+proj_const       = param['proj_const']
+SyDT             = param['SyDT']
 ### ======== Template Ends==================================================================================================
 
 
@@ -34,16 +22,13 @@ tis_log.info("Executing " + os.path.basename(__file__))
 # Updated 10 April 2017
 # Caps Used : Signals_Cap ,Routes_Cap ,Switchs_Cap ,Points_Cap, Secondary_Detection_Devices_Cap,Signalisation_Areas_Cap
 # Constant used :  None 
-###==========================================================================================================================
+###========================================================================================================================== 
 
-csv_reader = CSVReader.CSVReader(config.csv_folder_path)
-SyDT = csv_reader.SyDT    
-
-routes_cap = SyDT[csv_reader.Routes_Cap]
-switchs_cap = SyDT[csv_reader.Switchs_Cap]
-points_cap =  SyDT[csv_reader.Points_Cap]
-sddevices_cap =SyDT[csv_reader.Secondary_Detection_Devices_Cap]
-sig_area_cap = SyDT[csv_reader.Signalisation_Areas_Cap]
+routes_cap = SyDT['Routes_Cap']
+switchs_cap = SyDT['Switchs_Cap']
+points_cap =  SyDT['Points_Cap']
+sddevices_cap =SyDT['Secondary_Detection_Devices_Cap']
+sig_area_cap = SyDT['Signalisation_Areas_Cap']
 sdd_id_list = sig_area_cap['Area_Boundary_Secondary_Detection_Device_ID_List']
 cbi_sig_area=dict()
 test_result=''
@@ -86,7 +71,7 @@ for route in route_names:
                 route_sdd_list.append(sdd_name)
 
                 if sdd_name == '':
-                    tis_log("Error: Point " + pt + " is not linked with SDD")
+                    dtvt_log("Error: Point " + pt + " is not linked with SDD")
                 else:
                     for key,value in cbi_sig_area.items():
                         for vitem in value:
@@ -95,11 +80,11 @@ for route in route_names:
                                 break
 
         if len(set(sw_sig_area)) > 1:
-            tis_log.error("For route " + route + " all switches do not belong to same CBI Signalisation Area")
+            dtvt_log.error("For route " + route + " all switches do not belong to same CBI Signalisation Area")
             test_result='NOK'
             global_test_results.append(test_result)
         else:            
-            tis_log.info("For route " + route + " all switches belong to same CBI Signalisation Area")            
+            dtvt_log.info("For route " + route + " all switches belong to same CBI Signalisation Area")            
             test_result = 'OK'
             global_test_results.append(test_result)
 

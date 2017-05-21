@@ -1,31 +1,19 @@
-### ========= Template =======================================================================================================
-import sys
-import os,os.path
+### ========= Template =========================================================================
+import sys , os , os.path
 import logging
 from openpyxl import workbook, worksheet
-
 # add root folder in search path
 root_folder = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
 sys.path.append(root_folder)
-
-import TisLib
-from TisLib import Utility, Configuration , CSVReader
-
-try:
-    # Get Tis_Logger and specify the log file name   
-    log_file_path = os.path.join(root_folder + "\\Logs\\" , os.path.basename(__file__).split('.')[0] + '.log')
-    result_file_name = os.path.basename(__file__).split('.')[0] + '.xlsx'
-    result_file_path = os.path.join(root_folder + "\\Results\\" ,'Test_Results_' + result_file_name)
-    tis_log = Utility.GetLogger(log_file_path)
-except:
-    print("Error while creating logger")
-
-config = Configuration.Configuration(root_folder)
-# read constant
-proj_const = dict()
-proj_const = Utility.GetProjectConstants(config.config_File_Path)
-print("\nExecuting " + os.path.basename(__file__))
-tis_log.info("Executing " + os.path.basename(__file__))
+import DtvtLib
+from DtvtLib import Utility, Configuration , CSVReader
+param = Utility.Initialise(root_folder,__file__)
+log_file_path    = param['log_file_path']
+result_file_name = param['result_file_name']
+result_file_path = param['result_file_path']
+dtvt_log         = param['dtvt_log']
+proj_const       = param['proj_const']
+sydb_reader      =  param['SyDB']
 
 ### ======== Template Ends=================================================================================================
 
@@ -35,10 +23,9 @@ tis_log.info("Executing " + os.path.basename(__file__))
 # Caps Used : SYDB Node used, Routes,Switch,Blocks,Points,Signals
 # Constant used :  None
 ###========================================================================================================================
-from TisLib import SydbReader
+from DtvtLib import SydbReader
 import xml.etree.ElementTree as ET
 
-sydb_reader = SydbReader.SydbReader(config.sydb_file_path)
 point_deadlocking_blocks = sydb_reader.Point_Deadlocking_Block_ID_List()
 signal_kp_pair = sydb_reader.Get_Signal_ID_Kp_Pairs()
 route_sig_pair = sydb_reader.Get_Route_OriginSignal_Pairs() 
@@ -88,7 +75,7 @@ for route in sydb_reader.root_node.findall('./Routes/Route'):
                        
         # check if signal block is in the deadlocking blocks of the point if yes break 
         if sig_blk in point_deadlocking_blocks[point_id_name_dict[pt]]:
-            tis_log.error( "For Route : " + route_name + " Signal " + signal + " with block ID = " + sig_blk + "in deadlocking blocks of point " + point_id_name_dict[pt])
+            dtvt_log.error( "For Route : " + route_name + " Signal " + signal + " with block ID = " + sig_blk + "in deadlocking blocks of point " + point_id_name_dict[pt])
             result = "NOK"
             break
         

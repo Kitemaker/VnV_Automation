@@ -156,28 +156,6 @@ namespace DTVT_VIEW
 
         }
 
-        private void csvMenu_Click(object sender, RoutedEventArgs e)
-        {
-            FolderBrowserDialog dlg = new FolderBrowserDialog();
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                projCsvFolderPath = dlg.SelectedPath;
-                projectXmlDoc.GetElementsByTagName("CsvFolder")[0].InnerText = dlg.SelectedPath;
-                LoadCsvFiles(dlg.SelectedPath);
-            }
-
-        }
-
-        private void LoadCsvFiles(string CsvFoderPath)
-        {
-            System.IO.DirectoryInfo csvDir = new DirectoryInfo(CsvFoderPath);
-            foreach (FileInfo finfo in csvDir.GetFiles("*.csv", SearchOption.TopDirectoryOnly))
-            {
-                listCsvFiles.Items.Add(finfo.Name);
-            }
-
-        }
-
         private void WndMain_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             XmlDocument existingFile = new XmlDocument();
@@ -195,7 +173,6 @@ namespace DTVT_VIEW
                 { System.Windows.Forms.MessageBox.Show(ex.Message); }
             }
         }
-
         private void exitPrjMenu_Click(object sender, RoutedEventArgs e)
         {
             DialogResult res = System.Windows.Forms.MessageBox.Show("Do you want to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -217,12 +194,32 @@ namespace DTVT_VIEW
 
         }
 
+        private void LoadCsvFiles(string CsvFoderPath)
+        {
+            System.IO.DirectoryInfo csvDir = new DirectoryInfo(CsvFoderPath);
+            foreach (FileInfo finfo in csvDir.GetFiles("*.csv", SearchOption.TopDirectoryOnly))
+            {
+                listCsvFiles.Items.Add(finfo.Name);
+            }
+
+        }
+        private void dataMenu_Click(object sender, RoutedEventArgs e)
+        {
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                projCsvFolderPath = dlg.SelectedPath;
+                projectXmlDoc.GetElementsByTagName("CsvFolder")[0].InnerText = dlg.SelectedPath;
+                LoadCsvFiles(dlg.SelectedPath);
+            }
+        }
+
         private void LoadRules(string RuleFolderPath)
         {
             System.IO.DirectoryInfo csvDir = new DirectoryInfo(RuleFolderPath);
             foreach (FileInfo finfo in csvDir.GetFiles("*.py", SearchOption.TopDirectoryOnly))
             {
-                //listCsvFiles.Items.Add(finfo.Name);
+                this.listRules.Items.Add(finfo.Name);
             }
 
         }
@@ -236,5 +233,7 @@ namespace DTVT_VIEW
                 projectXmlDoc.GetElementsByTagName("ConstantFolder")[0].InnerText = dlg.SelectedPath;
             }
         }
+
+      
     }
 }

@@ -1,0 +1,50 @@
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\bin\Debug\DTVT_VIEW.exe.config
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\bin\Debug\DTVT_VIEW.exe
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\bin\Debug\DTVT_VIEW.pdb
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.csprojResolveAssemblyReference.cache
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\MainWindow.g.cs
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\App.g.cs
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW_MarkupCompile.cache
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW_MarkupCompile.lref
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\MainWindow.baml
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.g.resources
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.Properties.Resources.resources
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.csproj.GenerateResource.Cache
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.exe
+C:\Users\295563\Documents\14 GITHUB\PythonApps\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.pdb
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\NewProject.xaml.cs
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\MainWindow.xaml.cs
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\DTVT_VIEW.exe.config
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\DTVT_VIEW.exe
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\DTVT_VIEW.pdb
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\MainWindow.g.cs
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\NewProject.g.cs
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\App.g.cs
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW_MarkupCompile.cache
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW_MarkupCompile.lref
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\MainWindow.baml
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\NewProject.baml
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.g.resources
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.Properties.Resources.resources
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.csproj.GenerateResource.Cache
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.exe
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.pdb
+C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.csprojResolveAssemblyReference.cache
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\DTVT_VIEW.exe.config
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.exe
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.pdb
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\NewProject.xaml.cs
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\MainWindow.xaml.cs
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\DTVT_VIEW.exe
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\DTVT_VIEW.pdb
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\MainWindow.g.cs
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\NewProject.g.cs
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\App.g.cs
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW_MarkupCompile.cache
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW_MarkupCompile.lref
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\MainWindow.baml
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\NewProject.baml
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.g.resources
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.Properties.Resources.resources
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.csproj.GenerateResource.Cache
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.csprojResolveAssemblyReference.cache

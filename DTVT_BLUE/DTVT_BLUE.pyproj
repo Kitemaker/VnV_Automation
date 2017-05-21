@@ -26,11 +26,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Rules\RULE_RCD_DB_SIGAREA_0003.py" />
     <Compile Include="Rules\RULE_RCD_TMS_RMZ_016.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\RULE_SCMA_SPECIFIC_RMZ_CONSTRAINT.py" />
-    <Compile Include="Rules\RCD_SIGNAL_0001.py">
+    <Compile Include="Rules\RULE_RCD_SIGNAL_0001.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\RULE_DB_ROUTE_0001.py">
@@ -49,22 +50,26 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\RULE_TMS_SSP_0012.py" />
-    <Compile Include="TisLib\Configuration.py">
+    <Compile Include="DtvtLib\Configuration.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TisLib\SydbReader.py">
+    <Compile Include="DtvtLib\SydbReader.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TisLib\Utility.py">
+    <Compile Include="DtvtLib\Utility.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TisLib\CSVReader.py">
+    <Compile Include="DtvtLib\CSVReader.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TisLib\__init__.py">
+    <Compile Include="DtvtLib\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\RULE_TMS_SDDB_0013.py" />
+    <Compile Include="Rules\RULE_TMS_STABL_0003.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\RunTests.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Input\Csv_Files\" />
@@ -74,7 +79,7 @@
     <Folder Include="Logs\" />
     <Folder Include="Results\" />
     <Folder Include="Rules\" />
-    <Folder Include="TisLib\" />
+    <Folder Include="DtvtLib\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Configuration\Configuration.xml">

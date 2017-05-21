@@ -23,8 +23,8 @@
 	<constant name="ATO_Activation_In_MCS_List" value="None"/>
 	<constant name="CBI_NON_UEVOL_Presence"/>
 	<constant name="DRM_RM_Mode"/>
-	<constant name="NIAP_Tail_Correction" value="3991" unit="cm"/>
-	<constant name="Head_Correction" value="16344" unit="cm"/>
+	<constant name="NIAP_Tail_Correction" value="4775" unit="cm"/>
+	<constant name="Head_Correction" value="15822" unit="cm"/>
 	<constant name="Head_Correction_Inter_Urbalis_Sector" unit="cm"/>
 	<constant name="NIAP_Tail_Correction_Inter_Urbalis_Sector" unit="cm"/>
 	<constant name="RTI_Train_Wakeup_Delay_Min" value="4382" unit="ms"/>

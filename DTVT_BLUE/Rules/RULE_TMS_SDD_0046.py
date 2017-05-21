@@ -8,15 +8,15 @@ from openpyxl import workbook, worksheet
 root_folder = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
 sys.path.append(root_folder)
 
-import TisLib
-from TisLib import Utility, Configuration , CSVReader
+import DtvtLib
+from DtvtLib import Utility, Configuration , CSVReader
 
 try:
-    # Get Tis_Logger and specify the log file name   
+    # Get Dtvt_Logger and specify the log file name   
     log_file_path = os.path.join(root_folder + "\\Logs\\" , os.path.basename(__file__).split('.')[0] + '.log')
     result_file_name = os.path.basename(__file__).split('.')[0] + '.xlsx'
     result_file_path = os.path.join(root_folder + "\\Results\\" ,'Test_Results_' + result_file_name)
-    tis_log = Utility.GetLogger(log_file_path)
+    dtvt_log = Utility.GetLogger(log_file_path)
 except:
     print("Error while creating logger")
 
@@ -25,7 +25,7 @@ config = Configuration.Configuration(root_folder)
 proj_const = dict()
 proj_const = Utility.GetProjectConstants(config.config_File_Path)
 print("Executing " + os.path.basename(__file__))
-tis_log.info("Executing " + os.path.basename(__file__))
+dtvt_log.info("Executing " + os.path.basename(__file__))
 
 ### ======== Template Ends===============================================================================================
 
@@ -36,7 +36,7 @@ tis_log.info("Executing " + os.path.basename(__file__))
 # Constant used :  None
 ###======================================================================================================================
 
-from TisLib import SydbReader
+from DtvtLib import SydbReader
 import xml.etree.ElementTree as ET
 
 sydb_reader = SydbReader.SydbReader(config.sydb_file_path)
@@ -78,7 +78,7 @@ for block in sydb_reader.root_node.findall('./Blocks/Block'):
                     elif (signal_kp >= min(blk_kp_begin,blk_kp_end)) and (signal_kp <= max(blk_kp_begin,blk_kp_end)):
                         res =  'NOK'
                         global_test_results.append('NOK')
-                        tis_log.error("Kp of Signal: "+ signal_name + " exist in deadlocking block: " + blk_name + " of Point: "+ pt_name)
+                        dtvt_log.error("Kp of Signal: "+ signal_name + " exist in deadlocking block: " + blk_name + " of Point: "+ pt_name)
 
                     Utility.WriteToWorkSheet(wsRpt,rwCount,[signal_name,signal_track,signal_kp,pt_name,blk_id,blk_name,blk_trk,blk_kp_begin,blk_kp_end,res])                   
                     rwCount = rwCount+1                                       

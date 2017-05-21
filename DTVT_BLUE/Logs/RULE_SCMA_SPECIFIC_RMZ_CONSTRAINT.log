@@ -1,0 +1,16 @@
+2017/05/18 03:12:16 PM : INFO : Executing Utility.py
+2017/05/18 03:12:16 PM : INFO : Creating Class CSVReader
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_CS_2A, Track: TR_2A_CS_GN has failed the rule for Points: ,PT_W203A_CS	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_CS_1A, Track: TR_1A_CS_GN has failed the rule for Points: ,PT_W201A_CS	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_WPP_2A, Track: TR_2A_CS_GN has failed the rule for Points: ,PT_W239_WPP	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_MDW_2A, Track: TR_2A_CS_GN has failed the rule for Points: ,PT_W433_MDW	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_MDW_6C, Track: TR_6C_MDW_MDW has failed the rule for Points: ,PT_W431B_MDW	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_MDW_5C, Track: TR_5C_MDW_MDW has failed the rule for Points: ,PT_W429B_MDW	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_MDW_1A, Track: TR_1A_CS_GN has failed the rule for Points: ,PT_W427_MDW	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_DMZ_5D, Track: TR_5D_MDW_DMZ has failed the rule for Points: ,PT_W519_DMZ	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_ZD_3A, Track: TR_3A_SLW_ZD has failed the rule for Points: ,PT_W1801B_ZD	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_RAI_4A, Track: TR_4A_SLW_ZD has failed the rule for Points: ,PT_W1833B_ZD	
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_VZG_7A, Track: TR_7A_ND_ZD has failed the rule for Points: ,PT_W3423B_VZG	,PT_W3421A_VZG
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_VZG_8, Track: TR_8_ND_ZD has failed the rule for Points: ,PT_W3421B_VZG	,PT_W3423A_VZG
+2017/05/18 03:12:17 PM : ERROR : RMZ:RMZ_RAI_4A, Track: TR_4A_SLW_ZD has failed the rule for Points: ,PT_W1833B_ZD	
+2017/05/18 03:12:17 PM : INFO : Report generated successfully at C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_BLUE\Results\Test_Results_NOK_RULE_SCMA_SPECIFIC_RMZ_CONSTRAINT.xlsx
