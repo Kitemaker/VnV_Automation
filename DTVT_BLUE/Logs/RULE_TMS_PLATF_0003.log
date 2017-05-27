@@ -1,2 +1,69 @@
-2017/05/15 07:14:24 PM : INFO : Executing Utility.py
-2017/05/15 07:14:24 PM : INFO : Creating Class CSVReader
+2017/05/24 12:11:10 PM : INFO : Executing Utility.py
+2017/05/24 12:11:10 PM : INFO : Creating Class CSVReader
+2017/05/24 12:11:16 PM : ERROR : For platform PF_HVW_4B_RDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_HDS_3B_LUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_JLS_4B_RDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_VLN_3B_LUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_STD_4B_RDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_ZD_4A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_OAS_4A_LDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_OAS_3A_RUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_ZD_12_LDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_ZD_7A_RUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_ND_7A_LUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_ND_8_RDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_NDP_7A_LUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_NDP_8_RDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_CSN_7A_RUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_CSN_8_LDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_RKN_7A_LUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_RKN_8_RDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_VZG_7A_LUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_VZG_8_RDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_DPP_7A_LUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_DPP_8_LDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_EPP_7A_RUC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_EPP_8_LDC_Late_Change_Distance does not match
+2017/05/24 12:11:16 PM : ERROR : For platform PF_VPD_5D_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_VPD_6D_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_DMZ_5D_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_DMZ_6D_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_VSW_5E_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_VSW_6E_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_GZH_5E_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_GZH_6E_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_KEN_5E_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_KEN_6E_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_GPP_5E_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_GPP_6E_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_CS_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_CS_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_NMT_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_NMT_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_WLP_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_WLP_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_WPP_1A_RUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_WPP_2A_LDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_WBS_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_WBS_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_ASA_1A_RUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_ASA_2A_LDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_SLW_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_SLW_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_MDW_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_MDW_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_DVD_1A_RUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_DVD_2A_LDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_SVT_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_SVT_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_BMR_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_BMR_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_BLW_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_BLW_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_HLD_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_HLD_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_RGB_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_RGB_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_GN_1A_LUC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : ERROR : For platform PF_GN_2A_RDC_Late_Change_Distance not found
+2017/05/24 12:11:16 PM : INFO : Report generated successfully at C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_BLUE\Results\Test_Results_NOK_RULE_TMS_PLATF_0003.xlsx

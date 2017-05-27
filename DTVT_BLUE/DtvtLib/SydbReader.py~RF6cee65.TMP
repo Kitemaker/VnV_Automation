@@ -7,7 +7,6 @@ import logging
 class SydbReader(object):
     
     def __init__(self, SydbPath):
-        print('Creating SyDB Reader')
         self.sydb_file = ET.parse(SydbPath)
         self.root_node = self.sydb_file.getroot()
         self.Tool_Version =  self.root_node.attrib['Tool_Version']
@@ -15,30 +14,17 @@ class SydbReader(object):
         self.SyPD_Version = self.root_node.attrib['SyPD_Version']
         self.XML_File_Version = self.root_node.attrib['XML_File_Version']        
         self.dtvt_log =  logging.getLogger('Dtvt_Logger')
-        self.DL1 = self.GetFirsLevelItemNames()
-        self.DL2 = self.GetSecondLevelItems()
+        self.Data_L1 = self.GetFirsLevelItemNames()
         self.data_tables = dict()
 
     def GetFirsLevelItemNames(self):
-        data_Level1=dict()
+        data_Level1=list()
         try:
-            data_Level1 = {item.tag : item  for item in self.root_node.getchildren()}
-
-            return data_Level1
+            data_Level1 = [item.tag for item in self.root_node.getchildren()]
         except:
             self.dtvt_log.error((sys.exc_info()[0]))
-            return None
-
-    def GetSecondLevelItems(self):
-        data_Level2=dict()
-        try:
-            for nodeName, node in self.DL1.items():
-                data_Level2[nodeName] = node.getchildren()
-
-            return data_Level2
-        except:
-            self.dtvt_log.error((sys.exc_info()[0]))
-            return None
+    def GetSecondLevelItems(self,item):
+        pass
 
     def GetDataTables(self):
         dts = dict()
@@ -185,6 +171,7 @@ class SydbReader(object):
             for _sta in self.root_node.findall('./Stopping_Areas/Stopping_Area'):
                 _orig_areal_list = []
                 _name = ''
+
                 _name = _sta.attrib['Name']
                 if(_name != ''):
                     for _org in _sta.findall('./Original_Area_List/Original_Area'):
@@ -205,7 +192,6 @@ class SydbReader(object):
                 platform_items = dict()
                 platform_items['ID'] = int(_ptf.attrib['ID'])
                 platform_items['Track_ID'] = _ptf.find('Track_ID').text
-                platform_items['SSP_ID_List'] = self.Get_SSP_ID_List(_ptf)
                 _kp_beg =  _ptf.find('Kp_Begin')
                 _kp_end =  _ptf.find('Kp_End')
                 platform_items['Kp_Begin'] = int(_kp_beg.attrib['Value']) +   int(_kp_beg.attrib['Corrected_Gap_Value']) +  int(_kp_beg.attrib['Corrected_Trolley_Value'])
@@ -218,8 +204,8 @@ class SydbReader(object):
             self.dtvt_log.error("Module:SydbReader Method:Get_Platforms_With_Items", sys.exc_info()[0])
             return None
 
-    def Get_COD_Areas_With_Items(self):
 
+     def Get_COD_Areas_With_Items(self):
         """ Return dict of COD_Area Name and its Child Nodes in dict fomrat """
         try:
             _cod_areas = dict()
@@ -228,145 +214,27 @@ class SydbReader(object):
                 _cod_items = dict()
                 _cod_items['ID'] = int(_cod.attrib['ID'])
                 _cod_items['Track_ID'] = _cod.find('Track_ID').text
-                _cod_items['SSP_ID_List'] = self.Get_SSP_ID_List(_cod)
                 _kp_beg =  _cod.find('Kp_Begin')
                 _kp_end =  _cod.find('Kp_End')
                 _cod_items['Kp_Begin'] = int(_kp_beg.attrib['Value']) +   int(_kp_beg.attrib['Corrected_Gap_Value']) +  int(_kp_beg.attrib['Corrected_Trolley_Value'])
                 _cod_items['Kp_End'] = int(_kp_end.attrib['Value']) +   int(_kp_end.attrib['Corrected_Gap_Value']) +  int(_kp_end.attrib['Corrected_Trolley_Value'])
-                _cod_areas[_cod.attrib['Name']] = _cod_items
+                _cod_areas[_ptf.attrib['Name']] = _cod_items
 
 
-            return _cod_areas
+            return _platforms
         except:
             self.dtvt_log.error("Module:SydbReader Method:Get_Platforms_With_Items", sys.exc_info()[0])
             return None
 
-    def Get_Stabling_Location_With_Items(self):
+            
 
-        """ Return dict of Stabling_Location Name and its Child Nodes in dict fomrat """
-        try:
-            _stl_locations = dict()
-            for _stl in self.root_node.findall('./Stablings_Location/Stabling_Location'):     
-                           
-                _stl_items = dict()
-                _stl_items['ID'] = int(_stl.attrib['ID'])
-                _stl_items['Track_ID'] = _stl.find('Track_ID').text
-                _stl_items['SSP_ID_List'] = self.Get_SSP_ID_List(_stl)
-                _kp_beg =  _stl.find('Kp_Begin')
-                _kp_end =  _stl.find('Kp_End')
-                _stl_items['Kp_Begin'] = int(_kp_beg.attrib['Value']) +   int(_kp_beg.attrib['Corrected_Gap_Value']) +  int(_kp_beg.attrib['Corrected_Trolley_Value'])
-                _stl_items['Kp_End'] = int(_kp_end.attrib['Value']) +   int(_kp_end.attrib['Corrected_Gap_Value']) +  int(_kp_end.attrib['Corrected_Trolley_Value'])
-                _stl_locations[_stl.attrib['Name']] = _stl_items
+        
 
 
-            return _stl_locations
-        except:
-            self.dtvt_log.error("Module:SydbReader Method:Get_Stabling_Location_With_Items", sys.exc_info()[0])
-            return None
-
-    def Get_Coupling_Uncoupling_Area_With_Items(self):
-
-        """ Return dict of Coupling_Uncoupling_Area Name and its Child Nodes in dict fomrat """
-        try:
-            _coupling_areas = dict()
-            for _cpl in self.root_node.findall('./Coupling_Uncoupling_Areas /Coupling_Uncoupling_Area'):     
-                           
-                _coupling_items = dict()
-                _coupling_items['ID'] = int(_cpl.attrib['ID'])
-                _coupling_items['Track_ID'] = _cpl.find('Track_ID').text
-                _coupling_items['SSP_ID_List'] = self.Get_SSP_ID_List(_cpl)
-                _kp_beg =  _cpl.find('Kp_Begin')
-                _kp_end =  _cpl.find('Kp_End')
-                _coupling_items['Kp_Begin'] = int(_kp_beg.attrib['Value']) +   int(_kp_beg.attrib['Corrected_Gap_Value']) +  int(_kp_beg.attrib['Corrected_Trolley_Value'])
-                _coupling_items['Kp_End'] = int(_kp_end.attrib['Value']) +   int(_kp_end.attrib['Corrected_Gap_Value']) +  int(_kp_end.attrib['Corrected_Trolley_Value'])
-
-                _coupling_areas[_cpl.attrib['Name']] = _coupling_items
-
-
-            return _coupling_areas
-        except:
-            self.dtvt_log.error("Module:SydbReader Method:Get_Coupling_Uncoupling_Area_With_Items", sys.exc_info()[0])
-            return None
-
-    def Get_Washing_Zone_With_Items(self):
-
-        """ Return dict of Washing_Zone Name and its Child Nodes in dict fomrat """
-        try:
-            _washing_zones = dict()
-            for _wsh in self.root_node.findall('./Washing_Zones/Washing_Zone'):     
-                           
-                _washing_items = dict()
-                _washing_items['ID'] = int(_wsh.attrib['ID'])
-                _washing_items['Track_ID'] = _wsh.find('Track_ID').text
-                _washing_items['SSP_ID_List'] = self.Get_SSP_ID_List(_wsh)
-                _kp_beg =  _wsh.find('Kp_Begin')
-                _kp_end =  _wsh.find('Kp_End')
-                _washing_items['Kp_Begin'] = int(_kp_beg.attrib['Value']) +   int(_kp_beg.attrib['Corrected_Gap_Value']) +  int(_kp_beg.attrib['Corrected_Trolley_Value'])
-                _washing_items['Kp_End'] = int(_kp_end.attrib['Value']) +   int(_kp_end.attrib['Corrected_Gap_Value']) +  int(_kp_end.attrib['Corrected_Trolley_Value'])
-                _washing_zones[_wsh.attrib['Name']] = _washing_items
-
-
-            return _washing_zones
-        except:
-            self.dtvt_log.error("Module:SydbReader Method:Get_Washing_Zone_With_Items", sys.exc_info()[0])
-            return None
     
-    def Get_Transfer_Tracks_With_Items(self):
-
-        """ Return dict of Transfer_Track Name and its Child Nodes in dict fomrat """
-        try:
-            _transfer_tracks = dict()
-            for _tfr in self.root_node.findall('./Transfer_Tracks/Transfer_Track'):     
-                           
-                _transfer_items = dict()
-                _transfer_items['ID'] = int(_tfr.attrib['ID'])
-                _transfer_items['Track_ID'] = _tfr.find('Track_ID').text
-                _transfer_items['SSP_ID_List'] = self.Get_SSP_ID_List(_tfr)
-                _kp_beg =  _tfr.find('Kp_Begin')
-                _kp_end =  _tfr.find('Kp_End')
-                _transfer_items['Kp_Begin'] = int(_kp_beg.attrib['Value']) +   int(_kp_beg.attrib['Corrected_Gap_Value']) +  int(_kp_beg.attrib['Corrected_Trolley_Value'])
-                _transfer_items['Kp_End'] = int(_kp_end.attrib['Value']) +   int(_kp_end.attrib['Corrected_Gap_Value']) +  int(_kp_end.attrib['Corrected_Trolley_Value'])
-                _transfer_tracks[_tfr.attrib['Name']] = _transfer_items
 
 
-            return _transfer_tracks
-        except:
-            self.dtvt_log.error("Module:SydbReader Method:Get_Transfer_Tracks_With_Items", sys.exc_info()[0])
-            return None
 
-    def Get_Isolation_Areas_With_Items(self):
-
-        """ Return dict of Washing_Zone Name and its Child Nodes in dict fomrat """
-        try:
-            _isolation_areas = dict()
-            for _iso in self.root_node.findall('./Isolation_Areas/Isolation_Area'):     
-                           
-                _isolation_items = dict()
-                _isolation_items['ID'] = int(_iso.attrib['ID'])
-                _isolation_items['Track_ID'] = _iso.find('Track_ID').text
-                _isolation_items['SSP_ID_List'] = self.Get_SSP_ID_List(_iso)
-                _kp_beg =  _iso.find('Kp_Begin')
-                _kp_end =  _iso.find('Kp_End')
-                _isolation_items['Kp_Begin'] = int(_kp_beg.attrib['Value']) +   int(_kp_beg.attrib['Corrected_Gap_Value']) +  int(_kp_beg.attrib['Corrected_Trolley_Value'])
-                _isolation_items['Kp_End'] = int(_kp_end.attrib['Value']) +   int(_kp_end.attrib['Corrected_Gap_Value']) +  int(_kp_end.attrib['Corrected_Trolley_Value'])
-                _isolation_areas[_iso.attrib['Name']] = _isolation_items
-
-
-            return _isolation_areas
-        except:
-            self.dtvt_log.error("Module:SydbReader Method:Get_Isolation_Areas_With_Items", sys.exc_info()[0])
-            return None
-
-    def Get_SSP_ID_List(self,InElement):
-        try:
-            ssp_id_list = list()            
-            for item in InElement.findall('./SSP_ID_List/SSP_ID'):
-                ssp_id_list.append(item.text)
-
-            return ssp_id_list
-        except:
-            elf.dtvt_log.error("Module:SydbReader Method:Get_SSP_ID_List", sys.exc_info()[0])
-            return None
            
 
     

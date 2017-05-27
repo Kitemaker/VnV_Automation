@@ -45,7 +45,25 @@ namespace DTVT_VIEW
                     foreach (XmlAttribute attr in xdoc.DocumentElement.Attributes)
                     {
                         if (attr.Name == "name")
-                        { attr.Value = txtPrjName.Text; }
+                        {
+                            attr.Value = txtPrjName.Text;
+                        }
+                        if (attr.Name == "project_baseline")
+                        {
+                            attr.Value = txtPrjBline.Text;
+                        }
+                        if (attr.Name == "uevol_baseline")
+                        {
+                            attr.Value = txtUevolBline.Text;
+                        }
+                        if (attr.Name == "sydb_version")
+                        {
+                            attr.Value = txtdbBline.Text;
+                        }
+                        if (attr.Name == "sydt_version")
+                        {
+                            attr.Value = txtSyDTVer.Text;
+                        }
                     }
                     SaveFileDialog dlg = new SaveFileDialog();
                     dlg.Filter = "DTVT Blue Project (*.dtprj)|*.dtprj";
@@ -54,7 +72,7 @@ namespace DTVT_VIEW
                     if (dlg.ShowDialog() == true)
                     {
                         newProjFilePath = dlg.FileName;
-                        WriteProjectFile(xdoc);
+                        xdoc.GetElementsByTagName("RootFolder")[0].Attributes["path"].Value = new System.IO.FileInfo(newProjFilePath).DirectoryName;
                         xdoc.Save(dlg.FileName);
                     }                  
                 }
@@ -71,20 +89,7 @@ namespace DTVT_VIEW
                 MessageBox.Show(ex.Message);
             }
            
-        }
-
-        private void WriteProjectFile(XmlDocument xdoc)
-        {   
-            xdoc.GetElementsByTagName("Project_Baseline")[0].InnerText = this.txtPrjBline.Text;
-            xdoc.GetElementsByTagName("Uevol_Baseline")[0].InnerText = this.txtUevolBline.Text;
-            xdoc.GetElementsByTagName("Database_Baseline")[0].InnerText = this.txtdbBline.Text;
-            xdoc.GetElementsByTagName("SyDT_Version")[0].InnerText = this.txtSyDTVer.Text;
-            xdoc.GetElementsByTagName("RootFolder")[0].InnerText = new System.IO.FileInfo(newProjFilePath).DirectoryName;
-           
-        }
-
-
-         
+        }               
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {

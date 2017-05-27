@@ -47,4 +47,6 @@ C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug
 C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.g.resources
 C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.Properties.Resources.resources
 C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.csproj.GenerateResource.Cache
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\bin\Debug\New_Project_Template.xml
+C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW_Content.g.cs
 C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_VIEW\obj\Debug\DTVT_VIEW.csprojResolveAssemblyReference.cache

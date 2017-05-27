@@ -38,12 +38,7 @@ wbReport = workbook.Workbook()
 wsRpt=wbReport.active
 wsRpt.title = "Test_Results"
 rwCount = 1
-wsRpt.cell(row = rwCount, column = 1, value = "Route")
-wsRpt.cell(row = rwCount, column = 2, value = "Switchs")
-wsRpt.cell(row = rwCount, column = 3, value = "Point List")
-wsRpt.cell(row = rwCount, column = 4, value = "SDD List")
-wsRpt.cell(row = rwCount, column = 5, value = "Signalisation Areas")
-wsRpt.cell(row = rwCount, column = 6, value = "Result")
+Utility.WriteToWorkSheet(wsRpt,rwCount,["Route", "Switchs", "Point", "SDD List", "Signalisation Areas","Result"])
 rwCount = rwCount+1
 
 for i in range(len(sig_area_cap['Name'])):
@@ -94,6 +89,7 @@ for route in route_names:
         wsRpt.cell(row = rwCount, column = 4, value = Utility.ConvertToString( route_sdd_list))
         wsRpt.cell(row = rwCount, column = 5, value = Utility.ConvertToString(sw_sig_area))
         wsRpt.cell(row = rwCount, column = 6, value = test_result)
+        Utility.WriteToWorkSheet(wsRpt,rwCount,[route, route_switch_ids, Utility.ConvertToString(route_pt_list) ,Utility.ConvertToString( route_sdd_list),Utility.ConvertToString(sw_sig_area),test_result])
         rwCount = rwCount+1
 
 

@@ -40,7 +40,9 @@ namespace DTVT_VIEW
         string projCsvFolderPath = string.Empty;
         string projRulesFolderPath = string.Empty;
         string projConstantFolder = string.Empty;
-        internal string projSyDBFilePath = string.Empty;
+        string projRulesFolder = string.Empty;
+        string projSyDBFilePath = string.Empty;
+        private DirectoryInfo rulesDir = null;
         XmlDocument projectXmlDoc;
 
         public MainWindow()
@@ -48,6 +50,8 @@ namespace DTVT_VIEW
             InitializeComponent();
             EnableProjectTextBox(false);
         }
+
+       
 
         private void newPrjMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -67,6 +71,7 @@ namespace DTVT_VIEW
                 if (txtPrjName.Text != string.Empty)
                 {
                     projLoaded = true;
+                    lboxOutput.Items.Add(DateTime.Now.ToString() + "\t" + "Project " + txtPrjName + " has been loaded successfully.");
                 }
             }
         }
@@ -90,11 +95,26 @@ namespace DTVT_VIEW
             {
                 projFile = _dlg.FileName;
             }
-            ReadProjectFile(projFile);
-            FillTextBoxes();
+            try
+            {
+                ReadProjectFile(projFile);
+                FillTextBoxes();
+                projLoaded = true;
+                lboxOutput.Items.Add(DateTime.Now.ToString() + "\t" + "Project " + txtPrjName + " has been loaded successfully.");
+            }
+            catch (Exception ex)
+            {
+                projLoaded = false;
+                System.Windows.Forms.MessageBox.Show("Error Loading project file :\t" + projFile + "\n" + "Source:\t openPrjMenu_Click");
+            }
             if (projCsvFolderPath != string.Empty)
             {
                 LoadCsvFiles(projCsvFolderPath);
+            }
+            if (projRulesFolder != string.Empty)
+            {
+               LoadRules(projRulesFolder);
+               
             }
 
 
@@ -109,33 +129,28 @@ namespace DTVT_VIEW
                 projectXmlDoc.Load(filename);
                 docNode = projectXmlDoc.DocumentElement;
                 projName = docNode.GetAttribute("name");
+                projBaseline = docNode.GetAttribute("project_baseline");
+                uevolBaseline = docNode.GetAttribute("uevol_baseline");
+                sydtVersion = docNode.GetAttribute("sydt_version");
+                dbBaseline = docNode.GetAttribute("sydb_version");
                 foreach (XmlNode node in docNode.ChildNodes)
                 {
                     switch (node.Name)
-                    {
-                        case "Project_Baseline":
-                            projBaseline = node.InnerText;
-                            break;
-                        case "Uevol_Baseline":
-                            uevolBaseline = node.InnerText;
-                            break;
-                        case "Database_Baseline":
-                            dbBaseline = node.InnerText;
-                            break;
-                        case "SyDT_Version":
-                            sydtVersion = node.InnerText;
-                            break;
+                    {          
                         case "RootFolder":
-                            projRootFolder = node.InnerText;
+                            projRootFolder = node.Attributes["path"].Value;
                             break;
                         case "ConstantFile":
-                            projConstantFilePath = node.InnerText;
+                            projConstantFilePath = node.Attributes["path"].Value;
                             break;
                         case "SyDBFile":
-                            projSyDBFilePath = node.InnerText;
+                            projSyDBFilePath = node.Attributes["path"].Value;
                             break;
                         case "CsvFolder":
-                            projCsvFolderPath = node.InnerText;
+                            projCsvFolderPath = node.Attributes["path"].Value;
+                            break;
+                        case "RulesFolder":
+                            projRulesFolder = node.Attributes["path"].Value;
                             break;
                         default:
                             break;
@@ -156,23 +171,21 @@ namespace DTVT_VIEW
 
         }
 
+        private void ClearTextBoxes()
+        {
+            txtPrjBline.Text = string.Empty;
+            txtdbBline.Text = string.Empty;
+            txtPrjName.Text = string.Empty;
+            txtSyDTVer.Text = string.Empty;
+            txtUevolBline.Text = string.Empty;
+        }
+
         private void WndMain_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            XmlDocument existingFile = new XmlDocument();
-            if (projFile != string.Empty && existingFile != null)
-            {
-                try
-                {
-                    existingFile.Load(projFile);
-                    if (existingFile.DocumentElement.InnerXml != projectXmlDoc.DocumentElement.InnerXml)
-                    {
-                        projectXmlDoc.Save(projFile);
-                    }
-                }
-                catch (Exception ex)
-                { System.Windows.Forms.MessageBox.Show(ex.Message); }
-            }
+            SaveProjectFile();
         }
+
+
         private void exitPrjMenu_Click(object sender, RoutedEventArgs e)
         {
             DialogResult res = System.Windows.Forms.MessageBox.Show("Do you want to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -188,52 +201,153 @@ namespace DTVT_VIEW
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 projRulesFolderPath = dlg.SelectedPath;
-                projectXmlDoc.GetElementsByTagName("RulesFolder")[0].InnerText = dlg.SelectedPath;
+                projectXmlDoc.GetElementsByTagName("RulesFolder")[0].Attributes["path"].Value = dlg.SelectedPath;
                 LoadRules(dlg.SelectedPath);
             }
 
         }
-
-        private void LoadCsvFiles(string CsvFoderPath)
-        {
-            System.IO.DirectoryInfo csvDir = new DirectoryInfo(CsvFoderPath);
-            foreach (FileInfo finfo in csvDir.GetFiles("*.csv", SearchOption.TopDirectoryOnly))
-            {
-                listCsvFiles.Items.Add(finfo.Name);
-            }
-
-        }
-        private void dataMenu_Click(object sender, RoutedEventArgs e)
-        {
-            FolderBrowserDialog dlg = new FolderBrowserDialog();
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                projCsvFolderPath = dlg.SelectedPath;
-                projectXmlDoc.GetElementsByTagName("CsvFolder")[0].InnerText = dlg.SelectedPath;
-                LoadCsvFiles(dlg.SelectedPath);
-            }
-        }
-
         private void LoadRules(string RuleFolderPath)
         {
-            System.IO.DirectoryInfo csvDir = new DirectoryInfo(RuleFolderPath);
-            foreach (FileInfo finfo in csvDir.GetFiles("*.py", SearchOption.TopDirectoryOnly))
+            rulesDir = new DirectoryInfo(RuleFolderPath);
+            foreach (FileInfo finfo in rulesDir.GetFiles("*.py", SearchOption.TopDirectoryOnly))
             {
                 this.listRules.Items.Add(finfo.Name);
             }
 
         }
 
-        private void constMenu_Click(object sender, RoutedEventArgs e)
+        private void dataMenu_Click(object sender, RoutedEventArgs e)
         {
-            FolderBrowserDialog dlg = new FolderBrowserDialog();
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                projConstantFilePath = dlg.SelectedPath;
-                projectXmlDoc.GetElementsByTagName("ConstantFolder")[0].InnerText = dlg.SelectedPath;
+                FolderBrowserDialog dlg = new FolderBrowserDialog();
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    projCsvFolderPath = dlg.SelectedPath;
+                    projectXmlDoc.GetElementsByTagName("CsvFolder")[0].Attributes["path"].Value = dlg.SelectedPath;
+                    LoadCsvFiles(dlg.SelectedPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }
 
-      
+
+        private void LoadCsvFiles(string CsvFoderPath)
+        {
+            try
+            {
+                System.IO.DirectoryInfo csvDir = new DirectoryInfo(CsvFoderPath);
+                foreach (FileInfo finfo in csvDir.GetFiles("*.csv", SearchOption.TopDirectoryOnly))
+                {
+                    listCsvFiles.Items.Add(finfo.Name);
+                }
+            }
+            catch (Exception ex)
+            { System.Windows.Forms.MessageBox.Show(ex.Message); }
+
+        }    
+
+        private void constMenu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                FolderBrowserDialog dlg = new FolderBrowserDialog();
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    projConstantFilePath = dlg.SelectedPath;
+                    projectXmlDoc.GetElementsByTagName("ConstantFolder")[0].Attributes["path"].Value = dlg.SelectedPath;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }        
+
+        private void listRules_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            FileInfo finfo = new FileInfo(rulesDir.FullName + "\\" + listRules.SelectedValue.ToString());
+            StreamReader fstream = finfo.OpenText();
+
+            tblockRule.Text = "";
+            tblockRule.Text = fstream.ReadToEnd();
+        }
+
+        private void ruleContMenuVerify_Click(object sender, RoutedEventArgs e)
+        {
+            FileInfo finfo = new FileInfo(rulesDir.FullName + "\\" + listRules.SelectedValue.ToString());
+            System.Windows.Forms.MessageBox.Show("Do you want to run rule:\n" + finfo.FullName);
+        }
+
+        private void importMenu_SubmenuOpened(object sender, RoutedEventArgs e)
+        {
+            if (txtPrjName.Text == string.Empty)
+            {
+                foreach (ItemsControl menu in importMenu.Items)
+                {
+                    menu.IsEnabled = false;
+
+                }
+            }
+            else
+            {
+                foreach (ItemsControl menu in importMenu.Items)
+                {
+                    menu.IsEnabled = true;
+
+                }
+            }
+        }
+
+        private void savePrjMenu_Click(object sender, RoutedEventArgs e)
+        {
+            SaveProjectFile();
+        }
+
+        private void SaveProjectFile()
+        {
+
+            XmlDocument existingFile = new XmlDocument();
+            if (projFile != string.Empty && existingFile != null)
+            {
+                try
+                {
+                    existingFile.Load(projFile);
+                    if (existingFile.DocumentElement.InnerXml != projectXmlDoc.DocumentElement.InnerXml)
+                    {
+                        projectXmlDoc.Save(projFile);
+                        lboxOutput.Items.Add(DateTime.Now.ToString() + "\t" + "Project file " + projFile + " has been saved successfully.");
+                    }
+                    
+                }
+                catch (Exception ex)
+                { System.Windows.Forms.MessageBox.Show(ex.Message); }
+            }
+
+
+        }
+
+        private void sydbMenu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                FolderBrowserDialog dlg = new FolderBrowserDialog();
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    projConstantFilePath = dlg.SelectedPath;
+                    projectXmlDoc.GetElementsByTagName("SyDBFile")[0].Attributes["path"].Value = dlg.SelectedPath;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+   
     }
 }

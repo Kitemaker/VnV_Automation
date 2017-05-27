@@ -26,6 +26,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Rules\GFPD_AP51\RCD_STOPPING_AREA_0001.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\GFPD_AP51\RCD_STOPPING_AREA_0004.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\GFPD_AP51\RULE_WZ_0002.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Rules\RULE_RCD_DB_SIGAREA_0003.py" />
     <Compile Include="Rules\RULE_RCD_TMS_RMZ_016.py">
       <SubType>Code</SubType>
@@ -38,6 +47,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\RULE_DB_ROUTE_0003.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\GFPD_AR\RULE_STOPPING_AREA_0008.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\RULE_TMS_PLATF_0003.py">
@@ -80,6 +92,8 @@
     <Folder Include="Results\" />
     <Folder Include="Rules\" />
     <Folder Include="DtvtLib\" />
+    <Folder Include="Rules\GFPD_AP51\" />
+    <Folder Include="Rules\GFPD_AR\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Configuration\Configuration.xml">

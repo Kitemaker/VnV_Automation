@@ -127,7 +127,7 @@ def GetPointsOfSwitch(switchIndex, SwitchsCap):
 def ConvertToString(listInput:list):
     out_text=''
     for item in listInput:
-        out_text=out_text + item +';'
+        out_text=out_text + str( item )+';'
 
     return out_text
 
@@ -345,13 +345,23 @@ def Initialise(RootFolder:str,RuleFileName:str):
 def ConvertSetToString(InputSet:set):
     out = ''
     for item in InputSet:
-        out = out + ";" + item
+        out = out + ";" + str(item)
 
     return out
 
 
-
-    
+def Show(Input):
+    if type(Input) == str or type(Input) == int or type(Input) == float:
+        print(str(Input))
+    elif type(Input) == list or type(Input) == set or type(Input) == tuple:
+        tabs = tabs + 1 
+        for item in Input:
+            Show(item)
+    elif type(Input) == ET.Element:
+        print(Input.tag + "Value = " + Input.text)
+        for node in ET.Element(Input).getchildren():
+            Show(node)
+        
 
 
 
