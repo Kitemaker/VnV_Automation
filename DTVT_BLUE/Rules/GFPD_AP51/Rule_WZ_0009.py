@@ -17,10 +17,10 @@ SyDT             = param['SyDT']
 
 ### ======== Template Ends=========================================================================
 
-### =========Rule_WZ_0002===============================================================
+### =========Rule_WZ_0009===============================================================
 # Author : Saleem Javed
-# Updated 23 May 2017
-# Caps Used : Projects_Cap,
+# Updated 31 May 2017
+# Caps Used : Project_Specific_Boundarys_Cap,
 # Constant used :  None 
 
 ###================================================================================================
@@ -31,28 +31,29 @@ wbReport = workbook.Workbook()
 wsRpt=wbReport.active
 wsRpt.title = "Test_Results"
 rwCount = 1
-Utility.WriteToWorkSheet(wsRpt,rwCount,["Project Name", "Max_Blocks_With_Work_Zone","Result"])
+Utility.WriteToWorkSheet(wsRpt,rwCount,["Boundary Name", "Boundary Type", "Direction"])
 rwCount = rwCount+1
 
 # Read Caps
-project_cap = SyDT['Projects_Cap']
-project_names = project_cap['Name']
-Max_Blocks_With_Work_Zone = project_cap['Max_Blocks_With_Work_Zone']
+boundary_cap = SyDT['Project_Specific_Boundarys_Cap']
+boundary_names = boundary_cap['Name']
+boundary_type = boundary_cap['Type']
+boundary_dir = boundary_cap['Direction']
 _result = ''
-for index in range(len(project_names)):
-    proj_name = project_names[index]
-    max_blocks_with_wz = int(Max_Blocks_With_Work_Zone[index])
-    if max_blocks_with_wz <=1000:
+for index in range(len(boundary_names)):
+    bnd_name = boundary_names[index]
+    bnd_type = boundary_type[index]
+    bnd_dir = boundary_dir[index]
+    if bnd_type !="Dynamic Work Zone" and bnd_dir =="Both":
         _result = 'OK'
         global_test_results.append('OK')
-        dtvt_log.info('Project ' + proj_name  + 'has Blocks_With_Work_Zone less than 1000,  Max_Blocks_With_Work_Zone = ' + str(max_blocks_with_wz))
+        dtvt_log.info('Project Specific Boundary ' + bnd_name  + 'of type = ' + bnd_type + '  has direction = ' + bnd_dir)
     else:
         _result = 'NOK'
         global_test_results.append('NOK')
-        dtvt_log.error('Project ' + proj_name  + 'has Blocks_With_Work_Zone more than 1000,  Max_Blocks_With_Work_Zone = ' + str(max_blocks_with_wz))
+        dtvt_log.error('Project Specific Boundary ' + bnd_name  + 'of type = ' + bnd_type + '  has direction = ' + bnd_dir)
 
-
-    Utility.WriteToWorkSheet(wsRpt,rwCount,[proj_name,max_blocks_with_wz,_result])
+    Utility.WriteToWorkSheet(wsRpt,rwCount,[bnd_name,bnd_type,bnd_dir,_result])
     rwCount = rwCount+1
 
 # Save Report

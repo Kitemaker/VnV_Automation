@@ -22,6 +22,7 @@
                 <MenuItem x:Name="newPrjMenu"  Header="New Project" Click="newPrjMenu_Click" />
                 <MenuItem x:Name="openPrjMenu" Header="Open Project" Click="openPrjMenu_Click"/>
                 <MenuItem x:Name="savePrjMenu" Header="SaveProject" Click="savePrjMenu_Click"/>
+                <MenuItem x:Name="setPython" Header="Set Python Path" Click="setPython_Click"/>
                 <MenuItem x:Name="exitPrjMenu" Header="Exit" Click="exitPrjMenu_Click"/>
             </MenuItem>
             <MenuItem x:Name="importMenu"  Header="Import" Height="30" Width="70" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Padding="15,5,8,3" SubmenuOpened="importMenu_SubmenuOpened">

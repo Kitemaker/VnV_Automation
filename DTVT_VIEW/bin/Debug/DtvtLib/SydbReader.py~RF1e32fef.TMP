@@ -1,0 +1,49 @@
+import os.path
+import sys
+import xml.etree.ElementTree as ET
+import logging
+
+class SydbReader(object):
+    
+    def __init__(self, SydbPath):
+        self.sydb_file = ET.parse(SydbPath)
+        self.root_node = self.sydb_file.getroot()
+        self.Tool_Version =  self.root_node.attrib['Tool_Version']
+        self.Sector_ID = self.root_node.attrib['Sector_ID']
+        self.SyPD_Version = self.root_node.attrib['SyPD_Version']
+        self.XML_File_Version = self.root_node.attrib['XML_File_Version']        
+        self.tis_log =  logging.getLogger('Tis_Logger')
+        self.Data_L1 = self.GetFirsLevelItemNames()
+        self.data_tables = dict()
+
+    def GetFirsLevelItemNames(self):
+        data_Level1=list()
+        try:
+            data_Level1 = [item.tag for item in self.root_node.getchildren()]
+        except:
+            self.tis_log.error((sys.exc_info()[0]))
+
+    def GetDataTables(self):
+        dts = dict()
+        eqpdts = dict()
+        for item in self.root_node.getchildren():
+            eqps = item.getchildren()
+            for k,v in eqps[0]:
+                eqpdts[k] = ''
+            for key,value in eqpdts:
+                eqpdts[k] = [item.attrib[k] for item in eqps]
+            dts[item.tag] = eqpdts
+        return dts
+
+    def Get_Point_Deadlocking_Block_ID_List(self,PointName:str):
+        Deadlocking_Block_ID_List = list()
+        
+        try:             
+           for block in self.GetPoint(PointName).find('Deadlocking_Block_ID_List'):
+              Deadlocking_Block_ID_List.append(block.text)
+        except:
+            self.tis_log.error((sys.exc_info()[0]))
+            Deadlocking_Block_ID_List = []
+        finally:
+            return Deadlocking_Block_ID_List
+

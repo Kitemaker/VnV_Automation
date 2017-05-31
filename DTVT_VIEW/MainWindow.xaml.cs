@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Configuration;
 
 using System.Xml;
 using System.IO;
@@ -43,16 +45,26 @@ namespace DTVT_VIEW
         string projRulesFolder = string.Empty;
         string projSyDBFilePath = string.Empty;
         private DirectoryInfo rulesDir = null;
+        string rootFolder = string.Empty;
+        string pythonPath = string.Empty;
         XmlDocument projectXmlDoc;
+        
+        
 
         public MainWindow()
         {
             InitializeComponent();
+            InitialiseData();
             EnableProjectTextBox(false);
         }
 
-       
 
+        private void InitialiseData()
+        {
+            rootFolder = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            pythonPath = ConfigurationManager.AppSettings["python"];            
+
+        }
         private void newPrjMenu_Click(object sender, RoutedEventArgs e)
         {
             _newProj = new DTVT_VIEW.NewProject();
@@ -279,7 +291,8 @@ namespace DTVT_VIEW
         private void ruleContMenuVerify_Click(object sender, RoutedEventArgs e)
         {
             FileInfo finfo = new FileInfo(rulesDir.FullName + "\\" + listRules.SelectedValue.ToString());
-            System.Windows.Forms.MessageBox.Show("Do you want to run rule:\n" + finfo.FullName);
+            VerifyRule(finfo.FullName);
+            
         }
 
         private void importMenu_SubmenuOpened(object sender, RoutedEventArgs e)
@@ -347,7 +360,92 @@ namespace DTVT_VIEW
             }
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PythonScript">Full path of Python Script</param>
+        private void VerifyRule(string PythonScript)
+        {
+            if (pythonPath == string.Empty)
+            {
+               System.Windows.Forms.MessageBox.Show("Python Exe path is not set\n");
+                return;
+            }
+            if (rootFolder == string.Empty)
+            {
+                System.Windows.Forms.MessageBox.Show("Root Folder path is not \n");
+                return;
+            }
 
-   
+            string outString;
+            // Create new process start info 
+            ProcessStartInfo myProcessStartInfo = new ProcessStartInfo(pythonPath);
+
+            // make sure we can read the output from stdout 
+            myProcessStartInfo.UseShellExecute = false;
+            myProcessStartInfo.RedirectStandardOutput = true;
+
+            // start python app with 3 arguments  
+            // 1st arguments is pointer to itself,  
+            // 2nd and 3rd are actual arguments we want to send 
+            myProcessStartInfo.Arguments =   PythonScript  + " " + rootFolder;
+
+            Process myProcess = new Process();
+            // assign start information to the process 
+            myProcess.StartInfo = myProcessStartInfo;
+            
+            lboxOutput.Items.Add(DateTime.Now.ToString() + "\t" + "Calling Python script with arguments "+ PythonScript + " , "+ rootFolder);
+            
+            // start the process 
+            myProcess.Start();
+
+            // Read the standard output of the app we called.  
+            // in order to avoid deadlock we will read output first 
+            // and then wait for process terminate: 
+            StreamReader myStreamReader = myProcess.StandardOutput;
+            string myString = myStreamReader.ReadLine();
+
+            /*if you need to read multiple lines, you might use: 
+                string myString = myStreamReader.ReadToEnd() */
+
+            // wait exit signal from the app we called and then close it. 
+            myProcess.WaitForExit();
+            myProcess.Close();
+
+            // write the output we got from python app 
+            lboxOutput.Items.Add(DateTime.Now.ToString() + "\t"+ myString);
+
+
+
+        }
+
+        private void setPython_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog _dlg = new OpenFileDialog();
+            _dlg.Filter = "DTVT Blue Project (*.exe)|*.exe";
+            _dlg.Multiselect = false;
+            DialogResult _res = _dlg.ShowDialog();
+            if (_res == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    ConfigurationManager.AppSettings["python"] = _dlg.FileName;
+                    var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    var settings = configFile.AppSettings.Settings;
+                    settings["python"].Value = _dlg.FileName;
+                    configFile.Save(ConfigurationSaveMode.Modified);
+                    ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
+                    pythonPath = ConfigurationManager.AppSettings["python"];
+                }
+                 
+                catch (ConfigurationErrorsException)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error writing app settings");
+                }
+            }
+           
+        }
+
+        
     }
 }

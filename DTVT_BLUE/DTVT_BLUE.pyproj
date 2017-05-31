@@ -32,7 +32,13 @@
     <Compile Include="Rules\GFPD_AP51\RCD_STOPPING_AREA_0004.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Rules\GFPD_AP51\Rule_DB_General_0001.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Rules\GFPD_AP51\RULE_WZ_0002.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\GFPD_AP51\Rule_WZ_0009.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\RULE_RCD_DB_SIGAREA_0003.py" />
