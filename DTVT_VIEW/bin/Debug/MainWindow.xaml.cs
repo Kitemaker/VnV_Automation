@@ -48,6 +48,7 @@ namespace DTVT_VIEW
         string rootFolder = string.Empty;
         string pythonPath = string.Empty;
         XmlDocument projectXmlDoc;
+        ProjectSettingsWindow projSettingWnd;
         
         
 
@@ -446,6 +447,17 @@ namespace DTVT_VIEW
            
         }
 
-        
+        private void importMenu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void settingsMenu_Click(object sender, RoutedEventArgs e)
+        {
+            projSettingWnd = new ProjectSettingsWindow();
+            projSettingWnd.ShowDialog();
+        }
+
+      
     }
 }

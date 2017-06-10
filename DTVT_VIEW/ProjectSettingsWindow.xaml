@@ -1,0 +1,43 @@
+﻿<Window x:Name="ProjectSettingsWindow1" x:Class="DTVT_VIEW.ProjectSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DTVT_VIEW"
+        mc:Ignorable="d"
+        Title="Project Settings" Height="400" Width="600" WindowStartupLocation="CenterOwner" Topmost="True" MinWidth="600" MinHeight="400" MaxWidth="1200" MaxHeight="400" HorizontalContentAlignment="Right">
+    <Grid x:Name="prjSettingGrid">
+        <Grid.OpacityMask>
+            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+        </Grid.OpacityMask>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>           
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="189*"/>
+            <ColumnDefinition Width="57*"/>
+
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblImportRule"   Content="Rules" Grid.Column ="0" Grid.Row ="0" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+        <Label x:Name="lblImportData"   Content="Data" Grid.Column ="0" Grid.Row ="1" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="26" Width="35"/>
+        <Label x:Name="lblImportSydb"   Content="SyDB" Grid.Column ="0" Grid.Row ="2" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="26" Width="37"/>
+        <Label x:Name="lblImportConst"  Content="Constant" Grid.Column ="0" Grid.Row ="3" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="26" Width="57"/>
+        <TextBox x:Name="txtImportRule" Text="" Grid.Column ="1" Grid.Row ="0" Margin="0,10,0,0" VerticalAlignment="Top" Height="22" IsEnabled="False"/>
+        <TextBox x:Name="txtImportData" Text="" Grid.Column ="1" Grid.Row ="1" Margin="0,10,0,0" VerticalAlignment="Top" Height="22" IsEnabled="False"/>
+        <TextBox x:Name="txtImportSydb" Text="" Grid.Column ="1" Grid.Row ="2" Margin="0,10,0,0" VerticalAlignment="Top" Height="22" IsEnabled="False"/>
+        <TextBox x:Name="txtImportConst" Text="" Grid.Column ="1" Grid.Row ="3" Margin="0,10,0,0" VerticalAlignment="Top" Height="22" IsEnabled="False"/>
+        <Button x:Name="btnImportRule"  Content="..." Grid.Column ="2" Grid.Row ="0" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" HorizontalAlignment="Left" Height="22" Click="btnImportRule_Click"/>
+        <Button x:Name="btnImportData"  Content="..." Grid.Column ="2" Grid.Row ="1" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" HorizontalAlignment="Left" Height="22" Click="btnImportData_Click"/>
+        <Button x:Name="btnImportSydb"  Content="..." Grid.Column ="2" Grid.Row ="2" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" HorizontalAlignment="Left" Height="22" Click="btnImportSydb_Click"/>
+        <Button x:Name="btnImportConst" Content="..." Grid.Column ="2" Grid.Row ="3" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" HorizontalAlignment="Left" Height="22" Click="btnImportConst_Click"/>
+        <Button x:Name="btnSave" Content="Save" Grid.Column ="1" Grid.Row ="5" Margin="10,10,10,0" VerticalAlignment="Top" Width="80" HorizontalAlignment="Right" Height="22"  HorizontalContentAlignment="Center" Click="btnSave_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Column ="2" Grid.Row ="5" Margin="10,10,10,0" VerticalAlignment="Top" Width="80" HorizontalAlignment="Left" Height="22" HorizontalContentAlignment="Center" Click="btnCancel_Click"/>
+
+    </Grid>
+</Window>

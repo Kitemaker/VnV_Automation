@@ -1,0 +1,5 @@
+2017/06/07 11:51:56 AM : INFO : Executing RULE_TMS_SDD_0046.py
+2017/06/07 11:51:57 AM : ERROR : Kp of Signal: SI_5_U_ITW exist in deadlocking block: B_211 of Point: PT_W1529_ITW
+2017/06/07 11:52:00 AM : ERROR : Kp of Signal: SI_160_U_LCM exist in deadlocking block: B_1681 of Point: PT_W345B_LCM
+2017/06/07 11:52:00 AM : ERROR : Kp of Signal: SI_160_U_LCM exist in deadlocking block: B_1681 of Point: PT_W347_LCM
+2017/06/07 11:52:05 AM : INFO : Report generated successfully at C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_BLUE\Results\Test_Results_NOK_RULE_TMS_SDD_0046.xlsx

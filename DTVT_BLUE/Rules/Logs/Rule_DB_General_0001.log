@@ -1,0 +1,5 @@
+2017/06/07 11:32:27 AM : INFO : Executing Utility.py
+2017/06/07 11:32:27 AM : INFO : Creating Class CSVReader
+2017/06/07 11:32:33 AM : ERROR : Track_Containers_Cap	TR_3C_ITW_ITW
+2017/06/07 11:32:40 AM : ERROR : Tracks_Cap	TR_3C_ITW_ITW
+2017/06/07 11:32:46 AM : INFO : Report generated successfully at C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_BLUE\Results\Test_Results_NOK_Rule_DB_General_0001.xlsx

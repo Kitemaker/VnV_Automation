@@ -32,7 +32,10 @@
     <Compile Include="Rules\GFPD_AP51\RCD_STOPPING_AREA_0004.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rules\GFPD_AP51\Rule_DB_General_0001.py">
+    <Compile Include="Rules\GFPD_AP51\RULE_DB_GENERAL_0001.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\GFPD_AP51\RULE_TMS_PLATF_0014.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\GFPD_AP51\RULE_WZ_0002.py">
@@ -41,15 +44,18 @@
     <Compile Include="Rules\GFPD_AP51\Rule_WZ_0009.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rules\RULE_RCD_DB_SIGAREA_0003.py" />
-    <Compile Include="Rules\RULE_RCD_TMS_RMZ_016.py">
+    <Compile Include="Rules\GFPD_AP51\SCMA_TMS_OVERLAP_0033.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\RCD_DB_SIGAREA_0003.py" />
+    <Compile Include="Rules\RCD_TMS_RMZ_016.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\RULE_SCMA_SPECIFIC_RMZ_CONSTRAINT.py" />
-    <Compile Include="Rules\RULE_RCD_SIGNAL_0001.py">
+    <Compile Include="Rules\RCD_SIGNAL_0001.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rules\RULE_DB_ROUTE_0001.py">
+    <Compile Include="Rules\GFPD_AP51\RULE_DB_ROUTE_0001.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rules\RULE_DB_ROUTE_0003.py">
@@ -83,11 +89,10 @@
     <Compile Include="DtvtLib\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rules\RULE_TMS_SDDB_0013.py" />
+    <Compile Include="Rules\RULE_TMS_SDD_0013.py" />
     <Compile Include="Rules\RULE_TMS_STABL_0003.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rules\RunTests.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Input\Csv_Files\" />

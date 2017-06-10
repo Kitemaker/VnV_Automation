@@ -1,0 +1,11 @@
+2017/06/07 11:31:02 AM : INFO : Executing Utility.py
+2017/06/07 11:31:02 AM : INFO : Creating Class CSVReader
+2017/06/07 11:31:05 AM : ERROR : STL_LCM_113C  track = 2032 is overlapping with   WZ_113A_113D_LCM  track =   2032
+2017/06/07 11:31:06 AM : ERROR : STL_LCM_113D  track = 2032 is overlapping with   WZ_113A_113D_LCM  track =   2032
+2017/06/07 11:31:06 AM : ERROR : COD_LCM_113D_B  track = 2032 is overlapping with   WZ_113A_113D_LCM  track =   2032
+2017/06/07 11:31:06 AM : ERROR : STL_LCM_113A  track = 2032 is overlapping with   WZ_113A_113D_LCM  track =   2032
+2017/06/07 11:31:06 AM : ERROR : COD_LCM_113A_B  track = 2032 is overlapping with   WZ_113A_113D_LCM  track =   2032
+2017/06/07 11:31:07 AM : ERROR : COD_LCM_113C_B  track = 2032 is overlapping with   WZ_113A_113D_LCM  track =   2032
+2017/06/07 11:31:07 AM : ERROR : STL_LCM_113B  track = 2032 is overlapping with   WZ_113A_113D_LCM  track =   2032
+2017/06/07 11:31:07 AM : ERROR : COD_LCM_113B_B  track = 2032 is overlapping with   WZ_113A_113D_LCM  track =   2032
+2017/06/07 11:31:11 AM : INFO : Report generated successfully at C:\Users\295563\Documents\MyData\PROJECTS\VnV\VnV_Automation\DTVT_BLUE\Results\Test_Results_NOK_RCD_STOPPING_AREA_0004.xlsx

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DTVT_VIEW"
         mc:Ignorable="d"
-        Title="DTVT BLUE" Topmost="True" WindowStartupLocation="CenterScreen" Closing="WndMain_Closing" MinWidth="800" MinHeight="600" WindowStyle="ThreeDBorderWindow">
+        Title="DTVT BLUE" WindowStartupLocation="CenterScreen" Closing="WndMain_Closing" MinWidth="800" MinHeight="600" WindowStyle="ThreeDBorderWindow" WindowState="Maximized">
 
     <Grid x:Name="GridMain" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}">
         <Grid.ColumnDefinitions>
@@ -25,11 +25,12 @@
                 <MenuItem x:Name="setPython" Header="Set Python Path" Click="setPython_Click"/>
                 <MenuItem x:Name="exitPrjMenu" Header="Exit" Click="exitPrjMenu_Click"/>
             </MenuItem>
-            <MenuItem x:Name="importMenu"  Header="Import" Height="30" Width="70" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Padding="15,5,8,3" SubmenuOpened="importMenu_SubmenuOpened">
+            <MenuItem x:Name="importMenu"  Header="Import" Height="30" Width="70" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Padding="15,5,8,3" SubmenuOpened="importMenu_SubmenuOpened" Click="importMenu_Click">
                 <MenuItem x:Name="rulesMenu"  Header="Import Rules" Click="rulesMenu_Click" />
                 <MenuItem x:Name="dataMenu" Header="Import Data" Click="dataMenu_Click"/>
                 <MenuItem x:Name="sydbMenu" Header="Import SyDB" Click="sydbMenu_Click"/>
                 <MenuItem x:Name="constMenu" Header="Import Constants" Click="constMenu_Click"/>
+                <MenuItem x:Name="settingsMenu" Header="Project Settings" Click="settingsMenu_Click"/>
             </MenuItem>
             <MenuItem x:Name="helpMenu"  Header="Help" Height="30" Width="70" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Padding="15,5,8,3">
                 <MenuItem x:Name="userManualMenu"  Header="User Manual"/>

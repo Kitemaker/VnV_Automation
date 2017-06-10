@@ -1,12 +1,8 @@
 import os,sys
+import DtvtLib
+from DtvtLib import Utility, Configuration , CSVReader
 
-# Get File  name without path
-print(os.path.basename(__file__))
-print(__file__)
-print(os.path.basename(__file__).split('.')[0] + '.log')
-sys.path.append(r'C:\Users\295563\Documents\01 PROJECTS\VnV\VnV_Automation\DTVT_BLUE')
-import TisLib
-import TisLib.SydbReader
+
 
 
 

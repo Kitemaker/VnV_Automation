@@ -17,7 +17,7 @@ SyDT             = param['SyDT']
 
 ### ======== Template Ends===========================================================================
 
-### =========Rule RCD_DB_SIGAREA_0003 ===================================================================
+### ========= RCD_DB_SIGAREA_0003 ===================================================================
 # Author : Saleem Javed
 # Updated 16 May 2017
 # Caps Used : Signalisation_Areas_Cap , Points_Cap , SDDBs_Cap,Secondary_Detection_Devices_Cap

@@ -367,6 +367,26 @@ class SydbReader(object):
         except:
             elf.dtvt_log.error("Module:SydbReader Method:Get_SSP_ID_List", sys.exc_info()[0])
             return None
+
+    def GetConventionalDirection(self):
+        try:
+            return self.root_node.find('./Lines/Line/Conventional_Description_Direction').text
+        except:
+            elf.dtvt_log.error("Module:SydbReader Method:GetConventionalDirection", sys.exc_info()[0])
+            return None
+    def GetUpSignification(self):
+        try:
+            return self.root_node.find('./Lines/Line/Up_Signification').text
+        except:
+            elf.dtvt_log.error("Module:SydbReader Method:GetUpSignification", sys.exc_info()[0])
+            return None
+
+    def GetDownSignification(self):
+        try:
+            return self.root_node.find('./Lines/Line/Down_Signification').text
+        except:
+            elf.dtvt_log.error("Module:SydbReader Method:GetDownSignification", sys.exc_info()[0])
+            return None
            
 
     
